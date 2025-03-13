@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <item android:width="27dp"
+        android:height="27dp"
+        android:state_pressed="false">
+
+        <vector android:height="27dp"
+            android:width="27dp"
+            android:viewportHeight="960"
+            android:viewportWidth="960">
+            <path
+                android:strokeColor="@color/invertedBackgrounds"
+                android:strokeWidth="85"
+                android:strokeLineCap="round"
+                android:pathData="M150,480 810,480"/>
+        </vector>
+    </item>
+    <item android:width="27dp"
+        android:height="27dp">
+        <vector android:height="27dp"
+            android:width="27dp"
+            android:viewportHeight="960"
+            android:viewportWidth="960">
+            <path
+                android:strokeColor="@color/inactive"
+                android:strokeWidth="85"
+                android:strokeLineCap="round"
+                android:pathData="M150,480 810,480"/>
+        </vector>
+    </item>
+</selector>
