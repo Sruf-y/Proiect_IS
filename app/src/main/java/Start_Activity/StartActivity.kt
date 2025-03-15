@@ -59,7 +59,6 @@ class StartActivity : AppCompatActivity() {
 
 
 
-
     }
 
     private fun makeCurrentFragment(fragment: Fragment,container:FragmentContainerView) {
