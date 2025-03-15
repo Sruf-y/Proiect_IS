@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,7 +16,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,10 +50,11 @@ public class MainActivity extends AppCompatActivity {
         // set click action for button/ orice alt "View" (view = obiect grafic)
 
         another_activity.setOnClickListener(new View.OnClickListener() {
+            // codul aici este comentat pt ca am sters layout-ul la care duce
             @Override
             public void onClick(View view) {
-                Intent activitystarter = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(activitystarter);
+                //Intent activitystarter = new Intent(MainActivity.this, SecondActivity.class);
+                //startActivity(activitystarter);
             }
         });
 

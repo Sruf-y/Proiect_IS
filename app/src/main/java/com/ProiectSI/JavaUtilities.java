@@ -1,6 +1,6 @@
 package com.ProiectSI;
 
-public class Utilities{
+public class JavaUtilities {
 
 
     public Boolean FloatToBoolean(float a){
@@ -14,3 +14,6 @@ public class Utilities{
         return Integer.parseInt(a.toString());
     }
 }
+
+
+
