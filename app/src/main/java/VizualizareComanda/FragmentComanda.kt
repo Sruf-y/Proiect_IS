@@ -34,7 +34,11 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),MeniuAdaptor_Lista.o
         super.onViewCreated(view, savedInstanceState)
 
         val auth_buton: ShapeableImageView = requireView().findViewById(R.id.login_button1)
+
         auth_buton.setOnClickListener{
+
+            lista_items_in_meniu_static.add(Meniu_Item())
+
             val intent = Intent(requireContext(),Login_Activity::class.java)
             startActivity(intent)
         }

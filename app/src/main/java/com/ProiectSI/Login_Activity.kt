@@ -3,6 +3,8 @@ package com.ProiectSI
 import DataClasses.Angajat
 import Start_Activity.AdminActivity
 import Start_Activity.AngajatActivity
+import Start_Activity.Lista_Angajati
+import Start_Activity.customToast
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -17,7 +19,7 @@ import androidx.core.view.WindowInsetsCompat
 import kotlin.math.log
 
 
-val Lista_Angajati = ArrayList<Angajat>();
+
 
 class Login_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,9 +87,3 @@ class Login_Activity : AppCompatActivity() {
     }
 }
 
-fun customToast(whereToShowIt: View, context: Context, message: String) {
-    val tost = Toast.makeText(context, message, Toast.LENGTH_SHORT);
-
-
-    tost.show();
-}
