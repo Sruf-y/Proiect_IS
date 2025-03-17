@@ -1,9 +1,13 @@
 package Start_Activity
 
+import DataClasses.Angajat
 import DataClasses.Meniu_Item
 import FragmentMeniu.FragmentMeniu
 import VizualizareComanda.FragmentComanda
+import android.content.Context
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
@@ -14,7 +18,7 @@ var lista_Comanda= ArrayList<Meniu_Item>()// lista de cele cumparate
 
 var lista_items_in_meniu_static = ArrayList<Meniu_Item>() // lista cu toate mancarurile pe care le avem. Se initializeaza chiar aici
 
-
+val Lista_Angajati = ArrayList<Angajat>();
 
 
 class StartActivity : AppCompatActivity() {
@@ -52,7 +56,7 @@ class StartActivity : AppCompatActivity() {
 
         //adauga itemele din meniu aici
 
-        lista_items_in_meniu_static.add(Meniu_Item()) // constructor gol, inainte de set-upul pentru clasa de date
+
 
 
 
@@ -68,4 +72,12 @@ class StartActivity : AppCompatActivity() {
         }
     }
 
+}
+
+
+fun customToast(whereToShowIt: View, context: Context, message: String) {
+    val tost = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+
+
+    tost.show();
 }
