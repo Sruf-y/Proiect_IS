@@ -7,6 +7,27 @@
     android:layout_height="match_parent"
     tools:context="Start_Activity.AdminActivity">
 
+
+
+    <!--
+    Avem nevoie de o lista de butoane pentru actiunile adminului.
+
+    nu avem nevoie de activity_angajat.
+
+    Link pentru exemplu de creare background culoare/gradient:
+    https://www.youtube.com/watch?v=88Z5Ly-Nb3g
+
+    Nu avem nevoie de alte activitati momentan.
+    Nu avem nevoie de alte pagini de log-in.
+    Nu sterge intregi fragmente/activitati.
+    -->
+
+
+
+
+
+
+
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="729dp"
