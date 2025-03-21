@@ -29,10 +29,11 @@ public class Meniu_Item {
         this.description = description;
         this.nutritionDescription = nutritionDescription;
     }
-
     public Meniu_Item(){
 
     }
+
+
 
  
 

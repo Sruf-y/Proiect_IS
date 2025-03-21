@@ -107,6 +107,7 @@
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/imageView5"
                     app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -207,5 +208,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/usernameEditText2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@drawable/background_rounded_corners"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="text"
+        android:paddingStart="15dp"
+        android:textColorHint="@color/invertedLightTextBackgrounds"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="574dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
