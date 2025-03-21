@@ -34,7 +34,6 @@ public class Meniu_Item {
     }
 
 
-
  
 
     public int getId() {
