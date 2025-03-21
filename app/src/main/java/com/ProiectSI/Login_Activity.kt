@@ -5,20 +5,11 @@ import Start_Activity.AdminActivity
 import Start_Activity.AngajatActivity
 import Start_Activity.Lista_Angajati
 import Start_Activity.customToast
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import kotlin.math.log
-
-
 
 
 class Login_Activity : AppCompatActivity() {
@@ -32,7 +23,7 @@ class Login_Activity : AppCompatActivity() {
 //            insets
 //        }
 
-        val username:EditText = findViewById(R.id.usernameEditText)
+        val username:EditText = findViewById(R.id.Email)
 
         val password:EditText = findViewById(R.id.passwordEditText)
 
@@ -78,7 +69,7 @@ class Login_Activity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        val username:EditText = findViewById(R.id.usernameEditText)
+        val username:EditText = findViewById(R.id.Email)
 
         val password:EditText = findViewById(R.id.passwordEditText)
 
