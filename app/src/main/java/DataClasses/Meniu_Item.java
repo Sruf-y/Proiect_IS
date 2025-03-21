@@ -31,6 +31,10 @@ public class Meniu_Item {
     }
     public Meniu_Item(){}
 
+    public Meniu_Item(){
+
+    }
+
  
 
     public int getId() {
