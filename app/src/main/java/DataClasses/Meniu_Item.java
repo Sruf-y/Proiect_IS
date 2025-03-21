@@ -30,6 +30,10 @@ public class Meniu_Item {
         this.nutritionDescription = nutritionDescription;
     }
 
+    public Meniu_Item(){
+
+    }
+
  
 
     public int getId() {
