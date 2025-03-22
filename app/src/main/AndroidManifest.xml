@@ -34,9 +34,6 @@
             android:name="Setari_Admin_Angajat.Schimbare_date_mancare"
             android:exported="false" />
         <activity
-            android:name="Start_Activity.AngajatActivity"
-            android:exported="false" />
-        <activity
             android:name="Start_Activity.AdminActivity"
             android:exported="false" />
         <activity
