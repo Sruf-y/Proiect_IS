@@ -15,7 +15,7 @@ public class AdminActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // enableEdgeToEdge(); // Uncomment if needed
+        // enableEdgeToEdge();
         setContentView(R.layout.activity_admin);
 
         // ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -24,9 +24,14 @@ public class AdminActivity extends AppCompatActivity {
         //     return insets;
         // });
 
-        // Retrieve extras from the intent
         String angajatName = getIntent().getStringExtra("arg1");
         String angajatPassword = getIntent().getStringExtra("arg2");
         boolean isAdmin = "admin".equals(getIntent().getStringExtra("arg3"));
+
+
+        // AICI SCRII CODUL
+
+
+
     }
 }
