@@ -27,6 +27,7 @@
         android:layout_height="729dp"
         android:clipToPadding="true"
         android:divider="@drawable/invisible_divider_horizontal"
+        android:gravity="center_horizontal|top"
         android:orientation="vertical"
         android:paddingStart="40dp"
         android:paddingTop="20dp"
@@ -39,9 +40,9 @@
             android:id="@+id/admin_buton_adaugare_angajat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Creare cont angajat"
             android:background="@drawable/rounded_button"
             android:fontFamily="@font/poppins"
+            android:text="Creare cont angajat"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
 
@@ -49,9 +50,9 @@
             android:id="@+id/admin_schimbare_date_item_meniu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Schimbare date item din meniu"
             android:background="@drawable/rounded_button"
             android:fontFamily="@font/poppins"
+            android:text="Schimbare date item din meniu"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
 
@@ -59,9 +60,9 @@
             android:id="@+id/admin_modificare"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Modificare"
             android:background="@drawable/rounded_buttonv2"
             android:fontFamily="@font/poppins"
+            android:text="Modificare"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
 
