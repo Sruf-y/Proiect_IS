@@ -93,11 +93,12 @@
                     app:srcCompat="@drawable/person_removebg_preview" />
 
                 <EditText
-                    android:id="@+id/usernameEditText"
+                    android:id="@+id/Email"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:background="@drawable/background_rounded_corners"
                     android:ems="10"
+                    android:fontFamily="@font/poppins"
                     android:hint="Username"
                     android:inputType="text"
                     android:paddingStart="15dp"
@@ -144,6 +145,7 @@
                     android:layout_height="0dp"
                     android:background="@drawable/background_rounded_corners"
                     android:ems="10"
+                    android:fontFamily="@font/poppins"
                     android:hint="Password"
                     android:inputType="textPassword"
                     android:paddingStart="15dp"
@@ -175,7 +177,8 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Authentify"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Log in"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout7"
@@ -185,41 +188,32 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:paddingHorizontal="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout8"
-        app:layout_constraintVertical_bias="0.13999999">
+        app:layout_constraintVertical_bias="0.0">
+
 
         <Button
             android:id="@+id/Log_In_Button"
             android:layout_width="0dp"
             android:layout_height="57dp"
-            android:backgroundTint="@color/invertedLightTextBackgrounds"
-            android:backgroundTintMode="screen"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/poppins"
             android:text="Log In"
-            android:textColor="@color/backgrounds"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <EditText
-        android:id="@+id/usernameEditText2"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:background="@drawable/background_rounded_corners"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="text"
-        android:paddingStart="15dp"
-        android:textColorHint="@color/invertedLightTextBackgrounds"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="574dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

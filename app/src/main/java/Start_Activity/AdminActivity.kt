@@ -18,7 +18,9 @@ class AdminActivity : AppCompatActivity() {
 //            insets
 //        }
 
-
+        val angajatName= intent.getStringExtra("arg1")
+        val angajatPassword = intent.getStringExtra("arg2")
+        val is_admin:Boolean = intent.getStringExtra("arg3")=="admin"
 
 
 

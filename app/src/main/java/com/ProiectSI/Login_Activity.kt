@@ -2,23 +2,13 @@ package com.ProiectSI
 
 import DataClasses.Angajat
 import Start_Activity.AdminActivity
-import Start_Activity.AngajatActivity
 import Start_Activity.Lista_Angajati
 import Start_Activity.customToast
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import kotlin.math.log
-
-
 
 
 class Login_Activity : AppCompatActivity() {
@@ -32,7 +22,7 @@ class Login_Activity : AppCompatActivity() {
 //            insets
 //        }
 
-        val username:EditText = findViewById(R.id.usernameEditText)
+        val username:EditText = findViewById(R.id.Email)
 
         val password:EditText = findViewById(R.id.passwordEditText)
 
@@ -47,6 +37,9 @@ class Login_Activity : AppCompatActivity() {
             if(username.text.toString()==admin_username && password.text.toString()==admin_password)
             {
                 val intent = Intent(this,AdminActivity::class.java)
+                intent.putExtra("arg1",username.text.toString())
+                intent.putExtra("arg2",password.text.toString())
+                intent.putExtra("arg3","admin");
                 startActivity(intent)
             }
             else if(Lista_Angajati.size>0)
@@ -54,9 +47,10 @@ class Login_Activity : AppCompatActivity() {
                 for(i in Lista_Angajati)
                     if(i.username==username.text.toString() && i.password==password.text.toString())
                     {
-                        val intent = Intent(this,AngajatActivity::class.java)
+                        val intent = Intent(this,AdminActivity::class.java)
                         intent.putExtra("arg1",username.text.toString())
                         intent.putExtra("arg2",password.text.toString())
+                        intent.putExtra("arg3","angajat");
                         startActivity(intent)
                         break;
                     }
@@ -78,7 +72,7 @@ class Login_Activity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        val username:EditText = findViewById(R.id.usernameEditText)
+        val username:EditText = findViewById(R.id.Email)
 
         val password:EditText = findViewById(R.id.passwordEditText)
 
