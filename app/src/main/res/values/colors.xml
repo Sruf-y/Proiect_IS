@@ -81,4 +81,34 @@
     <color name="transparent">#00000000</color>
     <color name="semi_transparent">#88000000</color>
 
+
+    <!-- 🔹 Fundaluri și suprafețe -->
+    <color name="background_primary">#F5F5F5</color> <!-- Fundal principal: Alb murdar, minimalist și curat -->
+    <color name="background_secondary">#E0E0E0</color> <!-- Fundal secundar: Gri deschis, pentru separare subtilă -->
+    <color name="background_contrast">#424242</color> <!-- Fundal contrastant: Gri închis, adaugă profunzime -->
+
+    <!-- 🔤 Texte și titluri -->
+    <color name="text_primary">#212121</color> <!-- Text principal: Negru soft, pentru lizibilitate maximă -->
+    <color name="text_secondary">#757575</color> <!-- Text secundar: Gri mediu, pentru subtitluri și descrieri -->
+    <color name="text_accent">#6D8B74</color> <!-- Text de accent: Verde salvie, elegant și modern -->
+
+    <!-- 🔘 Butoane și interacțiuni -->
+    <color name="button_primary">#6D8B74</color> <!-- Buton principal: Verde salvie, calm și sofisticat -->
+    <color name="button_secondary">#424242</color> <!-- Buton secundar: Gri închis, pentru opțiuni alternative -->
+    <color name="button_text">#FFFFFF</color> <!-- Text pe butoane: Alb, contrast ridicat pentru claritate -->
+    <color name="button_disabled">#E0E0E0</color> <!-- Butoane dezactivate: Gri deschis, cu opacitate redusă -->
+
+    <!-- 🖱️ Elemente interactive -->
+    <color name="selection_active">#6D8B74</color> <!-- Selecție activă: Verde salvie, elegant și rafinat -->
+    <color name="hover_effect">#5A7661</color> <!-- Efect hover: Verde mai închis, pentru feedback subtil -->
+    <color name="link_color">#6D8B74</color> <!-- Link-uri și elemente clicabile: Verde salvie -->
+
+    <!-- ⚠️ Stări și mesaje -->
+    <color name="success">#4CAF50</color> <!-- Mesaje de succes: Verde, indică acțiuni reușite -->
+    <color name="error">#D32F2F</color> <!-- Mesaje de eroare: Roșu aprins, pentru probleme sau erori -->
+    <color name="warning">#FFA000</color> <!-- Mesaje de avertizare: Portocaliu, pentru atenționări -->
+    <color name="info">#1976D2</color> <!-- Mesaje informative: Albastru, pentru notificări neutre -->
+
 </resources>
+
+
