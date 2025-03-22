@@ -6,7 +6,7 @@
     <corners android:radius="16dp"/>
 
     <!-- Setează conturul (borderul) -->
-    <stroke android:width="2dp" android:color="@android:color/invertedLightTextBackgrounds"/>
+    <stroke android:width="2dp" android:color="@color/invertedLightTextBackgrounds"/>
 
     <!-- Setează background transparent -->
     <solid android:color="@android:color/transparent"/>
