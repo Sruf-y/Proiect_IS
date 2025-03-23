@@ -7,7 +7,7 @@
     tools:context="FragmentMeniu.FragmentMeniu" >
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewCautare"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,22 +36,20 @@
             app:layout_constraintStart_toEndOf="@+id/finish_activity_button"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <ImageView
             android:id="@+id/finish_activity_button"
-            android:layout_width="40dp"
+            android:layout_width="50dp"
             android:layout_height="0dp"
             android:background="@drawable/ripple_circle"
             android:clickable="true"
+            android:padding="10dp"
             android:rotation="90"
-            android:scaleX="0.6"
-            android:scaleY="0.7"
+            android:src="@android:drawable/arrow_down_float"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearance="@style/roundedImageViewRounded"
-            app:srcCompat="@android:drawable/arrow_down_float"
             app:tint="@color/invertedBackgrounds"
             app:tintMode="src_atop" />
     </androidx.constraintlayout.widget.ConstraintLayout>
