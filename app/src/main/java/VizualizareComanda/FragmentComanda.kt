@@ -2,6 +2,8 @@ package VizualizareComanda
 
 import Adaptors.MeniuAdaptor_Lista
 import DataClasses.Meniu_Item
+import Start_Activity.GlobalVars.cos_comanda
+import Start_Activity.GlobalVars.lista_Comenzi
 import Start_Activity.GlobalVars.lista_items_in_meniu_static
 import android.content.Intent
 import android.os.Bundle
@@ -38,7 +40,9 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),MeniuAdaptor_Lista.o
         val recycler:RecyclerView = requireView().findViewById(R.id.recyclercomanda)
         recycler.layoutManager=LinearLayoutManager(requireContext())
 
-        val adaptor= MeniuAdaptor_Lista(lista_items_in_meniu_static,this,this)
+
+        //val adaptor= MeniuAdaptor_Lista(cos_comanda.list,this,this) // CORECT
+        val adaptor= MeniuAdaptor_Lista(lista_items_in_meniu_static,this,this) // INCORECT
         recycler.adapter=adaptor
         recycler.adapter?.notifyDataSetChanged()
 
@@ -80,17 +84,12 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),MeniuAdaptor_Lista.o
     override fun onResume() {
         super.onResume()
 
-
-
         val recycler:RecyclerView = requireView().findViewById(R.id.recyclercomanda)
-
         recycler.layoutManager=LinearLayoutManager(requireContext());
 
-
-
         val adaptor= MeniuAdaptor_Lista(lista_items_in_meniu_static,this,this);
-
         recycler.adapter=adaptor
+
         recycler.adapter?.notifyDataSetChanged()
 
 
