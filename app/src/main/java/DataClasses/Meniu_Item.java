@@ -3,29 +3,23 @@ package DataClasses;
 import java.util.List;
 
 public class Meniu_Item {
-    private int id;
+    private int image_id;
     private String name;
     private String category; 
     private double price;
     private boolean available;
-    private List<String> ingredients;
-    private boolean isSpicy;
-    private boolean isVegetarian;
     private String description;             
     private String nutritionDescription;   
 
  
-    public Meniu_Item(int id, String name, String category, double price, boolean available,
+    public Meniu_Item(int image_id, String name, String category, double price, boolean available,
                       List<String> ingredients, boolean isSpicy, boolean isVegetarian,
                       String description, String nutritionDescription) {
-        this.id = id;
+        this.image_id=image_id;
         this.name = name;
         this.category = category;
         this.price = price;
         this.available = available;
-        this.ingredients = ingredients;
-        this.isSpicy = isSpicy;
-        this.isVegetarian = isVegetarian;
         this.description = description;
         this.nutritionDescription = nutritionDescription;
     }
@@ -37,14 +31,12 @@ public class Meniu_Item {
     }
 
 
- 
-
-    public int getId() {
-        return id;
+    public int getImage_id() {
+        return image_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setImage_id(int image_id) {
+        this.image_id = image_id;
     }
 
     public String getName() {
@@ -77,30 +69,6 @@ public class Meniu_Item {
 
     public void setAvailable(boolean available) {
         this.available = available;
-    }
-
-    public List<String> getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(List<String> ingredients) {
-        this.ingredients = ingredients;
-    }
-
-    public boolean isSpicy() {
-        return isSpicy;
-    }
-
-    public void setSpicy(boolean isSpicy) {
-        this.isSpicy = isSpicy;
-    }
-
-    public boolean isVegetarian() {
-        return isVegetarian;
-    }
-
-    public void setVegetarian(boolean isVegetarian) {
-        this.isVegetarian = isVegetarian;
     }
 
     public String getDescription() {

@@ -18,7 +18,9 @@ import com.ProiectSI.R;
 import java.util.ArrayList;
 import Adaptors.MeniuAdaptor_Lista;
 import DataClasses.Meniu_Item;
-import Start_Activity.lista_items_in_meniu_static
+import Start_Activity.GlobalVars
+import Start_Activity.GlobalVars.lista_items_in_meniu_static
+
 import android.content.Context
 import android.widget.SearchView
 import androidx.activity.contextaware.ContextAware

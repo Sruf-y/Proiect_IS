@@ -15,10 +15,8 @@ public class Schimbare_Date_Angajati extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_schimbare_date_angajati);
-
-
-
 
     }
 }

@@ -23,114 +23,123 @@
     -->
 
 
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:clipToPadding="true"
-        android:divider="@drawable/invisible_divider_horizontal"
-        android:gravity="center_horizontal|top"
-        android:orientation="vertical"
-        android:paddingTop="20dp"
-        android:showDividers="middle"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
-
-        <Button
-            android:id="@+id/admin_buton_adaugare_angajat"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_button"
-            android:fontFamily="@font/poppins"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:text="Creare cont angajat"
-            android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            android:clipToPadding="true"
+            android:divider="@drawable/invisible_divider_horizontal"
+            android:gravity="center"
+            android:importantForAutofill="auto"
+            android:isScrollContainer="true"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:showDividers="middle">
 
-        <Button
-            android:id="@+id/admin_schimbare_date_item_meniu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_button"
-            android:fontFamily="@font/poppins"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:text="Schimbare date item din meniu"
-            android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            <Button
+                android:id="@+id/admin_buton_adaugare_angajat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/poppins"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp"
+                android:text="Creare cont angajat"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/admin_modificare"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_buttonv2"
-            android:fontFamily="@font/poppins"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:text="Modificare"
-            android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            <Button
+                android:id="@+id/admin_modificare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_buttonv2"
+                android:fontFamily="@font/poppins"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp"
+                android:text="Modificare cont angajat"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/admin_confirmare"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_buttonv2"
-            android:fontFamily="@font/poppins"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:text="Confrmare"
-            android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            <Button
+                android:id="@+id/admin_vizualizare_conturi_angajati"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/poppins"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp"
+                android:text="Conturi angajati"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/admin_adaugare_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_button"
-            android:fontFamily="@font/poppins"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:text="Adaugare item"
-            android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            <Button
+                android:id="@+id/admin_stergere_cont_angajati"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/poppins"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp"
+                android:text="Stergere cont angajati"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/admin_vizualizare_comenzi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_buttonv2"
-            android:fontFamily="@font/poppins"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:text="Vizualizare comenzi"
-            android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            <Button
+                android:id="@+id/admin_adaugare_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/poppins"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp"
+                android:text="Adaugare item"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/admin_vizualizare_conturi_angajati"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_button"
-            android:fontFamily="@font/poppins"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:text="Conturi angajati"
-            android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            <Button
+                android:id="@+id/admin_vizualizare_comenzi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/poppins"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp"
+                android:text="Vizualizare comenzi"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/admin_stergere_cont_angajati"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_button"
-            android:fontFamily="@font/poppins"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:text="Stergere cont angajati"
-            android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            <Button
+                android:id="@+id/admin_schimbare_date_item_meniu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/poppins"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp"
+                android:text="Schimbare date item din meniu"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/admin_stergere_item_din_meniu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/poppins"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp"
+                android:text="Stergere item din meniu"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

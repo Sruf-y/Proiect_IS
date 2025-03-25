@@ -15,9 +15,8 @@ public class Schimbare_date_mancare extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_schimbare_date_mancare);
-        //cod aici
 
+        setContentView(R.layout.activity_schimbare_date_mancare);
 
     }
 }

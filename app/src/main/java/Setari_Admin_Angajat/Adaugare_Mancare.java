@@ -10,15 +10,44 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.ProiectSI.R;
 
+import java.util.ArrayList;
+
+import DataClasses.Meniu_Item;
+import Functii_Utils.Functii;
+import Start_Activity.GlobalVars;
+import Start_Activity.StartActivity;
+import kotlin.jvm.internal.MutableLocalVariableReference;
+import kotlin.reflect.KProperty;
+import kotlinx.coroutines.GlobalScope;
+
+
 public class Adaugare_Mancare extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_adaugare_mancare);
-       //aici cod
 
 
+        // asa utilizez o variabila ce a fost facuta globala in StartActivity
+        GlobalVars.INSTANCE.getLista_items_in_meniu_static();
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+
+        // Salvarea unei liste/valori.
+        Functii.Companion.SaveAsJson(Adaugare_Mancare.this,"Lista_Meniu",GlobalVars.INSTANCE.getLista_items_in_meniu_static());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Functia este null-safe. Asa se incarca din fisier daca exista o lista/valoare salvata.
+        GlobalVars.INSTANCE.setLista_items_in_meniu_static(Functii.Companion.LoadFromJson(Adaugare_Mancare.this,"Lista_Meniu",GlobalVars.INSTANCE.getLista_items_in_meniu_static()));
     }
 }

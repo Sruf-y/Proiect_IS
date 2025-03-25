@@ -2,7 +2,7 @@ package VizualizareComanda
 
 import Adaptors.MeniuAdaptor_Lista
 import DataClasses.Meniu_Item
-import Start_Activity.lista_items_in_meniu_static
+import Start_Activity.GlobalVars.lista_items_in_meniu_static
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -72,14 +72,6 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),MeniuAdaptor_Lista.o
 
 
     }
-
-
-
-
-
-
-
-
 
 
 

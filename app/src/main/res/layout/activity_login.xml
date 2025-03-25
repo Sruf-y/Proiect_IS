@@ -52,10 +52,11 @@
             app:srcCompat="@drawable/horizontal_divider" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout7"
         android:layout_width="0dp"
-        android:layout_height="57dp"
+        android:layout_height="60dp"
         android:paddingHorizontal="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,11 +73,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/outline">
+                android:background="@drawable/text_background">
 
                 <ImageView
                     android:id="@+id/imageView5"
@@ -116,7 +118,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout8"
         android:layout_width="0dp"
-        android:layout_height="57dp"
+        android:layout_height="60dp"
         android:paddingHorizontal="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout7"
@@ -127,17 +129,17 @@
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout4"
                 android:layout_width="match_parent"
-                android:layout_height="57dp"
-                android:background="@drawable/outline">
+                android:layout_height="match_parent"
+                android:background="@drawable/text_background">
 
                 <EditText
                     android:id="@+id/passwordEditText"
@@ -195,21 +197,21 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout8"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.32999998">
 
 
         <Button
             android:id="@+id/Log_In_Button"
-            android:layout_width="0dp"
-            android:layout_height="57dp"
+            android:layout_width="198dp"
+            android:layout_height="62dp"
             android:background="@drawable/rounded_button"
+            android:elevation="2dp"
             android:fontFamily="@font/poppins"
-            android:text="Log In"
+            android:text="Login"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

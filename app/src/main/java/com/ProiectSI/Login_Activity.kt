@@ -2,7 +2,7 @@ package com.ProiectSI
 
 import DataClasses.Angajat
 import Start_Activity.AdminActivity
-import Start_Activity.Lista_Angajati
+import Start_Activity.GlobalVars.lista_Angajati
 import Start_Activity.customToast
 import android.content.Intent
 import android.os.Bundle
@@ -31,7 +31,8 @@ class Login_Activity : AppCompatActivity() {
         val admin_username:String = "admin@restaurant.null"
         val admin_password:String = "adminRestaurantMagic12"
 
-        Lista_Angajati.add(Angajat("Andrei","Botofan"))
+        lista_Angajati.add(Angajat("Andrei","Botofan"))
+        lista_Angajati.add(Angajat("Bologa","Darius"))
 
         loginbuton.setOnClickListener{
             if(username.text.toString()==admin_username && password.text.toString()==admin_password)
@@ -42,9 +43,9 @@ class Login_Activity : AppCompatActivity() {
                 intent.putExtra("arg3","admin");
                 startActivity(intent)
             }
-            else if(Lista_Angajati.size>0)
+            else if(lista_Angajati.size>0)
             {
-                for(i in Lista_Angajati)
+                for(i in lista_Angajati)
                     if(i.username==username.text.toString() && i.password==password.text.toString())
                     {
                         val intent = Intent(this,AdminActivity::class.java)
