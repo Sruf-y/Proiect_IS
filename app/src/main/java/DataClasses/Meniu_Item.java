@@ -32,7 +32,9 @@ public class Meniu_Item {
     public Meniu_Item(){
 
     }
-
+    public Meniu_Item(String nume){
+        this.name=nume;
+    }
 
 
  

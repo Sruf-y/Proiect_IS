@@ -7,61 +7,141 @@
     android:layout_height="match_parent"
     tools:context="Setari_Admin_Angajat.Adaugare_Mancare">
 
-    <EditText
-        android:id="@+id/editTextText"
+
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Adaugare item"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editImagine"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/text_background"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="76dp" />
+        android:padding="10dp"
+        android:text="Imagine"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/editValoriNutritionale"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/text_background"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="163dp" />
+        android:padding="10dp"
+        android:text="Denumire"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/editImagine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="parent" />
+<!--    <EdiText-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="57dp"-->
+<!--        android:hint="Denumire"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:background="@drawable/rounded_button"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView3" />-->
+
 
     <EditText
-        android:id="@+id/editTextText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/editValoriNutritionale"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/text_background"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="220dp" />
+        android:padding="10dp"
+        android:text="Valori nutritionale"
+        android:textSize="16sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/editTextDescriere"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/editTextDescriere"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/text_background"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="286dp" />
+        android:padding="10dp"
+        android:text="Descriere"
+        android:textSize="16sp"
+
+        app:layout_constraintBottom_toTopOf="@+id/editTextPret"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editTextText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/editTextPret"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/text_background"
         android:ems="10"
+        android:fontFamily="@font/poppins"
         android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="342dp" />
+        android:padding="10dp"
+        android:text="Pret"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/admin_confirmare"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="164dp"
-        android:layout_height="59dp"
-        android:text="Confirm"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="489dp" />
+        android:id="@+id/admin_confirmare"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/poppins"
+        android:text="Confirmare"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

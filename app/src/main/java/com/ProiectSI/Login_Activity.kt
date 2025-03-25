@@ -32,6 +32,7 @@ class Login_Activity : AppCompatActivity() {
         val admin_password:String = "adminRestaurantMagic12"
 
         Lista_Angajati.add(Angajat("Andrei","Botofan"))
+        Lista_Angajati.add(Angajat("Bologa","Darius"))
 
         loginbuton.setOnClickListener{
             if(username.text.toString()==admin_username && password.text.toString()==admin_password)

@@ -18,18 +18,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <com.google.android.material.imageview.ShapeableImageView
+        <ImageView
             android:id="@+id/login_button1"
             android:layout_width="60dp"
-            android:layout_height="0dp"
-            android:clickable="true"
+            android:layout_height="60dp"
+            android:background="@drawable/ripple_circle"
+            android:backgroundTint="@color/liftedBackgrounds"
+            android:padding="10dp"
+            android:src="@drawable/outline_accessibility_new_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearance="@style/roundedImageViewRounded"
-            app:srcCompat="@drawable/outline_accessibility_new_24" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/butonaddTemporar_"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/ripple_circle"
+            android:backgroundTint="@color/liftedBackgrounds"
+            android:padding="10dp"
+            android:src="@drawable/add_material_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.17"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

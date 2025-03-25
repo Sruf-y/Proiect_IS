@@ -1,12 +1,15 @@
 package FragmentMeniu
 
 
+import Activity_Cautare.Cautare
 import Adaptors.TabSwipeAdaptor
 import DataClasses.Meniu_Item
+import Start_Activity.StartActivity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.ProiectSI.Login_Activity
@@ -33,7 +36,7 @@ class FragmentMeniu : Fragment(R.layout.fragment_meniu) {
 
         pagesView.adapter = TabSwipeAdaptor(this)
 
-
+        // ataseaza tabs de adaptorul de fragmente pentru a fi up-to-date
         TabLayoutMediator(tabs,pagesView){tab,position->
             when(position){
                 0->tab.text="Aperitive"
@@ -44,9 +47,18 @@ class FragmentMeniu : Fragment(R.layout.fragment_meniu) {
         }.attach()
 
 
-        val auth_buton: ShapeableImageView = requireView().findViewById(R.id.login_button2)
+        val auth_buton: ImageView = requireView().findViewById(R.id.login_button2)
         auth_buton.setOnClickListener{
             val intent = Intent(requireContext(), Login_Activity::class.java)
+            startActivity(intent)
+        }
+
+
+        val search_button: ImageView = requireView().findViewById(R.id.search_button)
+
+        search_button.setOnClickListener {
+            val intent = Intent(requireContext(), Cautare::class.java)
+
             startActivity(intent)
         }
 

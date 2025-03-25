@@ -23,7 +23,7 @@ class MeniuAdaptor_Lista(val mlist:ArrayList<Meniu_Item>, val clickListener: onC
         // val title_view:TextView=itemView.findViewById(R.id.alarmTitle)
 
         //instantierea obiectelor pt utilizare in cod
-        val textbox = itemView.findViewById<TextView>(R.id.textView)
+        val titlu:TextView = itemView.findViewById(R.id.Titlu)
 
     }
 
@@ -47,9 +47,15 @@ class MeniuAdaptor_Lista(val mlist:ArrayList<Meniu_Item>, val clickListener: onC
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
 
-        val item = mlist[position]
+        val mancare = mlist[position]
+
+        if(holder is ItemViewHolder){
+
+            holder.titlu.text=mancare.name
 
 
+
+        }
 
 
 
