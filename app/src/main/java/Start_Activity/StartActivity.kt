@@ -74,7 +74,6 @@ class StartActivity : AppCompatActivity() {
 
 
 
-
     }
 
     override fun onPause() {
