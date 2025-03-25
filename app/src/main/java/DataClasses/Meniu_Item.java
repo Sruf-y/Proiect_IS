@@ -12,9 +12,10 @@ public class Meniu_Item {
     private String nutritionDescription;   
 
  
-    public Meniu_Item(int id, String name, String category, double price, boolean available,
+    public Meniu_Item(int image_id, String name, String category, double price, boolean available,
                       List<String> ingredients, boolean isSpicy, boolean isVegetarian,
                       String description, String nutritionDescription) {
+        this.image_id=image_id;
         this.name = name;
         this.category = category;
         this.price = price;
