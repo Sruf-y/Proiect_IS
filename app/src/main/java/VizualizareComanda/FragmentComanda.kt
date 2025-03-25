@@ -77,14 +77,6 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),MeniuAdaptor_Lista.o
 
 
 
-
-
-
-
-
-
-
-
     override fun onResume() {
         super.onResume()
 
