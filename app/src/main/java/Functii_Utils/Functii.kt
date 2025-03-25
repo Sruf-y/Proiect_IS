@@ -14,6 +14,9 @@ class Functii {
 
             File(filepath).writeText(json)
         }
+        //exemplu utilizare in java
+
+        // Functii.Companion.SaveAsJson(Adaugare_Mancare.this,"Lista_Meniu",GlobalVars.INSTANCE.getLista_items_in_meniu_static());
 
         fun <T> LoadFromJson(context: Context, filename: String, data: T): T {
 
@@ -29,5 +32,9 @@ class Functii {
             }
             return data
         }
+
+        //exemplu utilizare in java
+
+        //GlobalVars.INSTANCE.setLista_items_in_meniu_static(Functii.Companion.LoadFromJson(Adaugare_Mancare.this,"Lista_Meniu",GlobalVars.INSTANCE.getLista_items_in_meniu_static()));
     }
 }
