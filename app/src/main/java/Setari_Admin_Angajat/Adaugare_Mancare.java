@@ -10,6 +10,15 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.ProiectSI.R;
 
+import java.util.ArrayList;
+
+import DataClasses.Meniu_Item;
+import Start_Activity.GlobalVars;
+import Start_Activity.StartActivity;
+import kotlin.jvm.internal.MutableLocalVariableReference;
+import kotlin.reflect.KProperty;
+import kotlinx.coroutines.GlobalScope;
+
 public class Adaugare_Mancare extends AppCompatActivity {
 
     @Override
@@ -18,5 +27,8 @@ public class Adaugare_Mancare extends AppCompatActivity {
 
         setContentView(R.layout.activity_adaugare_mancare);
 
+
+        // asa utilizez o variabila ce a fost facuta globala in StartActivity
+        GlobalVars.INSTANCE.getLista_items_in_meniu_static();
     }
 }

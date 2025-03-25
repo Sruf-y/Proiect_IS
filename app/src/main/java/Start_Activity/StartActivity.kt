@@ -14,13 +14,17 @@ import androidx.fragment.app.FragmentContainerView
 import com.ProiectSI.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-@JvmField
-var lista_Comanda= ArrayList<Meniu_Item>()// lista de cele cumparate
 
-@JvmField
-var lista_items_in_meniu_static = ArrayList<Meniu_Item>() // lista cu toate mancarurile pe care le avem. Se initializeaza chiar aici
-@JvmField
-val lista_Angajati = ArrayList<Angajat>();
+
+object GlobalVars{
+    var lista_Comanda= ArrayList<Meniu_Item>()// lista de cele cumparate
+
+
+    var lista_items_in_meniu_static = ArrayList<Meniu_Item>() // lista cu toate mancarurile pe care le avem. Se initializeaza chiar aici
+
+    val lista_Angajati = ArrayList<Angajat>();
+}
+
 
 
 class StartActivity : AppCompatActivity() {

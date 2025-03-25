@@ -2,7 +2,7 @@ package com.ProiectSI
 
 import DataClasses.Angajat
 import Start_Activity.AdminActivity
-import Start_Activity.lista_Angajati
+import Start_Activity.GlobalVars.lista_Angajati
 import Start_Activity.customToast
 import android.content.Intent
 import android.os.Bundle
