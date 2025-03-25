@@ -16,6 +16,7 @@ class Functii {
         }
         //exemplu utilizare in java
 
+
         // Functii.Companion.SaveAsJson(Adaugare_Mancare.this,"Lista_Meniu",GlobalVars.INSTANCE.getLista_items_in_meniu_static());
 
         fun <T> LoadFromJson(context: Context, filename: String, data: T): T {
