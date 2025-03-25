@@ -31,7 +31,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:weightSum="5">
+            android:weightSum="5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageView"
@@ -49,8 +53,9 @@
 
                 <TextView
                     android:id="@+id/Titlu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:gravity="center|top"
                     android:shadowColor="@color/backgrounds"
                     android:shadowDx="3"
                     android:shadowDy="3"
@@ -58,30 +63,31 @@
                     android:text="Sarmale Belgiene"
                     android:textAllCaps="false"
                     android:textColor="@color/creepyface_background"
-                    android:textSize="26sp"
+                    android:textSize="24sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/Pret"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.236" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/Pret"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="start"
                     android:shadowColor="@color/backgrounds"
                     android:shadowDx="3"
                     android:shadowDy="3"
                     android:shadowRadius="1"
                     android:text="15.43 ron"
                     android:textAllCaps="true"
-                    android:textSize="22sp"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.816"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.763" />
+                    app:layout_constraintVertical_bias="0.868" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>

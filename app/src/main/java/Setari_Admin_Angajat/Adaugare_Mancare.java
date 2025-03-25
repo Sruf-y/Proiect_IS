@@ -9,7 +9,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.ProiectSI.R;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 import DataClasses.Meniu_Item;
@@ -48,6 +50,7 @@ public class Adaugare_Mancare extends AppCompatActivity {
         super.onResume();
 
         // Functia este null-safe. Asa se incarca din fisier daca exista o lista/valoare salvata.
-        GlobalVars.INSTANCE.setLista_items_in_meniu_static(Functii.Companion.LoadFromJson(Adaugare_Mancare.this,"Lista_Meniu",GlobalVars.INSTANCE.getLista_items_in_meniu_static()));
+        //Type aux = new TypeToken<ArrayList<Meniu_Item>>(){}.getType();
+        GlobalVars.INSTANCE.setLista_items_in_meniu_static(Functii.Companion.LoadFromJson(Adaugare_Mancare.this,"Lista_Meniu",GlobalVars.INSTANCE.getLista_items_in_meniu_static(),GlobalVars.INSTANCE.getLista_items_in_meniu_static().getClass()));
     }
 }

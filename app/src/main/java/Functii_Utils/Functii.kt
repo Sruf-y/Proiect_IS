@@ -12,6 +12,8 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
+import java.io.FileReader
+import java.lang.reflect.Type
 
 class Functii {
 
@@ -56,7 +58,16 @@ class Functii {
 
         // Functii.Companion.SaveAsJson(Adaugare_Mancare.this,"Lista_Meniu",GlobalVars.INSTANCE.getLista_items_in_meniu_static());
 
-        fun <T> LoadFromJson(context: Context, filename: String, data: T): T {
+
+
+        fun KotlinSaveAsJson(context: Context, filename: String, data: Any) {
+            val json = Gson().toJson(data);
+            val filepath = context.filesDir.toString() + "/" + filename + ".json"
+
+            File(filepath).writeText(json)
+        }
+
+        inline fun <reified T> KotlinLoadFromJson(context: Context, filename: String, data: T): T {
 
             val filepath = context.filesDir.toString() + "/" + filename + ".json"
             val file = File(filepath)
@@ -71,8 +82,20 @@ class Functii {
             return data
         }
 
-        //exemplu utilizare in java
 
-        //GlobalVars.INSTANCE.setLista_items_in_meniu_static(Functii.Companion.LoadFromJson(Adaugare_Mancare.this,"Lista_Meniu",GlobalVars.INSTANCE.getLista_items_in_meniu_static()));
+
+        fun <T> LoadFromJson(context: Context, filename: String, defaultValue: T, type: Type): T {
+            val file = File(context.filesDir, "$filename.json")
+            return if (file.exists()) {
+                try {
+                    Gson().fromJson(file.readText(), type) ?: defaultValue
+                } catch (e: Exception) {
+                    defaultValue
+                }
+            } else {
+                defaultValue
+            }
+        }
+
     }
 }

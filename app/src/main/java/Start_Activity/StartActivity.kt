@@ -9,17 +9,19 @@ import Start_Activity.GlobalVars.lista_Angajati
 import Start_Activity.GlobalVars.lista_Comenzi
 import Start_Activity.GlobalVars.lista_items_in_meniu_static
 import VizualizareComanda.FragmentComanda
-import android.content.Context
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
 import com.ProiectSI.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.gson.reflect.TypeToken
 
-
+enum class File_Salvate{
+    Lista_Comenzi,
+    Lista_Meniu,
+    Lista_Angajati
+}
 
 object GlobalVars{
     var lista_Comenzi= ArrayList<Comanda>() // lista cu toate comenzile de pana acum
@@ -78,11 +80,11 @@ class StartActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-        Functii.SaveAsJson(this,"Lista_Comenzi",lista_Comenzi)
+        Functii.KotlinSaveAsJson(this,File_Salvate.Lista_Comenzi.name,lista_Comenzi)
 
-        Functii.SaveAsJson(this,"Lista_Meniu",lista_items_in_meniu_static)
+        Functii.KotlinSaveAsJson(this,File_Salvate.Lista_Meniu.name,lista_items_in_meniu_static)
 
-        Functii.SaveAsJson(this,"Lista_Angajati",lista_Angajati)
+        Functii.KotlinSaveAsJson(this,File_Salvate.Lista_Angajati.name,lista_Angajati)
 
     }
 
@@ -91,11 +93,11 @@ class StartActivity : AppCompatActivity() {
 
 
 
-        lista_Comenzi=Functii.LoadFromJson(this,"Lista_Comenzi",lista_Comenzi)
+        lista_Comenzi=Functii.KotlinLoadFromJson(this, File_Salvate.Lista_Comenzi.name,lista_Comenzi)
 
-        lista_items_in_meniu_static=Functii.LoadFromJson(this,"Lista_Meniu",lista_items_in_meniu_static)
+        lista_items_in_meniu_static= Functii.KotlinLoadFromJson(this,File_Salvate.Lista_Meniu.name,lista_items_in_meniu_static)
 
-        lista_Angajati=Functii.LoadFromJson(this,"Lista_Angajati",lista_Angajati)
+        lista_Angajati=Functii.KotlinLoadFromJson(this, File_Salvate.Lista_Angajati.name,lista_Angajati)
     }
 
     private fun makeCurrentFragment(fragment: Fragment,container:FragmentContainerView) {
