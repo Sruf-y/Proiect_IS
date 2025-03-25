@@ -84,7 +84,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/editValoriNutritionale"
+            android:id="@+id/valorinutritionale"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/text_background"
@@ -96,6 +96,18 @@
             android:textSize="16sp"
 
             />
+
+        <EditText
+            android:id="@+id/tipmancare"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/text_background"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:inputType="text"
+            android:padding="10dp"
+            android:text="Tip mancare"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/editTextDescriere"
