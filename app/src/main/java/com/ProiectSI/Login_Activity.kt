@@ -3,11 +3,11 @@ package com.ProiectSI
 import DataClasses.Angajat
 import Start_Activity.AdminActivity
 import Start_Activity.GlobalVars.lista_Angajati
-import Start_Activity.customToast
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -57,7 +57,7 @@ class Login_Activity : AppCompatActivity() {
                     }
             }
             else{
-                customToast(loginbuton,this,"Incorrect combination")
+                Toast.makeText(this,"Combinatie incorecta!",Toast.LENGTH_SHORT)
             }
 
 

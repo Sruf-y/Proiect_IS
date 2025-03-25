@@ -1,21 +1,24 @@
 package DataClasses;
 
+import java.io.Console;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Meniu_Item {
-    private int image_id;
-    private String name;
-    private String category; 
+    private int image_id =-1;
+    private String name="Default";
+    private Categorie category;
     private double price;
     private boolean available;
     private String description;             
     private String nutritionDescription;   
 
  
-    public Meniu_Item(int image_id, String name, String category, double price, boolean available,
-                      List<String> ingredients, boolean isSpicy, boolean isVegetarian,
+    public Meniu_Item(int image_id, String name, Categorie category, double price, boolean available,
                       String description, String nutritionDescription) {
-        this.image_id=image_id;
+
+        if(image_id!=-1)
+            this.image_id=image_id;
         this.name = name;
         this.category = category;
         this.price = price;
@@ -47,11 +50,11 @@ public class Meniu_Item {
         this.name = name;
     }
 
-    public String getCategory() {
+    public Categorie getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Categorie category) {
         this.category = category;
     }
 
@@ -87,7 +90,43 @@ public class Meniu_Item {
         this.nutritionDescription = nutritionDescription;
     }
 
+    public Meniu_Item Parse(String textline){
 
+
+        Meniu_Item aux = null;
+        try{
+            String[] pieces = textline.split("/");
+
+            aux=new Meniu_Item(Integer.parseInt(pieces[0]),pieces[1],Categorie.valueOf(pieces[2].toLowerCase()),Double.parseDouble(pieces[3]),Boolean.getBoolean(pieces[4]),pieces[5],pieces[6]);
+
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+
+        return aux;
+    }
+
+    public ArrayList<Meniu_Item> ParseArrayList(String textline) {
+        ArrayList<Meniu_Item> lista = new ArrayList<>();
+
+        try {
+            String[] objects = textline.split(";");
+            for (String object : objects) {
+                String[] pieces = object.split("/");
+
+                if (pieces.length == 7) {
+
+                    Meniu_Item aux = new Meniu_Item(Integer.parseInt(pieces[0]), pieces[1], Categorie.valueOf(pieces[2].toLowerCase()), Double.parseDouble(pieces[3]), Boolean.getBoolean(pieces[4]), pieces[5], pieces[6]);
+
+                    lista.add(aux);
+
+                }
+            }
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return lista;
+    }
     @Override
     public String toString() {
         return "Nume='" + name + "'\nPret=" + price;
