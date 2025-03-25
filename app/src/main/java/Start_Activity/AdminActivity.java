@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ProiectSI.MainActivity;
 import com.ProiectSI.R;
 
+import Setari_Admin_Angajat.Adaugare_Mancare;
 import Setari_Admin_Angajat.Creare_Cont_Angajat;
 
 
@@ -53,6 +54,14 @@ public class AdminActivity extends AppCompatActivity {
         button_creare_angajat.setVisibility(View.GONE);
          }
 
+    Button buton_adaugare_item = findViewById(R.id.admin_adaugare_item);
+    buton_adaugare_item.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent_nou = new Intent(AdminActivity.this, Adaugare_Mancare.class);
+            startActivity(intent_nou);
+        }
+    });
 
 
 
