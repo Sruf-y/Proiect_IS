@@ -56,18 +56,6 @@
                 android:textSize="16sp" />
 
             <Button
-                android:id="@+id/admin_schimbare_date_item_meniu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_button"
-                android:fontFamily="@font/poppins"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="15dp"
-                android:text="Schimbare date item din meniu"
-                android:textColor="@android:color/white"
-                android:textSize="16sp" />
-
-            <Button
                 android:id="@+id/admin_modificare"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,7 +63,31 @@
                 android:fontFamily="@font/poppins"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="15dp"
-                android:text="Modificare"
+                android:text="Modificare cont angajat"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/admin_vizualizare_conturi_angajati"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/poppins"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp"
+                android:text="Conturi angajati"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/admin_stergere_cont_angajati"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_button"
+                android:fontFamily="@font/poppins"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp"
+                android:text="Stergere cont angajati"
                 android:textColor="@android:color/white"
                 android:textSize="16sp" />
 
@@ -104,26 +116,26 @@
                 android:textSize="16sp" />
 
             <Button
-                android:id="@+id/admin_vizualizare_conturi_angajati"
+                android:id="@+id/admin_schimbare_date_item_meniu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_button"
                 android:fontFamily="@font/poppins"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="15dp"
-                android:text="Conturi angajati"
+                android:text="Schimbare date item din meniu"
                 android:textColor="@android:color/white"
                 android:textSize="16sp" />
 
             <Button
-                android:id="@+id/admin_stergere_cont_angajati"
+                android:id="@+id/admin_stergere_item_din_meniu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_button"
                 android:fontFamily="@font/poppins"
                 android:paddingHorizontal="15dp"
                 android:paddingVertical="15dp"
-                android:text="Stergere cont angajati"
+                android:text="Stergere item din meniu"
                 android:textColor="@android:color/white"
                 android:textSize="16sp" />
 
