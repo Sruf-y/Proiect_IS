@@ -3,6 +3,7 @@ package DataClasses;
 import java.util.List;
 
 public class Meniu_Item {
+    private int image_id;
     private String name;
     private String category; 
     private double price;
@@ -29,7 +30,13 @@ public class Meniu_Item {
     }
 
 
- 
+    public int getImage_id() {
+        return image_id;
+    }
+
+    public void setImage_id(int image_id) {
+        this.image_id = image_id;
+    }
 
     public String getName() {
         return name;
