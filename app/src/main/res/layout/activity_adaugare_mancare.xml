@@ -7,61 +7,134 @@
     android:layout_height="match_parent"
     tools:context="Setari_Admin_Angajat.Adaugare_Mancare">
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="76dp" />
 
-    <EditText
-        android:id="@+id/editTextText2"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="163dp" />
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Adaugare item"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="220dp" />
+    <!--    <EdiText-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="57dp"-->
+<!--        android:hint="Denumire"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:background="@drawable/rounded_button"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView3" />-->
 
-    <EditText
-        android:id="@+id/editTextText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="286dp" />
-
-    <EditText
-        android:id="@+id/editTextText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="Name"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="342dp" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="164dp"
-        android:layout_height="59dp"
-        android:text="Confirm"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="489dp" />
+        android:id="@+id/admin_confirmare"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/poppins"
+        android:text="Confirmare"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/invisible_divider_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:showDividers="middle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/editTextText2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/text_background"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:inputType="text"
+            android:padding="10dp"
+            android:text="Denumire"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editImagine"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/text_background"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:inputType="text"
+            android:padding="10dp"
+            android:text="Nume Imagine"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/valorinutritionale"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/text_background"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:inputType="text"
+            android:padding="10dp"
+            android:text="Valori nutritionale"
+            android:textSize="16sp"
+
+            />
+
+        <EditText
+            android:id="@+id/tipmancare"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/text_background"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:inputType="text"
+            android:padding="10dp"
+            android:text="Tip mancare"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextDescriere"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/text_background"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:inputType="text"
+            android:padding="10dp"
+            android:singleLine="false"
+
+            android:text="Descriere"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextPret"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/text_background"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:inputType="text"
+            android:padding="10dp"
+            android:text="Pret"
+            android:textSize="16sp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
