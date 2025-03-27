@@ -21,7 +21,9 @@
         <!-- <item name="android:textAlignment">center</item> -->
     </style>
 
-
+    <style name="SpinnerStyle">
+        <item name="android:textColor">@color/black</item>
+    </style>
 
     <style name="DefaultButtonAndrei">
         <item name="android:background">@drawable/default_button_andrei</item>
