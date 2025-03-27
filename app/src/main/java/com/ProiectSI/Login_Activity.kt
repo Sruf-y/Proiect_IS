@@ -1,14 +1,17 @@
 package com.ProiectSI
 
 import DataClasses.Angajat
+import DataClasses.GlobalVars
 import Start_Activity.AdminActivity
-import Start_Activity.GlobalVars.lista_Angajati
+import DataClasses.GlobalVars.lista_Angajati
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.math.log
 
 
 class Login_Activity : AppCompatActivity() {
@@ -34,35 +37,37 @@ class Login_Activity : AppCompatActivity() {
         lista_Angajati.add(Angajat("Andrei","Botofan"))
         lista_Angajati.add(Angajat("Bologa","Darius"))
 
-        loginbuton.setOnClickListener{
-            if(username.text.toString()==admin_username && password.text.toString()==admin_password)
-            {
-                val intent = Intent(this,AdminActivity::class.java)
-                intent.putExtra("arg1",username.text.toString())
-                intent.putExtra("arg2",password.text.toString())
-                intent.putExtra("arg3","admin");
+        if(GlobalVars.APP_IN_TEST_MODE) {
+            loginbuton.setOnClickListener {
+                if (username.text.toString() == admin_username && password.text.toString() == admin_password) {
+                    val intent = Intent(this, AdminActivity::class.java)
+                    intent.putExtra("arg1", "admin@restaurant.null")
+                    intent.putExtra("arg2", "adminRestaurantMagic12")
+                    intent.putExtra("arg3", "admin");
+                    startActivity(intent)
+                } else {
+                    for (i in lista_Angajati) {
+                        if (i.username == username.text.toString() && i.password == password.text.toString()) {
+                            val intent = Intent(this, AdminActivity::class.java)
+                            intent.putExtra("arg1", username.text.toString())
+                            intent.putExtra("arg2", password.text.toString())
+                            intent.putExtra("arg3", "angajat");
+                            startActivity(intent)
+                            break;
+                        }
+                    }
+                    Toast.makeText(this, "Combinatie incorecta!", Toast.LENGTH_SHORT)
+                }
+            }
+        }
+        else {
+            loginbuton.setOnClickListener {
+                val intent = Intent(this, AdminActivity::class.java)
+                intent.putExtra("arg1", "admin@restaurant.null")
+                intent.putExtra("arg2", "adminRestaurantMagic12")
+                intent.putExtra("arg3", "admin");
                 startActivity(intent)
             }
-            else if(lista_Angajati.size>0)
-            {
-                for(i in lista_Angajati)
-                    if(i.username==username.text.toString() && i.password==password.text.toString())
-                    {
-                        val intent = Intent(this,AdminActivity::class.java)
-                        intent.putExtra("arg1",username.text.toString())
-                        intent.putExtra("arg2",password.text.toString())
-                        intent.putExtra("arg3","angajat");
-                        startActivity(intent)
-                        break;
-                    }
-            }
-            else{
-                Toast.makeText(this,"Combinatie incorecta!",Toast.LENGTH_SHORT)
-            }
-
-
-
-
         }
 
 

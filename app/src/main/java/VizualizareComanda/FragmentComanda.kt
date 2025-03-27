@@ -2,9 +2,9 @@ package VizualizareComanda
 
 import Adaptors.MeniuAdaptor_Lista
 import DataClasses.Meniu_Item
-import Start_Activity.GlobalVars.cos_comanda
-import Start_Activity.GlobalVars.lista_Comenzi
-import Start_Activity.GlobalVars.lista_items_in_meniu_static
+import DataClasses.GlobalVars.cos_comanda
+import DataClasses.GlobalVars.lista_Comenzi
+import DataClasses.GlobalVars.lista_items_in_meniu_static
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -22,7 +22,7 @@ import java.util.List;
 
 import DataClasses.Meniu_Item;
 import Functii_Utils.Functii;
-import Start_Activity.GlobalVars;
+import DataClasses.GlobalVars;
 import Start_Activity.StartActivity;
 import kotlin.jvm.internal.MutableLocalVariableReference;
 import kotlin.reflect.KProperty;

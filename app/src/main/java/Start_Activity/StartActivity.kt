@@ -5,9 +5,9 @@ import DataClasses.Comanda
 import DataClasses.Meniu_Item
 import FragmentMeniu.FragmentMeniu
 import Functii_Utils.Functii
-import Start_Activity.GlobalVars.lista_Angajati
-import Start_Activity.GlobalVars.lista_Comenzi
-import Start_Activity.GlobalVars.lista_items_in_meniu_static
+import DataClasses.GlobalVars.lista_Angajati
+import DataClasses.GlobalVars.lista_Comenzi
+import DataClasses.GlobalVars.lista_items_in_meniu_static
 import VizualizareComanda.FragmentComanda
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -21,16 +21,6 @@ enum class File_Salvate{
     Lista_Comenzi,
     Lista_Meniu,
     Lista_Angajati
-}
-
-object GlobalVars{
-    var lista_Comenzi= ArrayList<Comanda>() // lista cu toate comenzile de pana acum
-    var cos_comanda= Comanda()// lista de cele cumparate
-
-
-    var lista_items_in_meniu_static = ArrayList<Meniu_Item>() // lista cu toate mancarurile pe care le avem. Se initializeaza chiar aici
-
-    var lista_Angajati = ArrayList<Angajat>();
 }
 
 
