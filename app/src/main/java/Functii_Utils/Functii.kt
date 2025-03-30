@@ -104,7 +104,7 @@ class Functii {
         fun CheckNewInstallLoadList(context:Context){
             if(GlobalVars.lista_items_in_meniu_static.size==0){
                 GlobalVars.lista_items_in_meniu_static.clear()
-                GlobalVars.lista_items_in_meniu_static= Meniu_Item().ParseArrayList("")
+                GlobalVars.lista_items_in_meniu_static= Meniu_Item().ParseArrayList(context,"")
                 KotlinSaveAsJson(context, File_Salvate.Lista_Meniu.toString(), GlobalVars.lista_items_in_meniu_static)
             }
         }

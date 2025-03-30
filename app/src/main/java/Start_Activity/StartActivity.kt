@@ -1,6 +1,7 @@
 package Start_Activity
 
 import DataClasses.Angajat
+import DataClasses.Categorie
 import DataClasses.Comanda
 import DataClasses.Meniu_Item
 import FragmentMeniu.FragmentMeniu
@@ -81,13 +82,18 @@ class StartActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        Functii.CheckNewInstallLoadList(this)
+        //Functii.CheckNewInstallLoadList(this)
 
         lista_Comenzi=Functii.KotlinLoadFromJson(this, File_Salvate.Lista_Comenzi.toString(),lista_Comenzi)
 
+        lista_Angajati=Functii.KotlinLoadFromJson(this, File_Salvate.Lista_Angajati.toString(),lista_Angajati)
+
         lista_items_in_meniu_static= Functii.KotlinLoadFromJson(this,File_Salvate.Lista_Meniu.toString(),lista_items_in_meniu_static)
 
-        lista_Angajati=Functii.KotlinLoadFromJson(this, File_Salvate.Lista_Angajati.toString(),lista_Angajati)
+        lista_items_in_meniu_static.clear()
+
+        lista_items_in_meniu_static.add(Meniu_Item(-1,"Mamaliguta Cu Ceapa", Categorie.fel_principal,24.5,true,"Mamaliga ca acasa facuta de bunica bucatareasa.","30g otet \n10g sare \n500ml lapte \n1kgmalai"))
+
     }
 
     private fun makeCurrentFragment(fragment: Fragment,container:FragmentContainerView) {

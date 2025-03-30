@@ -1,17 +1,27 @@
 package DataClasses;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.Context;
+import android.util.Log;
+
+import java.io.BufferedWriter;
 import java.io.Console;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Meniu_Item {
     private int image_id =-1;
-    private String name="Default";
-    private Categorie category;
-    private double price;
-    private boolean available;
-    private String description;             
-    private String nutritionDescription;   
+    private String name="DefaultName";
+    private Categorie category=Categorie.aperitiv;
+    private double price=0.0;
+    private boolean available=true;
+    private String description="DefaultDescription";
+    private String nutritionDescription="DefaultNotritionDescription";
 
  
     public Meniu_Item(int image_id, String name, Categorie category, double price, boolean available,
@@ -128,6 +138,10 @@ public class Meniu_Item {
         }
         return lista;
     }
+
+
+
+
     @Override
     public String toString() {
         return "Nume='" + name + "'\nPret=" + price;
