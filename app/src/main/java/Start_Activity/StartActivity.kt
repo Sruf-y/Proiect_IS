@@ -81,13 +81,13 @@ class StartActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
+        Functii.CheckNewInstallLoadList(this)
 
+        lista_Comenzi=Functii.KotlinLoadFromJson(this, File_Salvate.Lista_Comenzi.toString(),lista_Comenzi)
 
-        lista_Comenzi=Functii.KotlinLoadFromJson(this, File_Salvate.Lista_Comenzi.name,lista_Comenzi)
+        lista_items_in_meniu_static= Functii.KotlinLoadFromJson(this,File_Salvate.Lista_Meniu.toString(),lista_items_in_meniu_static)
 
-        lista_items_in_meniu_static= Functii.KotlinLoadFromJson(this,File_Salvate.Lista_Meniu.name,lista_items_in_meniu_static)
-
-        lista_Angajati=Functii.KotlinLoadFromJson(this, File_Salvate.Lista_Angajati.name,lista_Angajati)
+        lista_Angajati=Functii.KotlinLoadFromJson(this, File_Salvate.Lista_Angajati.toString(),lista_Angajati)
     }
 
     private fun makeCurrentFragment(fragment: Fragment,container:FragmentContainerView) {

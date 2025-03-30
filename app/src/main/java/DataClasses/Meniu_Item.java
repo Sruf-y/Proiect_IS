@@ -90,7 +90,7 @@ public class Meniu_Item {
         this.nutritionDescription = nutritionDescription;
     }
 
-    public Meniu_Item Parse(String textline){
+    public final Meniu_Item Parse(String textline){
 
 
         Meniu_Item aux = null;
@@ -106,7 +106,7 @@ public class Meniu_Item {
         return aux;
     }
 
-    public ArrayList<Meniu_Item> ParseArrayList(String textline) {
+    public final ArrayList<Meniu_Item> ParseArrayList(String textline) {
         ArrayList<Meniu_Item> lista = new ArrayList<>();
 
         try {
