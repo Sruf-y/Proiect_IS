@@ -15,10 +15,24 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
+import java.io.FileOutputStream
 import java.io.FileReader
+import java.io.IOException
 import java.lang.reflect.Type
 
 class Functii {
+
+    fun WriteStringInFile(context:Context,filename:String,message:String) {
+
+        try {
+
+            val fos:FileOutputStream = context . openFileOutput ("$filename.txt", Context.MODE_PRIVATE);
+            fos.write(message.toByteArray());
+            fos.close();
+        } catch (e:IOException ) {
+            e.printStackTrace();
+        }
+    }
 
     fun CustomSnack(whereToShowIt: View, message: String){
         val snack = Snackbar.make(whereToShowIt,message, Snackbar.LENGTH_SHORT)
@@ -104,7 +118,7 @@ class Functii {
         fun CheckNewInstallLoadList(context:Context){
             if(GlobalVars.lista_items_in_meniu_static.size==0){
                 GlobalVars.lista_items_in_meniu_static.clear()
-                GlobalVars.lista_items_in_meniu_static= Meniu_Item().ParseArrayList(context,"")
+                GlobalVars.lista_items_in_meniu_static= Meniu_Item().ParseArrayList("")
                 KotlinSaveAsJson(context, File_Salvate.Lista_Meniu.toString(), GlobalVars.lista_items_in_meniu_static)
             }
         }
