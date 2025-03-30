@@ -106,6 +106,7 @@ public class Meniu_Item {
         return aux;
     }
 
+
     public final ArrayList<Meniu_Item> ParseArrayList(String textline) {
         ArrayList<Meniu_Item> lista = new ArrayList<>();
 
