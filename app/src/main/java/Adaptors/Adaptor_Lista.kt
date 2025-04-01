@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ProiectSI.R
 import com.google.android.material.imageview.ShapeableImageView
 
-class Adaptor_Lista(val tip: Tip_Adaptor, val mlist:ArrayList<Meniu_Item>, val clickListener: onClickListener, val longPressListener: onLongPressListener):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class Adaptor_Lista<T>(val tip: Tip_Adaptor, val mlist:ArrayList<T>, val clickListener: onClickListener, val longPressListener: onLongPressListener):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     interface onClickListener{
@@ -70,9 +70,11 @@ class Adaptor_Lista(val tip: Tip_Adaptor, val mlist:ArrayList<Meniu_Item>, val c
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
 
-        val mancare = mlist[position]
+
 
         if (holder is ItemMeniu) {
+
+            val mancare = mlist[position] as Meniu_Item
 
             holder.titlu.text = mancare.name
             holder.pret.text = "${mancare.price.toString()} RON"
