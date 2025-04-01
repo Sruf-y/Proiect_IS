@@ -1,8 +1,6 @@
 package Start_Activity
 
-import DataClasses.Angajat
 import DataClasses.Categorie
-import DataClasses.Comanda
 import DataClasses.Meniu_Item
 import FragmentMeniu.FragmentMeniu
 import Functii_Utils.Functii
@@ -16,7 +14,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
 import com.ProiectSI.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.gson.reflect.TypeToken
 
 enum class File_Salvate{
     Lista_Comenzi,
@@ -71,11 +68,11 @@ class StartActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
-        Functii.KotlinSaveAsJson(this,File_Salvate.Lista_Comenzi.name,lista_Comenzi)
+        Functii.SaveAsJson(this,File_Salvate.Lista_Comenzi.name,lista_Comenzi)
 
-        Functii.KotlinSaveAsJson(this,File_Salvate.Lista_Meniu.name,lista_items_in_meniu_static)
+        Functii.SaveAsJson(this,File_Salvate.Lista_Meniu.name,lista_items_in_meniu_static)
 
-        Functii.KotlinSaveAsJson(this,File_Salvate.Lista_Angajati.name,lista_Angajati)
+        Functii.SaveAsJson(this,File_Salvate.Lista_Angajati.name,lista_Angajati)
 
     }
 
@@ -90,7 +87,7 @@ class StartActivity : AppCompatActivity() {
 
         lista_items_in_meniu_static= Functii.KotlinLoadFromJson(this,File_Salvate.Lista_Meniu.toString(),lista_items_in_meniu_static)
 
-        
+
         if(lista_items_in_meniu_static.isEmpty()) {
 
             lista_items_in_meniu_static.add(

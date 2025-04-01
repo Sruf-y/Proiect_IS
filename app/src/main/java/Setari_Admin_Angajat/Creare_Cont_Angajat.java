@@ -1,23 +1,15 @@
 package Setari_Admin_Angajat;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.ProiectSI.R;
 
-import java.lang.reflect.Type;
-import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
-import java.util.List;
 
 import DataClasses.Angajat;
 import DataClasses.GlobalVars;
@@ -52,7 +44,7 @@ public class Creare_Cont_Angajat extends AppCompatActivity {
 
         GlobalVars.INSTANCE.getLista_Angajati().add(angajat);
 
-        Functii.Companion.KotlinSaveAsJson(this,
+        Functii.Companion.SaveAsJson(this,
                 File_Salvate.Lista_Angajati.toString(),
                 GlobalVars.INSTANCE.getLista_Angajati()
         );

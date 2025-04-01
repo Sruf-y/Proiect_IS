@@ -2,7 +2,7 @@ package VizualizareComanda
 
 import Adaptors.MeniuAdaptor_Lista
 import DataClasses.Meniu_Item
-import DataClasses.GlobalVars.cos_comanda
+import DataClasses.GlobalVars.comanda_in_cos
 import DataClasses.GlobalVars.lista_Comenzi
 import DataClasses.GlobalVars.lista_items_in_meniu_static
 import android.content.Intent

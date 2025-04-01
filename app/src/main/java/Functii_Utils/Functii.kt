@@ -17,10 +17,8 @@ import com.google.gson.reflect.TypeToken
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
-import java.io.FileReader
 import java.io.IOException
 import java.io.ObjectInputStream
-import java.lang.reflect.Type
 
 class Functii {
 
@@ -79,12 +77,7 @@ class Functii {
 
 
 
-        fun KotlinSaveAsJson(context: Context, filename: String, data: Any) {
-            val json = Gson().toJson(data);
-            val filepath = context.filesDir.toString() + "/" + filename + ".json"
 
-            File(filepath).writeText(json)
-        }
 
         inline fun <reified T> KotlinLoadFromJson(context: Context, filename: String, data: T): T {
 
@@ -125,7 +118,7 @@ class Functii {
             if(GlobalVars.lista_items_in_meniu_static.size==0){
                 GlobalVars.lista_items_in_meniu_static.clear()
                 GlobalVars.lista_items_in_meniu_static= Meniu_Item().ParseArrayList("")
-                KotlinSaveAsJson(context, File_Salvate.Lista_Meniu.toString(), GlobalVars.lista_items_in_meniu_static)
+                SaveAsJson(context, File_Salvate.Lista_Meniu.toString(), GlobalVars.lista_items_in_meniu_static)
             }
         }
 
