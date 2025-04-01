@@ -5,29 +5,22 @@ package Activity_Cautare
 
 
 import android.os.Bundle;
-import android.provider.SyncStateContract;
-import android.view.View;
-import android.widget.Adapter;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.ProiectSI.R;
 import java.util.ArrayList;
-import Adaptors.MeniuAdaptor_Lista;
+import Adaptors.Adaptor_Lista;
+import Adaptors.Tip_Adaptor
 import DataClasses.Meniu_Item;
-import DataClasses.GlobalVars
 import DataClasses.GlobalVars.lista_items_in_meniu_static
 
 import android.content.Context
 import android.widget.SearchView
-import androidx.activity.contextaware.ContextAware
 import androidx.recyclerview.widget.LinearLayoutManager
 
 
-class Cautare : AppCompatActivity(), MeniuAdaptor_Lista.onClickListener, MeniuAdaptor_Lista.onLongPressListener {
+class Cautare : AppCompatActivity(), Adaptor_Lista.onClickListener, Adaptor_Lista.onLongPressListener {
 
      override fun onCreate(savedInstanceState: Bundle?) {
          super.onCreate(savedInstanceState)
@@ -44,7 +37,7 @@ class Cautare : AppCompatActivity(), MeniuAdaptor_Lista.onClickListener, MeniuAd
          val display_list=ArrayList<Meniu_Item>()
          display_list.addAll(lista_items_in_meniu_static)
          val recycler:RecyclerView = findViewById(R.id.recyclerViewCautare);
-         val adaptor= MeniuAdaptor_Lista(display_list,this,this)
+         val adaptor= Adaptor_Lista(Tip_Adaptor.meniu,display_list,this,this)
          recycler.layoutManager=LinearLayoutManager(this);
          recycler.adapter=adaptor
          recycler.adapter?.notifyDataSetChanged()
@@ -69,8 +62,8 @@ class Cautare : AppCompatActivity(), MeniuAdaptor_Lista.onClickListener, MeniuAd
                          }
                      }
                      //reset adapter for some reason, ugh
-                     recycler.adapter=MeniuAdaptor_Lista(display_list,
-                         context as MeniuAdaptor_Lista.onClickListener, context as MeniuAdaptor_Lista.onLongPressListener
+                     recycler.adapter=Adaptor_Lista(Tip_Adaptor.meniu,display_list,
+                         context as Adaptor_Lista.onClickListener, context as Adaptor_Lista.onLongPressListener
                      )
                      recycler.adapter?.notifyDataSetChanged()
 
@@ -108,7 +101,7 @@ class Cautare : AppCompatActivity(), MeniuAdaptor_Lista.onClickListener, MeniuAd
 
 
 
-        val adaptor= MeniuAdaptor_Lista(lista_items_in_meniu_static,this,this);
+        val adaptor= Adaptor_Lista(Tip_Adaptor.meniu,lista_items_in_meniu_static,this,this);
 
         recycler.adapter=adaptor
         recycler.adapter?.notifyDataSetChanged()

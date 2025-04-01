@@ -8,9 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ProiectSI.R
 import com.google.android.material.imageview.ShapeableImageView
-import com.google.android.material.shape.Shapeable
 
-class MeniuAdaptor_Lista(val mlist:ArrayList<Meniu_Item>, val clickListener: onClickListener, val longPressListener: onLongPressListener):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class Adaptor_Lista(val tip: Tip_Adaptor, val mlist:ArrayList<Meniu_Item>, val clickListener: onClickListener, val longPressListener: onLongPressListener):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     interface onClickListener{
@@ -21,7 +20,7 @@ class MeniuAdaptor_Lista(val mlist:ArrayList<Meniu_Item>, val clickListener: onC
     }
 
 
-    class ItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class ItemMeniu(itemView: View): RecyclerView.ViewHolder(itemView) {
         // val title_view:TextView=itemView.findViewById(R.id.alarmTitle)
 
         //instantierea obiectelor pt utilizare in cod
@@ -30,15 +29,36 @@ class MeniuAdaptor_Lista(val mlist:ArrayList<Meniu_Item>, val clickListener: onC
         val imagine: ShapeableImageView=itemView.findViewById(R.id.imageView)
     }
 
+    class ItemComanda(itemView:View):RecyclerView.ViewHolder(itemView){
+
+    }
+    class ItemChecklist(itemView:View):RecyclerView.ViewHolder(itemView){
+
+    }
+    class ItemAngajat(itemView:View):RecyclerView.ViewHolder(itemView){
+
+    }
+
+
 
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
 
-        val view= LayoutInflater.from(parent.context).inflate(R.layout.exemplu_item_meniu,parent,false)
+        val view: View
+        when(tip){
+            Tip_Adaptor.meniu -> {
+                view= LayoutInflater.from(parent.context).inflate(R.layout.exemplu_item_meniu,parent,false)
+            }
 
-        return ItemViewHolder(view)
+            Tip_Adaptor.check -> TODO()
+            Tip_Adaptor.comanda -> TODO()
+            Tip_Adaptor.angajat -> TODO()
+        }
+
+
+        return ItemMeniu(view)
     }
 
     override fun getItemCount(): Int {
@@ -52,10 +72,19 @@ class MeniuAdaptor_Lista(val mlist:ArrayList<Meniu_Item>, val clickListener: onC
 
         val mancare = mlist[position]
 
-        if(holder is ItemViewHolder){
+        if (holder is ItemMeniu) {
 
-            holder.titlu.text=mancare.name
-            holder.pret.text="${mancare.price.toString()} RON"
+            holder.titlu.text = mancare.name
+            holder.pret.text = "${mancare.price.toString()} RON"
+
+
+        } else if (holder is ItemComanda) {
+
+
+        }else if(holder is ItemChecklist){
+
+
+        }else if(holder is ItemAngajat){
 
 
         }
