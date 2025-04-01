@@ -90,10 +90,21 @@ class StartActivity : AppCompatActivity() {
 
         lista_items_in_meniu_static= Functii.KotlinLoadFromJson(this,File_Salvate.Lista_Meniu.toString(),lista_items_in_meniu_static)
 
-        lista_items_in_meniu_static.clear()
+        
+        if(lista_items_in_meniu_static.isEmpty()) {
 
-        lista_items_in_meniu_static.add(Meniu_Item(-1,"Mamaliguta Cu Ceapa", Categorie.fel_principal,24.5,true,"Mamaliga ca acasa facuta de bunica bucatareasa.","30g otet \n10g sare \n500ml lapte \n1kgmalai"))
-
+            lista_items_in_meniu_static.add(
+                Meniu_Item(
+                    -1,
+                    "Mamaliguta Cu Ceapa",
+                    Categorie.fel_principal,
+                    24.5,
+                    true,
+                    "Mamaliga ca acasa facuta de bunica bucatareasa.",
+                    "30g otet \n10g sare \n500ml lapte \n1kgmalai"
+                )
+            )
+        }
     }
 
     private fun makeCurrentFragment(fragment: Fragment,container:FragmentContainerView) {
