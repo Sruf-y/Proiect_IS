@@ -9,15 +9,13 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ProiectSI.MainActivity;
 import com.ProiectSI.R;
 
-import DataClasses.Meniu_Item;
+import DataClasses.GlobalVars;
 import Setari_Admin_Angajat.Adaugare_Mancare;
 import Setari_Admin_Angajat.Creare_Cont_Angajat;
 import Setari_Admin_Angajat.Schimbare_Date_Angajati;
 import Setari_Admin_Angajat.Schimbare_date_mancare;
-import Setari_Admin_Angajat.Stergere_Conturi_Angajati;
 
 
 public class AdminActivity extends AppCompatActivity {
@@ -40,11 +38,9 @@ public class AdminActivity extends AppCompatActivity {
         //buton Adaugare angajat
         Button button_creare_angajat = findViewById(R.id.admin_buton_adaugare_angajat);
         //button Schimbare date item din meniu
-        Button button_schimbare_date_item_meniu = findViewById(R.id.admin_schimbare_date_item_meniu);
+        Button button_schimbare_date_item_meniu = findViewById(R.id.admin_setari_meniu);
         //button Conturi Angajati
         Button button_admin_vizualizare_conturi_angajati = findViewById(R.id.admin_vizualizare_conturi_angajati);
-        //button stergere cont angajat
-        Button button_admin_stergere_cont_angajati = findViewById(R.id.admin_stergere_cont_angajati);
 
 
 
@@ -74,13 +70,7 @@ public class AdminActivity extends AppCompatActivity {
                 }
             });
 
-            button_admin_stergere_cont_angajati.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent_nou = new Intent(AdminActivity.this, Stergere_Conturi_Angajati.class);
-                    startActivity(intent_nou);
-                }
-            });
+
 
 
 
@@ -89,7 +79,6 @@ public class AdminActivity extends AppCompatActivity {
             button_creare_angajat.setVisibility(View.GONE);
             button_schimbare_date_item_meniu.setVisibility(View.GONE);
             button_admin_vizualizare_conturi_angajati.setVisibility(View.GONE);
-            button_admin_stergere_cont_angajati.setVisibility(View.GONE);
         }
 
         //Button adaugare item
@@ -123,16 +112,7 @@ public class AdminActivity extends AppCompatActivity {
             }
         });
 
-        //button Stergere item din meniu        NECOMPLETATA
-        Button button_admin_stergere_item_din_meniu = findViewById(R.id.admin_stergere_item_din_meniu);
 
-        button_admin_stergere_item_din_meniu.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Intent intent_nou=new Intent(AdminActivity.this, /*stergere item din meniu . class*/ );
-                // startActivity(intent_nou);
-            }
-        }));
 
 
     }

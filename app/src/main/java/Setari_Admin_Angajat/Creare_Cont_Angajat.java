@@ -1,6 +1,7 @@
 package Setari_Admin_Angajat;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,14 +14,15 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.ProiectSI.R;
 
+import java.lang.reflect.Type;
+import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
 import java.util.List;
 
 import DataClasses.Angajat;
 import DataClasses.GlobalVars;
 import Functii_Utils.Functii;
-
-
+import Start_Activity.File_Salvate;
 
 
 public class Creare_Cont_Angajat extends AppCompatActivity {
@@ -47,24 +49,26 @@ public class Creare_Cont_Angajat extends AppCompatActivity {
         });
     }
     private void adaugaAngajat(Angajat angajat) {
-        List<Angajat> listaAngajati = GlobalVars.INSTANCE.getLista_Angajati();
 
-        if (listaAngajati == null) {
-            listaAngajati = new ArrayList<>();
-        }
+        GlobalVars.INSTANCE.getLista_Angajati().add(angajat);
 
-        listaAngajati.add(angajat);
-
-        GlobalVars.INSTANCE.setLista_Angajati((ArrayList<Angajat>) listaAngajati);
-
-        Functii.Companion.SaveAsJson(this, "Lista_Angajati", listaAngajati);
+        Functii.Companion.KotlinSaveAsJson(this,
+                File_Salvate.Lista_Angajati.toString(),
+                GlobalVars.INSTANCE.getLista_Angajati()
+        );
     }
 
     @Override
     protected void onResume(){
         super.onResume();
-        List<Angajat> listaAngajati = Functii.Companion.LoadFromJson(this, "Lista_Angajati", new ArrayList<>(), ArrayList.class);
-        GlobalVars.INSTANCE.setLista_Angajati((ArrayList<Angajat>) listaAngajati);
+
+
+
+        ArrayList<Angajat> listaAngajati = Functii.Companion.LoadFromJson(this, "Lista_Angajati", GlobalVars.INSTANCE.getLista_Angajati());
+        GlobalVars.INSTANCE.setLista_Angajati(listaAngajati);
+
+
+
 
     }
 }

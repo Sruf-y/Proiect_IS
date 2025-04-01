@@ -15,9 +15,11 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
+import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.FileReader
 import java.io.IOException
+import java.io.ObjectInputStream
 import java.lang.reflect.Type
 
 class Functii {
@@ -101,17 +103,21 @@ class Functii {
 
 
 
-        fun <T> LoadFromJson(context: Context, filename: String, defaultValue: T, type: Type): T {
-            val file = File(context.filesDir, "$filename.json")
-            return if (file.exists()) {
-                try {
-                    Gson().fromJson(file.readText(), type) ?: defaultValue
-                } catch (e: Exception) {
-                    defaultValue
-                }
-            } else {
-                defaultValue
+        fun<T> LoadFromJson(context:Context,filename:String,data:T):T {
+
+
+            try {
+                val f:FileInputStream =FileInputStream(context.filesDir.toString() + "/" + filename + ".json");
+                val ois:ObjectInputStream =ObjectInputStream(f);
+                val o:Object= ois.readObject() as Object
+                ois.close();
+                f.close();
+                return o as T;
             }
+            catch (e: Exception) {
+                e.printStackTrace();
+            }
+            return data;
         }
 
 

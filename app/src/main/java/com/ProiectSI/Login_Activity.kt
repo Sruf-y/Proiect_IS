@@ -34,10 +34,8 @@ class Login_Activity : AppCompatActivity() {
         val admin_username:String = "admin@restaurant.null"
         val admin_password:String = "adminRestaurantMagic12"
 
-        lista_Angajati.add(Angajat("Andrei","Botofan"))
-        lista_Angajati.add(Angajat("Bologa","Darius"))
 
-        if(GlobalVars.APP_IN_TEST_MODE) {
+        if(!GlobalVars.APP_IN_TEST_MODE) {
             loginbuton.setOnClickListener {
                 if (username.text.toString() == admin_username && password.text.toString() == admin_password) {
                     val intent = Intent(this, AdminActivity::class.java)

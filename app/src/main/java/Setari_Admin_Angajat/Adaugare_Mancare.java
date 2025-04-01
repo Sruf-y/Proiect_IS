@@ -97,6 +97,6 @@ public class Adaugare_Mancare extends AppCompatActivity {
 
         // Functia este null-safe. Asa se incarca din fisier daca exista o lista/valoare salvata.
         //Type aux = new TypeToken<ArrayList<Meniu_Item>>(){}.getType();
-        GlobalVars.INSTANCE.setLista_items_in_meniu_static(Functii.Companion.LoadFromJson(Adaugare_Mancare.this,"Lista_Meniu",GlobalVars.INSTANCE.getLista_items_in_meniu_static(),GlobalVars.INSTANCE.getLista_items_in_meniu_static().getClass()));
+        GlobalVars.INSTANCE.setLista_items_in_meniu_static(Functii.Companion.LoadFromJson(Adaugare_Mancare.this,"Lista_Meniu",GlobalVars.INSTANCE.getLista_items_in_meniu_static()));
     }
 }

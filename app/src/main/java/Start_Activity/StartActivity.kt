@@ -82,7 +82,7 @@ class StartActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        //Functii.CheckNewInstallLoadList(this)
+        Functii.CheckNewInstallLoadList(this)
 
         lista_Comenzi=Functii.KotlinLoadFromJson(this, File_Salvate.Lista_Comenzi.toString(),lista_Comenzi)
 
