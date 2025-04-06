@@ -79,7 +79,7 @@ class StartActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        Functii.CheckNewInstallLoadList(this)
+
 
         lista_Comenzi=Functii.KotlinLoadFromJson(this, File_Salvate.Lista_Comenzi.toString(),lista_Comenzi)
 
@@ -87,6 +87,7 @@ class StartActivity : AppCompatActivity() {
 
         lista_items_in_meniu_static= Functii.KotlinLoadFromJson(this,File_Salvate.Lista_Meniu.toString(),lista_items_in_meniu_static)
 
+        Functii.CheckNewInstallLoadList(this)
 
         if(lista_items_in_meniu_static.isEmpty()) {
 
@@ -101,6 +102,11 @@ class StartActivity : AppCompatActivity() {
                     "30g otet \n10g sare \n500ml lapte \n1kgmalai"
                 )
             )
+
+
+
+
+
         }
     }
 

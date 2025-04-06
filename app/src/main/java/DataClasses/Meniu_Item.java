@@ -132,9 +132,15 @@ public class Meniu_Item {
                     lista.add(aux);
 
                 }
+                else if(pieces.length == 6)
+                {
+                    Meniu_Item aux = new Meniu_Item(-1, pieces[0], Categorie.valueOf(pieces[1].toLowerCase()), Double.parseDouble(pieces[2]), Boolean.getBoolean(pieces[3]), pieces[4], pieces[5]);
+                    lista.add(aux);
+                }
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
+            Log.i("ERRORS","Eroare parse list");
         }
         return lista;
     }

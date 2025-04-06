@@ -115,9 +115,8 @@ class Functii {
 
 
         fun CheckNewInstallLoadList(context:Context){
-            if(GlobalVars.lista_items_in_meniu_static.size==0){
-                GlobalVars.lista_items_in_meniu_static.clear()
-                GlobalVars.lista_items_in_meniu_static= Meniu_Item().ParseArrayList("")
+            if(GlobalVars.lista_items_in_meniu_static.isEmpty()){
+                GlobalVars.lista_items_in_meniu_static.addAll( Meniu_Item().ParseArrayList(""));
                 SaveAsJson(context, File_Salvate.Lista_Meniu.toString(), GlobalVars.lista_items_in_meniu_static)
             }
         }
