@@ -102,6 +102,18 @@ class StartActivity : AppCompatActivity() {
                     "30g otet \n10g sare \n500ml lapte \n1kgmalai"
                 )
             )
+            lista_items_in_meniu_static.add(
+                Meniu_Item(
+                    -1,
+                    "mancare de rata",
+                    Categorie.spirtoase,
+                    295.3,
+                    false,
+                    "",
+                    ""
+
+                )
+            )
 
 
 
