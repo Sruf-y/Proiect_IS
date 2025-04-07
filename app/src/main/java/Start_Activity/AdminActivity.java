@@ -15,6 +15,7 @@ import DataClasses.GlobalVars;
 import Setari_Admin_Angajat.Adaugare_Mancare;
 import Setari_Admin_Angajat.Creare_Cont_Angajat;
 import Setari_Admin_Angajat.Schimbare_Date_Angajati;
+import Setari_Admin_Angajat.Schimbare_Valabilitate_Item_Angajat;
 import Setari_Admin_Angajat.Schimbare_date_mancare;
 
 
@@ -92,13 +93,15 @@ public class AdminActivity extends AppCompatActivity {
         });
 
 
+        Button button_agnajat_schimba_valabilitate = findViewById(R.id.angajat_schimbare_valabilitate);
 
-
-
-
-
-
-
+        button_agnajat_schimba_valabilitate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                  Intent intent_nou=new Intent(AdminActivity.this, Schimbare_Valabilitate_Item_Angajat.class );
+                  startActivity(intent_nou);
+            }
+        });
 
 
         //button vizualizarea comenzii        NECOMPLETATA

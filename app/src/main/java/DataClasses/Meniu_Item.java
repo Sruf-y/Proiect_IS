@@ -18,7 +18,7 @@ public class Meniu_Item {
     private int image_id =-1;
     private String name="DefaultName";
     private Categorie category=Categorie.aperitiv;
-    private double price=0.0;
+    private double price=0.00;
     private boolean available=true;
     private String description="DefaultDescription";
     private String nutritionDescription="DefaultNotritionDescription";

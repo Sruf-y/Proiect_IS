@@ -49,8 +49,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout3"
         android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:background="@color/liftedBackgrounds"
+        android:layout_height="wrap_content"
+        android:background="@drawable/underline"
+        android:elevation="2dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -58,12 +61,23 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
         app:layout_constraintVertical_bias="1.0">
 
-        <Button
-            android:id="@+id/button2"
+        <TextView
+            android:id="@+id/checkOutButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
-            tools:layout_editor_absoluteX="289dp" />
+            android:background="@drawable/default_button_andrei"
+            android:backgroundTint="#E7A923"
+            android:backgroundTintMode="screen"
+            android:clickable="true"
+            android:scaleY="0.85"
+            android:text="Checkout"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView

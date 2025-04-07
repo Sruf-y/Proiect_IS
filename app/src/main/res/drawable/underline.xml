@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- CREATE A RECTANGLE WITH YOUR BORDER COLOR -->
+    <item>
+        <shape android:shape="rectangle" >
+
+            <stroke android:width="2dp" android:color="@color/invertedLiftedBackgrounds"/>
+
+        </shape>
+    </item>
+
+    <!-- NOW DEFINE THE NORMAL COLOR-->
+    <item android:bottom="2dp">
+        <shape android:shape="rectangle" >
+            <solid android:color="@color/liftedBackgrounds"/>
+        </shape>
+    </item>
+</layer-list>

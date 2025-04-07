@@ -22,48 +22,50 @@ import java.io.ObjectInputStream
 
 class Functii {
 
-    fun WriteStringInFile(context:Context,filename:String,message:String) {
-
-        try {
-
-            val fos:FileOutputStream = context . openFileOutput ("$filename.txt", Context.MODE_PRIVATE);
-            fos.write(message.toByteArray());
-            fos.close();
-        } catch (e:IOException ) {
-            e.printStackTrace();
-        }
-    }
-
-    fun CustomSnack(whereToShowIt: View, message: String){
-        val snack = Snackbar.make(whereToShowIt,message, Snackbar.LENGTH_SHORT)
-        snack.animationMode=Snackbar.ANIMATION_MODE_FADE
-        snack.apply {
-            view.setOnClickListener {
-                dismiss()
-            }
-
-            behavior=object:BaseTransientBottomBar.Behavior() {
-                override fun canSwipeDismissView(child: View): Boolean {
-                    return true
-                }
-            }
-
-            (view.layoutParams as FrameLayout.LayoutParams).apply {
-                width= ActionBar.LayoutParams.WRAP_CONTENT;
-                gravity= Gravity.END or Gravity.BOTTOM;
-            }
-
-            view.apply {
-                setBackgroundColor( ContextCompat.getColor(context,R.color.gray))
-
-                setAnchorView(whereToShowIt)
-
-            }
-        }.show()
-    }
-
 
     companion object {
+
+        fun WriteStringInFile(context:Context,filename:String,message:String) {
+
+            try {
+
+                val fos:FileOutputStream = context . openFileOutput ("$filename.txt", Context.MODE_PRIVATE);
+                fos.write(message.toByteArray());
+                fos.close();
+            } catch (e:IOException ) {
+                e.printStackTrace();
+            }
+        }
+
+        fun CustomSnack(whereToShowIt: View, message: String){
+            val snack = Snackbar.make(whereToShowIt,message, Snackbar.LENGTH_SHORT)
+            snack.animationMode=Snackbar.ANIMATION_MODE_FADE
+            snack.apply {
+                view.setOnClickListener {
+                    dismiss()
+                }
+
+                behavior=object:BaseTransientBottomBar.Behavior() {
+                    override fun canSwipeDismissView(child: View): Boolean {
+                        return true
+                    }
+                }
+
+                (view.layoutParams as FrameLayout.LayoutParams).apply {
+                    width= ActionBar.LayoutParams.WRAP_CONTENT;
+                    gravity= Gravity.END or Gravity.BOTTOM;
+                }
+
+                view.apply {
+                    setBackgroundColor( ContextCompat.getColor(context,R.color.gray))
+
+                    setAnchorView(whereToShowIt)
+
+                }
+            }.show()
+        }
+
+
         fun <T> SaveAsJson(context: Context, filename: String, data: T) {
             val json = Gson().toJson(data);
             val filepath = context.filesDir.toString() + "/" + filename + ".json"

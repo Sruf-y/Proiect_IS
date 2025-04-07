@@ -14,14 +14,18 @@ import Adaptors.Adaptor_Lista;
 import Adaptors.Tip_Adaptor
 import DataClasses.Meniu_Item;
 import DataClasses.GlobalVars.lista_items_in_meniu_static
+import Functii_Utils.Functii.Companion.CustomSnack
 
 import android.content.Context
 import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.stream.consumeAsFlow
 
 
 class Cautare : AppCompatActivity(), Adaptor_Lista.onClickListener, Adaptor_Lista.onLongPressListener {
-
+    lateinit var context:Context
+    lateinit var recycler:RecyclerView
+    lateinit var adaptor: Adaptor_Lista<Meniu_Item>
      override fun onCreate(savedInstanceState: Bundle?) {
          super.onCreate(savedInstanceState)
          setContentView(R.layout.activity_cautare)
@@ -32,16 +36,7 @@ class Cautare : AppCompatActivity(), Adaptor_Lista.onClickListener, Adaptor_List
                  finish();
          }
 
-
-         // recycler adaptor
-         val display_list=ArrayList<Meniu_Item>()
-         display_list.addAll(lista_items_in_meniu_static)
-         val recycler:RecyclerView = findViewById(R.id.recyclerViewCautare);
-         val adaptor= Adaptor_Lista(Tip_Adaptor.meniu,display_list,this,this)
-         recycler.layoutManager=LinearLayoutManager(this);
-         recycler.adapter=adaptor
-         recycler.adapter?.notifyDataSetChanged()
-         val context: Context = this
+         initializeRecycler()
 
          val searchview: SearchView = findViewById(R.id.searchView)
 
@@ -52,26 +47,22 @@ class Cautare : AppCompatActivity(), Adaptor_Lista.onClickListener, Adaptor_List
 
              override fun onQueryTextChange(line: String): Boolean {
                  if(!line.isEmpty()){
-                     display_list.clear()
+                     adaptor.mlist.clear()
 
-                     val searched_line= line.lowercase()
 
                      for(mancare in lista_items_in_meniu_static){
                          if(mancare.name.lowercase().contains(line.lowercase().trim())){
-                             display_list.add(mancare)
+                             adaptor.mlist.add(mancare)
                          }
                      }
-                     //reset adapter for some reason, ugh
-                     recycler.adapter=Adaptor_Lista(Tip_Adaptor.meniu,display_list,
-                         context as Adaptor_Lista.onClickListener, context as Adaptor_Lista.onLongPressListener
-                     )
+
                      recycler.adapter?.notifyDataSetChanged()
 
 
                  }
                  else{
-                     display_list.clear()
-                     display_list.addAll(lista_items_in_meniu_static)
+                     adaptor.mlist.clear()
+                     adaptor.mlist.addAll(lista_items_in_meniu_static)
                      recycler.adapter?.notifyDataSetChanged()
                  }
 
@@ -86,24 +77,32 @@ class Cautare : AppCompatActivity(), Adaptor_Lista.onClickListener, Adaptor_List
      }
 
     override fun oncardClick(position: Int,itemviewholder: RecyclerView.ViewHolder) {
-        TODO("Not yet implemented")
+
     }
 
     override fun onCardLongPress(position: Int,itemviewholder: RecyclerView.ViewHolder) {
-        TODO("Not yet implemented")
+        CustomSnack(
+            whereToShowIt = itemviewholder.itemView,
+            message = adaptor.mlist[position].nutritionDescription,
+        )
+    }
+
+    fun initializeRecycler(){
+
+        val lista_fara_unavailable= lista_items_in_meniu_static.filter { p-> p.isAvailable } as ArrayList
+
+
+        context = this
+        recycler = findViewById(R.id.recyclerViewCautare);
+        recycler.layoutManager=LinearLayoutManager(context);
+        recycler.adapter=Adaptor_Lista(Tip_Adaptor.meniu,ArrayList<Meniu_Item>(),context,this,this)
+        adaptor= recycler.adapter as Adaptor_Lista<Meniu_Item>
+        adaptor.updateList(lista_fara_unavailable)
+        recycler.adapter?.notifyDataSetChanged()
     }
 
     override fun onResume() {
         super.onResume()
-        val recycler:RecyclerView = findViewById(R.id.recyclerViewCautare)
-
-        recycler.layoutManager=LinearLayoutManager(this);
-
-
-
-        val adaptor= Adaptor_Lista(Tip_Adaptor.meniu,lista_items_in_meniu_static,this,this);
-
-        recycler.adapter=adaptor
-        recycler.adapter?.notifyDataSetChanged()
+        initializeRecycler()
     }
 }
