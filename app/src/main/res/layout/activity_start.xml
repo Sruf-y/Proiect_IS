@@ -11,10 +11,12 @@
   <com.google.android.material.bottomnavigation.BottomNavigationView
       android:id="@+id/navbar1"
       android:layout_width="0dp"
-      android:layout_height="70dp"
+      android:layout_height="wrap_content"
       android:background="@color/liftedBackgrounds"
+      android:paddingVertical="5dp"
       app:itemBackground="@drawable/ripple_circle"
       app:itemIconTint="@color/bar_item"
+      app:itemPaddingTop="5dp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"

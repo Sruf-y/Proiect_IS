@@ -111,33 +111,37 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/text_background"
                 android:focusableInTouchMode="true">
 
                 <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:focusableInTouchMode="true"
-                    tools:layout_editor_absoluteY="20dp">
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_max="200dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="vertical">
 
                         <EditText
                             android:id="@+id/valorinutritionale"
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            android:layout_height="wrap_content"
+
+                            android:autoSizeTextType="none"
                             android:background="@color/transparent"
                             android:ems="10"
                             android:fontFamily="@font/poppins"
                             android:gravity="top"
                             android:hint="Valori nutritionale"
-
                             android:inputType="textMultiLine"
-                            android:maxLines="100"
                             android:padding="10dp"
                             android:singleLine="false"
                             android:textColor="@color/black"
@@ -149,14 +153,18 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/text_background">
 
                 <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:focusableInTouchMode="true"
-                    tools:layout_editor_absoluteY="20dp">
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_max="200dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -166,15 +174,17 @@
                         <EditText
                             android:id="@+id/editTextDescriere"
                             android:layout_width="match_parent"
-                            android:layout_height="150dp"
+                            android:layout_height="wrap_content"
+                            android:autoSizeTextType="uniform"
                             android:background="@color/transparent"
                             android:ems="10"
                             android:fontFamily="@font/poppins"
+
                             android:gravity="top"
                             android:hint="Descriere"
-
                             android:inputType="textMultiLine"
                             android:isScrollContainer="true"
+                            android:maxHeight="100dp"
                             android:maxLines="100"
                             android:padding="10dp"
                             android:singleLine="false"
