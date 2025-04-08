@@ -12,6 +12,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.ActionBar.LayoutParams
 import androidx.cardview.widget.CardView
+import androidx.compose.ui.unit.Constraints
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.marginBottom
 import androidx.recyclerview.widget.RecyclerView
@@ -52,6 +53,7 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val mlist:ArrayList<T>, val context
         val checkbox:MaterialCheckBox = itemView.findViewById(R.id.ValabilCheckBox)
 
         val card:CardView = itemView.findViewById(R.id.card)
+        val overlay: ConstraintLayout = itemView.findViewById(R.id.overlay)
     }
     class ItemAngajat(itemView:View):RecyclerView.ViewHolder(itemView){
 
@@ -134,6 +136,10 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val mlist:ArrayList<T>, val context
 
                     mancare.isAvailable=holder.checkbox.isChecked
 
+                }
+
+                holder.overlay.setOnClickListener {
+                    clickListener.oncardClick(position,holder)
                 }
 
                 (holder.card.layoutParams as RecyclerView.LayoutParams).setMargins(10.dP,8.dP,10.dP,8.dP)
