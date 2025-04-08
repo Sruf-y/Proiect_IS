@@ -117,6 +117,30 @@ class StartActivity : AppCompatActivity() {
 
                 )
             )
+            lista_items_in_meniu_static.add(
+                Meniu_Item(
+                    -1,
+                    "Fish and Chips",
+                    Categorie.fel_principal,
+                    26.50,
+                    true,
+                    "peste cu cartofi pai",
+                    "Valori nutriționale : Calorii: 600 kcal"
+
+                )
+            )
+            lista_items_in_meniu_static.add(
+                Meniu_Item(
+                   -1,
+                    "Paste Carbonara",
+                    Categorie.fel_principal,
+                    27.70,
+                    true,
+                    "paste cu cascaval si carne de porc",
+                    "Valori nutritionale: 163.85 Kcal"
+                )
+            )
+
 
 
 
