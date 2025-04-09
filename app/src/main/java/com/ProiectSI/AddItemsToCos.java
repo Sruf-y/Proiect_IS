@@ -76,18 +76,7 @@ public class AddItemsToCos extends AppCompatActivity {
 
         text_box.setText(numar.toString());
 
-        if(numar<=0){
-            buton_minus.setEnabled(false);
-            collorchangeforButton(buton_minus, this,R.color.inactive);
-            numar=0;
-            text_box.setText(numar.toString());
-        }
-        else if(numar>=10){
-            plusbuton.setEnabled(false);
-            collorchangeforButton(plusbuton,this,R.color.inactive);
-            numar=10;
-            text_box.setText(numar.toString());
-        }
+
 
 
         infotextview.setText(item.getDescription()+"\n\n\n\n"+item.getNutritionDescription());
@@ -121,6 +110,7 @@ public class AddItemsToCos extends AppCompatActivity {
             }
         };
 
+        checkButtons.run();
 
 
 
