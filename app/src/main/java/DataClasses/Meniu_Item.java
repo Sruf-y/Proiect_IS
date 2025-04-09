@@ -17,6 +17,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Meniu_Item implements Parcelable {
     private int image_id =-1;
@@ -191,5 +192,17 @@ public class Meniu_Item implements Parcelable {
         parcel.writeByte((byte) (available ? 1 : 0));
         parcel.writeString(description);
         parcel.writeString(nutritionDescription);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Meniu_Item meniuItem = (Meniu_Item) o;
+        return image_id == meniuItem.image_id && Double.compare(price, meniuItem.price) == 0 && available == meniuItem.available && Objects.equals(name, meniuItem.name) && category == meniuItem.category && Objects.equals(description, meniuItem.description) && Objects.equals(nutritionDescription, meniuItem.nutritionDescription);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(image_id, name, category, price, available, description, nutritionDescription);
     }
 }

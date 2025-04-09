@@ -38,7 +38,10 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
     lateinit var myContext:Context
 
     override fun oncardClick(position: Int, itemviewholder: RecyclerView.ViewHolder) {
-        // open activity where to put items in cart
+        val intent = Intent(context, AddItemsToCos::class.java)
+        intent.putExtra("item",adaptor.mlist[position])
+        intent.putExtra("itemNr", GlobalVars.comanda_in_cos.listNumberOfs[position])
+        startActivity(intent)
     }
 
 
@@ -96,19 +99,26 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
 
     fun initializeRecycler(){
         myContext = requireContext()
+
         recycler = requireView().findViewById(R.id.recyclercomanda);
+
         recycler.layoutManager=LinearLayoutManager(context);
-        recycler.adapter=Adaptor_Lista(Tip_Adaptor.comanda,ArrayList<Meniu_Item>(),myContext,this,this)
+
+        recycler.adapter=Adaptor_Lista(Tip_Adaptor.comanda, ArrayList<Meniu_Item>(),myContext,this,this)
+
         adaptor= recycler.adapter as Adaptor_Lista<Meniu_Item>
+
         adaptor.updateList(GlobalVars.comanda_in_cos.list)
-        recycler.adapter?.notifyDataSetChanged()
     }
 
 
     override fun onResume() {
         super.onResume()
 
+
+
         initializeRecycler()
+
 
 
 

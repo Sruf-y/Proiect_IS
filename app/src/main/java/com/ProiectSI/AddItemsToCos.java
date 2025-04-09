@@ -261,8 +261,8 @@ public class AddItemsToCos extends AppCompatActivity {
 
 
     @Override
-    protected void onStop() {
-        super.onStop();
+    protected void onPause() {
+        super.onPause();
 
 
         if(GlobalVars.INSTANCE.getComanda_in_cos().getList().contains(item)){
