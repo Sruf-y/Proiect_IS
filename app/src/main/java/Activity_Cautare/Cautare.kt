@@ -17,8 +17,10 @@ import DataClasses.GlobalVars.lista_items_in_meniu_static
 import Functii_Utils.Functii.Companion.CustomSnack
 
 import android.content.Context
+import android.content.Intent
 import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ProiectSI.AddItemsToCos
 import kotlinx.coroutines.stream.consumeAsFlow
 
 
@@ -77,7 +79,10 @@ class Cautare : AppCompatActivity(), Adaptor_Lista.onClickListener, Adaptor_List
      }
 
     override fun oncardClick(position: Int,itemviewholder: RecyclerView.ViewHolder) {
-
+        val intent = Intent(context, AddItemsToCos::class.java)
+        intent.putExtra("item",adaptor.mlist[position])
+        intent.putExtra("itemNr",0)
+        startActivity(intent)
     }
 
     override fun onCardLongPress(position: Int,itemviewholder: RecyclerView.ViewHolder) {

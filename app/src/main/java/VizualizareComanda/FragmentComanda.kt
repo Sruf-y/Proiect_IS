@@ -2,8 +2,11 @@ package VizualizareComanda
 
 import Adaptors.Adaptor_Lista
 import Adaptors.Tip_Adaptor
+import DataClasses.Comanda
+import DataClasses.GlobalVars
 import DataClasses.Meniu_Item
 import DataClasses.GlobalVars.lista_items_in_meniu_static
+import DataClasses.StareComanda
 import Functii_Utils.Functii.Companion.CustomSnack
 import android.content.Context
 import android.content.Intent
@@ -13,9 +16,11 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.compose.material3.VerticalDivider
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ProiectSI.AddItemsToCos
 import com.ProiectSI.KotlinUtils.Companion.dP
 import com.ProiectSI.Login_Activity
 import com.ProiectSI.R
@@ -40,10 +45,6 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
     override fun onCardLongPress(position: Int, itemviewholder: RecyclerView.ViewHolder) {
         // make popup to show details about ingredients
 
-        CustomSnack(
-            whereToShowIt = itemviewholder.itemView,
-            message = adaptor.mlist[position].nutritionDescription,
-        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,7 +57,7 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
         initializeRecycler()
 
 
-        //val adaptor= MeniuAdaptor_Lista(cos_comanda.list,this,this) // CORECT
+
 
         val checkoutButton = requireView().findViewById<TextView>(R.id.checkOutButton)
         (checkoutButton.layoutParams as ConstraintLayout.LayoutParams).apply {
@@ -74,19 +75,30 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
         val buton_adaugare_temp: ImageView = requireView().findViewById(R.id.butonaddTemporar_)
 
         buton_adaugare_temp.setOnClickListener {
-            lista_items_in_meniu_static.clear()
-            lista_items_in_meniu_static.add(Meniu_Item("Mamaliga"))
-            lista_items_in_meniu_static.add(Meniu_Item("Mamaliga fiarta"))
-            lista_items_in_meniu_static.add(Meniu_Item("Supa"))
-            lista_items_in_meniu_static.add(Meniu_Item("Sarmale"))
-            lista_items_in_meniu_static.add(Meniu_Item("Ciorba de cartofi"))
-            lista_items_in_meniu_static.add(Meniu_Item("Supa de pui"))
-            lista_items_in_meniu_static.add(Meniu_Item("Ochi de ou"))
-            lista_items_in_meniu_static.add(Meniu_Item("Cartofi prajiti"))
-            lista_items_in_meniu_static.add(Meniu_Item("Cartofi gratinati cu sos de musdei"))
 
-            adaptor.updateList(lista_items_in_meniu_static)
 
+            // TODO comanda auxiliara temporara. Remove later. Exemplu. Trebuie pasata intent-ului astfel:
+            val comandaRandomLol: Comanda = Comanda()
+            comandaRandomLol.addItem(lista_items_in_meniu_static[0],5)
+
+
+
+            val intent = Intent(requireContext(), AddItemsToCos::class.java)
+            intent.putExtra("item",comandaRandomLol.list[0])
+            intent.putExtra("itemNr",comandaRandomLol.listNumberOfs[0])
+            startActivity(intent)
+
+
+        }
+
+        val status_comanda: TextView=requireView().findViewById(R.id.status_comanda)
+
+
+        if(GlobalVars.comanda_in_cos.stare!= StareComanda.Nelasata){
+            status_comanda.visibility= View.VISIBLE
+            status_comanda.text= "Status comanda: "+GlobalVars.comanda_in_cos.stare.toString().replace("_"," ")
+        } else{
+            status_comanda.visibility= View.GONE
         }
 
 
@@ -103,7 +115,7 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
         recycler.layoutManager=LinearLayoutManager(context);
         recycler.adapter=Adaptor_Lista(Tip_Adaptor.comanda,ArrayList<Meniu_Item>(),myContext,this,this)
         adaptor= recycler.adapter as Adaptor_Lista<Meniu_Item>
-        adaptor.updateList(lista_items_in_meniu_static)
+        adaptor.updateList(GlobalVars.comanda_in_cos.list)
         recycler.adapter?.notifyDataSetChanged()
     }
 

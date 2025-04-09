@@ -1,5 +1,6 @@
 package Adaptors
 
+import DataClasses.GlobalVars
 import DataClasses.Meniu_Item
 import Functii_Utils.Functii
 import android.content.Context
@@ -47,6 +48,7 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val mlist:ArrayList<T>, val context
         val pret: TextView = itemView.findViewById(R.id.Pret)
         val imagine: ShapeableImageView=itemView.findViewById(R.id.imageView)
         val card:CardView = itemView.findViewById(R.id.card)
+        val numberOf: TextView=itemView.findViewById(R.id.numberOf)
     }
     class ItemChecklist(itemView:View):RecyclerView.ViewHolder(itemView){
         val titlu:TextView = itemView.findViewById(R.id.titlu)
@@ -112,6 +114,7 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val mlist:ArrayList<T>, val context
                 (holder.card.layoutParams as RecyclerView.LayoutParams).setMargins(10.dP,5.dP,10.dP,5.dP)
             }
             is ItemComanda->{
+
                 val mancare = mlist[position] as Meniu_Item
 
                 holder.titlu.isSingleLine=true
@@ -119,9 +122,15 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val mlist:ArrayList<T>, val context
 
                 holder.imagine.layoutParams.height=90F.dP
 
-                holder.pret.text = "${"%.2f".format(mancare.price)} RON"
-
                 (holder.card.layoutParams as RecyclerView.LayoutParams).setMargins(10.dP,8.dP,10.dP,8.dP)
+
+                val numberOf = GlobalVars.comanda_in_cos.listNumberOfs[position]
+
+                holder.numberOf.apply {
+                    visibility= View.VISIBLE
+                    text= "x "+numberOf.toString()
+                }
+                holder.pret.text = "${"%.2f".format(mancare.price*numberOf)} RON"
 
             }
             is ItemChecklist->{

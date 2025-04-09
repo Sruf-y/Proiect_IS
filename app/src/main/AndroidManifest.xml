@@ -46,7 +46,7 @@
             android:name="Activity_Cautare.Cautare"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".AddItemsToCos"
             android:exported="false" />
         <activity
             android:name="Start_Activity.StartActivity"

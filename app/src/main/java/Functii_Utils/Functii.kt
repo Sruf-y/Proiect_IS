@@ -4,11 +4,15 @@ import DataClasses.GlobalVars
 import DataClasses.Meniu_Item
 import Start_Activity.File_Salvate
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.PorterDuff
+import android.graphics.drawable.Drawable
 import android.view.Gravity
 import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.app.ActionBar
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getColor
 import com.ProiectSI.R
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
@@ -19,6 +23,10 @@ import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.ObjectInputStream
+
+
+
+
 
 class Functii {
 

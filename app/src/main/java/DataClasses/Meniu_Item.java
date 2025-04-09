@@ -3,7 +3,11 @@ package DataClasses;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Context;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
 
 import java.io.BufferedWriter;
 import java.io.Console;
@@ -14,7 +18,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Meniu_Item {
+public class Meniu_Item implements Parcelable {
     private int image_id =-1;
     private String name="DefaultName";
     private Categorie category=Categorie.aperitiv;
@@ -43,6 +47,27 @@ public class Meniu_Item {
         this.name=nume;
     }
 
+
+    protected Meniu_Item(Parcel in) {
+        image_id = in.readInt();
+        name = in.readString();
+        price = in.readDouble();
+        available = in.readByte() != 0;
+        description = in.readString();
+        nutritionDescription = in.readString();
+    }
+
+    public static final Creator<Meniu_Item> CREATOR = new Creator<Meniu_Item>() {
+        @Override
+        public Meniu_Item createFromParcel(Parcel in) {
+            return new Meniu_Item(in);
+        }
+
+        @Override
+        public Meniu_Item[] newArray(int size) {
+            return new Meniu_Item[size];
+        }
+    };
 
     public int getImage_id() {
         return image_id;
@@ -151,5 +176,20 @@ public class Meniu_Item {
     @Override
     public String toString() {
         return "Nume='" + name + "'\nPret=" + price;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeInt(image_id);
+        parcel.writeString(name);
+        parcel.writeDouble(price);
+        parcel.writeByte((byte) (available ? 1 : 0));
+        parcel.writeString(description);
+        parcel.writeString(nutritionDescription);
     }
 }
