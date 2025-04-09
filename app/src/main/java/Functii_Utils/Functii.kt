@@ -138,18 +138,6 @@ class Functii {
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
                         -1,
-                        "mancare de rata",
-                        Categorie.spirtoase,
-                        295.3,
-                        false,
-                        "",
-                        ""
-
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
                         "Fish and Chips",
                         Categorie.fel_principal,
                         26.50,
