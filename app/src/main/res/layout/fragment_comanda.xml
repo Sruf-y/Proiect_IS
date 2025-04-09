@@ -39,6 +39,7 @@
             android:backgroundTint="@color/liftedBackgrounds"
             android:padding="10dp"
             android:src="@drawable/add_material_button"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.17"

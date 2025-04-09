@@ -74,22 +74,7 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
 
         val buton_adaugare_temp: ImageView = requireView().findViewById(R.id.butonaddTemporar_)
 
-        buton_adaugare_temp.setOnClickListener {
 
-
-            // TODO comanda auxiliara temporara. Remove later. Exemplu. Trebuie pasata intent-ului astfel:
-            val comandaRandomLol: Comanda = Comanda()
-            comandaRandomLol.addItem(lista_items_in_meniu_static[0],5)
-
-
-
-            val intent = Intent(requireContext(), AddItemsToCos::class.java)
-            intent.putExtra("item",comandaRandomLol.list[0])
-            intent.putExtra("itemNr",comandaRandomLol.listNumberOfs[0])
-            startActivity(intent)
-
-
-        }
 
         val status_comanda: TextView=requireView().findViewById(R.id.status_comanda)
 
