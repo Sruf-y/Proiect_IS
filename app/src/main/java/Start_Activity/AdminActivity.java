@@ -17,6 +17,7 @@ import Setari_Admin_Angajat.Creare_Cont_Angajat;
 import Setari_Admin_Angajat.Schimbare_Date_Angajati;
 import Setari_Admin_Angajat.Schimbare_Valabilitate_Item_Angajat;
 import Setari_Admin_Angajat.Schimbare_date_mancare;
+import Setari_Admin_Angajat.angajat_vizualizare_comanda;
 
 
 public class AdminActivity extends AppCompatActivity {
@@ -110,8 +111,8 @@ public class AdminActivity extends AppCompatActivity {
         button_admin_vizualizare_comenzi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //  Intent intent_nou=new Intent(AdminActivity.this, /*vizualizare comanda*/ );
-                //  startActivity(intent_nou);
+                  Intent intent_nou=new Intent(AdminActivity.this, angajat_vizualizare_comanda.class );
+                  startActivity(intent_nou);
             }
         });
 
