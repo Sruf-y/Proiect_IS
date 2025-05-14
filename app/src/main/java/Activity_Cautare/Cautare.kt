@@ -101,8 +101,8 @@ class Cautare : AppCompatActivity(), Adaptor_Lista.onClickListener, Adaptor_List
         context = this
         recycler = findViewById(R.id.recyclerViewCautare);
         recycler.layoutManager=LinearLayoutManager(context);
-        recycler.adapter=Adaptor_Lista(Tip_Adaptor.meniu,ArrayList<Meniu_Item>(),context,this,this)
-        adaptor= recycler.adapter as Adaptor_Lista<Meniu_Item>
+        adaptor=Adaptor_Lista(Tip_Adaptor.meniu,ArrayList<Meniu_Item>(),context,this,this)
+        recycler.adapter = adaptor
         adaptor.updateList(lista_fara_unavailable)
         recycler.adapter?.notifyDataSetChanged()
     }
