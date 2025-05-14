@@ -1,5 +1,6 @@
 package Adaptors
 
+import DataClasses.Categorie
 import DataClasses.GlobalVars
 import DataClasses.Meniu_Item
 import Functii_Utils.Functii
@@ -22,8 +23,15 @@ import com.ProiectSI.R
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.imageview.ShapeableImageView
 
-class Adaptor_Lista<T>(val tip: Tip_Adaptor, val mlist:ArrayList<T>, val context: Context, val clickListener: onClickListener, val longPressListener: onLongPressListener):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class Adaptor_Lista<T>(val tip: Tip_Adaptor, val lista:ArrayList<T>, val context: Context, val clickListener: onClickListener, val longPressListener: onLongPressListener, val filtru: Categorie?=null):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+
+    val mlist: ArrayList<T>
+        get(){if(tip == Tip_Adaptor.meniu && filtru!=null)
+                    return ArrayList<Meniu_Item>((lista as ArrayList<Meniu_Item>).filter { p->p.category== filtru }.filter { p->p.isAvailable }) as ArrayList<T>
+                else
+                    return lista
+        }
 
     interface onClickListener{
         fun oncardClick(position:Int, itemviewholder: RecyclerView.ViewHolder)

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,22 +13,13 @@ import android.view.ViewGroup;
 
 import com.ProiectSI.R;
 
+import org.jetbrains.annotations.NotNull;
 
-public class BauturiSpirtoase extends Fragment {
-
-
-
-    public BauturiSpirtoase() {
-        // Required empty public constructor
-    }
+import Adaptors.Adaptor_Lista;
 
 
+public class BauturiSpirtoase extends Fragment implements Adaptor_Lista.onClickListener,Adaptor_Lista.onLongPressListener{
 
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,5 +35,15 @@ public class BauturiSpirtoase extends Fragment {
 
 
         // aici se scrie codul
+    }
+
+    @Override
+    public void oncardClick(int position, RecyclerView.@NotNull ViewHolder itemviewholder) {
+
+    }
+
+    @Override
+    public void onCardLongPress(int position, RecyclerView.@NotNull ViewHolder itemviewholder) {
+
     }
 }

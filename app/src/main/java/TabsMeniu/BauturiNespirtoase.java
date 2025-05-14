@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,29 +13,14 @@ import android.view.ViewGroup;
 
 import com.ProiectSI.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BauturiNespirtoase#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class BauturiNespirtoase extends Fragment {
+import org.jetbrains.annotations.NotNull;
+
+import Adaptors.Adaptor_Lista;
 
 
-    public BauturiNespirtoase() {
-        // Required empty public constructor
-    }
+public class BauturiNespirtoase extends Fragment implements Adaptor_Lista.onClickListener,Adaptor_Lista.onLongPressListener {
 
 
-    public static BauturiNespirtoase newInstance(String param1, String param2) {
-        BauturiNespirtoase fragment = new BauturiNespirtoase();
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,5 +37,15 @@ public class BauturiNespirtoase extends Fragment {
 
 
         // AICI SE SCRIE CODUL
+    }
+
+    @Override
+    public void oncardClick(int position, RecyclerView.@NotNull ViewHolder itemviewholder) {
+
+    }
+
+    @Override
+    public void onCardLongPress(int position, RecyclerView.@NotNull ViewHolder itemviewholder) {
+
     }
 }

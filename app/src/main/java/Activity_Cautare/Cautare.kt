@@ -12,6 +12,7 @@ import com.ProiectSI.R;
 import java.util.ArrayList;
 import Adaptors.Adaptor_Lista;
 import Adaptors.Tip_Adaptor
+import DataClasses.Categorie
 import DataClasses.Meniu_Item;
 import DataClasses.GlobalVars.lista_items_in_meniu_static
 import Functii_Utils.Functii.Companion.CustomSnack

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,17 +13,14 @@ import android.view.ViewGroup;
 
 import com.ProiectSI.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FeluriPrincipale#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class FeluriPrincipale extends Fragment {
+import org.jetbrains.annotations.NotNull;
+
+import Adaptors.Adaptor_Lista;
 
 
-    public FeluriPrincipale() {
-        // Required empty public constructor
-    }
+public class FeluriPrincipale extends Fragment implements Adaptor_Lista.onClickListener,Adaptor_Lista.onLongPressListener {
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,5 +37,15 @@ public class FeluriPrincipale extends Fragment {
 
 
         // scrie codul aici
+    }
+
+    @Override
+    public void oncardClick(int position, RecyclerView.@NotNull ViewHolder itemviewholder) {
+
+    }
+
+    @Override
+    public void onCardLongPress(int position, RecyclerView.@NotNull ViewHolder itemviewholder) {
+
     }
 }
