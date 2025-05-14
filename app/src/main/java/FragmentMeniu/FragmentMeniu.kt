@@ -30,6 +30,7 @@ class FragmentMeniu : Fragment(R.layout.fragment_meniu) {
 
         // aici se scrie codul intr-un fragment
 
+
         val pagesView: ViewPager2 = requireView().findViewById(R.id.tabHolder)
         val tabs : TabLayout = requireView().findViewById(R.id.tabLayout)
 

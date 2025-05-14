@@ -1,13 +1,11 @@
 package Start_Activity
 
-import DataClasses.Categorie
-import DataClasses.Meniu_Item
 import FragmentMeniu.FragmentMeniu
 import Functii_Utils.Functii
 import DataClasses.GlobalVars.lista_Angajati
 import DataClasses.GlobalVars.lista_Comenzi
 import DataClasses.GlobalVars.lista_items_in_meniu_static
-import VizualizareComanda.FragmentComanda
+import Comanda_For_Client.FragmentComanda
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity

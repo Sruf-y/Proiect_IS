@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ripple_circle"
-    tools:context="VizualizareComanda.FragmentComanda">
+    tools:context="Comanda_For_Client.FragmentComanda">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"

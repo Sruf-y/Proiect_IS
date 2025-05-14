@@ -10,7 +10,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:backgroundTint="@color/green_light"
     android:clipToPadding="false"
     app:cardCornerRadius="30dp"
     app:cardElevation="5dp"
@@ -25,7 +24,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constr"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/green_light">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,7 +42,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="130dp"
                 android:layout_weight="3"
-                android:background="@drawable/sarmale"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/sarmale" />
 
@@ -115,6 +114,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clicklistener"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/clickable_background">

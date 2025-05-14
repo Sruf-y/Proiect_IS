@@ -1,17 +1,21 @@
 package DataClasses
 
+import android.os.Parcelable
 import com.ProiectSI.KotlinUtils.Companion.toBoolean
+import kotlinx.parcelize.Parcelize
+import kotlin.random.Random
+
+@Parcelize
+class Comanda(var id:String =randomizeID(),
+              var list:ArrayList<Meniu_Item> = ArrayList<Meniu_Item>(),
+              var listNumberOfs:ArrayList<Int> = ArrayList<Int>(),
+              var timp_asteptare:Int = 0,
+              var stare:StareComanda = StareComanda.Nelasata) : Parcelable {
 
 
-class Comanda() {
-    var list= ArrayList<Meniu_Item>()
-    var listNumberOfs = ArrayList<Int>()
-    var timp_asteptare:Int = 0
-    var stare:StareComanda = StareComanda.Nelasata
-
-    constructor(lista: java.util.ArrayList<Meniu_Item>,timp_asteptare:Int):this(){
+    constructor(lista: ArrayList<Meniu_Item>,lista_numbers:ArrayList<Int>,timp_asteptare:Int):this(){
         this.list=lista
-        this.listNumberOfs= MutableList(lista.size) { 0 } as ArrayList<Int>
+        this.listNumberOfs= lista_numbers
         this.timp_asteptare=timp_asteptare
     }
 
@@ -41,6 +45,28 @@ class Comanda() {
     }
 
 
+
+
+    companion object{
+        fun randomizeID(): String {
+            val randomizer = Random
+
+            val alphabet = listOf("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+
+            var string =""
+
+            do{
+                string =""
+
+                for(i in 0..5){
+                    string+=alphabet[randomizer.nextInt(0,alphabet.size-1)]
+                }
+            }while (GlobalVars.lista_Comenzi.map { p->p.id }.contains(string))
+
+
+            return string
+        }
+    }
 
 
 }
