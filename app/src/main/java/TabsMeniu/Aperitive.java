@@ -6,9 +6,11 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.provider.Settings;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +55,7 @@ public class Aperitive extends Fragment implements Adaptor_Lista.onClickListener
 
 
 
-        var adaptor = new Adaptor_Lista(Tip_Adaptor.meniu, GlobalVars.INSTANCE.getLista_items_in_meniu_static(),requireContext(),this,this, Categorie.aperitiv);
+        adaptor = new Adaptor_Lista(Tip_Adaptor.meniu, GlobalVars.INSTANCE.getLista_items_in_meniu_static(),requireContext(),this,this, Categorie.aperitiv);
 
         /*
          * Sa se defineasca recyclerview din  R.layout.fragment_aperitive ca variabila, pentru fiecare din cele 4 tab-uri
@@ -74,6 +76,7 @@ public class Aperitive extends Fragment implements Adaptor_Lista.onClickListener
 
 
 
+
     }
 
     @Override
@@ -82,6 +85,9 @@ public class Aperitive extends Fragment implements Adaptor_Lista.onClickListener
         var intent = new Intent(requireContext(), AddItemsToCos.class);
         intent.putExtra("item",adaptor.getMlist().get(position));
         intent.putExtra("itemNr",0);
+        startActivity(intent);
+
+
     }
 
     @Override
