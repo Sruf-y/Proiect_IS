@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ProiectSI.R;
@@ -35,24 +36,20 @@ public class angajat_vizualizare_comanda extends AppCompatActivity {
         var adaptor = new Comanda_Angajat_Adaptor(this,(comanda)->{
             Intent intent = new Intent(this, viz_com_full.class);
             intent.putExtra("comanda", comanda);
-
+            startActivity(intent);
             return null;
         });
 
-        /*
-        * Sa se defineasca recyclerview din  R.layout.activity_angajat_vizualizare_comanda ca variabila
-        *
-        * Sa i se seteze layoutManager pentru recycler ca LinearLayoutManager
-        *
-        * Sa i se seteze adapter pentru recycler ca adaptor (cel creat mai sus)
-        *
-        *
-        * Sa fie invocata metoda recyclerview_name.getAdapter().notifyDataSetChanged();
-        *
-        * */
+        //Sa se defineasca recyclerview din  R.layout.activity_angajat_vizualizare_comanda ca variabila
+        RecyclerView recyclerView = findViewById(R.id.recycler);
 
+        //Sa i se seteze layoutManager pentru recycler ca LinearLayoutManager
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
 
+        //Sa i se seteze adapter pentru recycler ca adaptor (cel creat mai sus)
+        recyclerView.setAdapter(adaptor);
 
-
+        //Sa fie invocata metoda recyclerview_name.getAdapter().notifyDataSetChanged();
+        recyclerView.getAdapter().notifyDataSetChanged();
     }
 }
