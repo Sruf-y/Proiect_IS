@@ -12,7 +12,7 @@ class Comanda(var id:String =randomizeID(),
               var list:ArrayList<Meniu_Item> = ArrayList<Meniu_Item>(),
               var listNumberOfs:ArrayList<Int> = ArrayList<Int>(),
               var timp_asteptare:Int = 0,
-              var stare:StareComanda = StareComanda.Nelasata) : Parcelable {
+              var stare:StareComanda = StareComanda.Neplasata) : Parcelable {
 
 
     constructor(lista: ArrayList<Meniu_Item>,lista_numbers:ArrayList<Int>,timp_asteptare:Int):this(){
@@ -70,6 +70,21 @@ class Comanda(var id:String =randomizeID(),
             return string
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

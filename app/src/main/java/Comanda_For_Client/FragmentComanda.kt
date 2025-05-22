@@ -2,12 +2,14 @@ package Comanda_For_Client
 
 import Adaptors.Adaptor_Lista
 import Adaptors.Tip_Adaptor
+import DataClasses.Comanda
 import DataClasses.GlobalVars
 import DataClasses.Meniu_Item
 import DataClasses.StareComanda
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ImageView
@@ -60,6 +62,15 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
         (checkoutButton.layoutParams as ConstraintLayout.LayoutParams).apply {
         }
 
+        checkoutButton.setOnClickListener {
+            GlobalVars.lista_Comenzi.add(GlobalVars.comanda_in_cos)
+            GlobalVars.comanda_in_cos= Comanda();
+            adaptor.updateList(GlobalVars.comanda_in_cos.list)
+            adaptor.notifyDataSetChanged()
+        }
+
+        GlobalVars.lista_items_in_meniu_static
+
         val auth_buton: ImageView = requireView().findViewById(R.id.login_button1)
 
 
@@ -76,7 +87,7 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
         val status_comanda: TextView=requireView().findViewById(R.id.status_comanda)
 
 
-        if(GlobalVars.comanda_in_cos.stare!= StareComanda.Nelasata){
+        if(GlobalVars.comanda_in_cos.stare!= StareComanda.Neplasata){
             status_comanda.visibility= View.VISIBLE
             status_comanda.text= "Status comanda: "+GlobalVars.comanda_in_cos.stare.toString().replace("_"," ")
         } else{

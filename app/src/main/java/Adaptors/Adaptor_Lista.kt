@@ -5,6 +5,7 @@ import DataClasses.GlobalVars
 import DataClasses.Meniu_Item
 import Functii_Utils.Functii
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -122,23 +123,34 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val lista:ArrayList<T>, val context
                 (holder.card.layoutParams as RecyclerView.LayoutParams).setMargins(10.dP,5.dP,10.dP,5.dP)
             }
             is ItemComanda->{
+                try {
 
-                val mancare = mlist[position] as Meniu_Item
 
-                holder.titlu.isSingleLine=true
-                holder.titlu.text =mancare.name
+                    val mancare = mlist[position] as Meniu_Item
 
-                holder.imagine.layoutParams.height=90F.dP
+                    holder.titlu.isSingleLine = true
+                    holder.titlu.text = mancare.name
 
-                (holder.card.layoutParams as RecyclerView.LayoutParams).setMargins(10.dP,8.dP,10.dP,8.dP)
+                    holder.imagine.layoutParams.height = 90F.dP
 
-                val numberOf = GlobalVars.comanda_in_cos.listNumberOfs[position]
+                    (holder.card.layoutParams as RecyclerView.LayoutParams).setMargins(
+                        10.dP,
+                        8.dP,
+                        10.dP,
+                        8.dP
+                    )
+                    var numberOf=0
+                    if(GlobalVars.comanda_in_cos.listNumberOfs.isNotEmpty())
+                        numberOf = GlobalVars.comanda_in_cos.listNumberOfs[position]
 
-                holder.numberOf.apply {
-                    visibility= View.VISIBLE
-                    text= "x "+numberOf.toString()
+                    holder.numberOf.apply {
+                        visibility = View.VISIBLE
+                        text = "x " + numberOf.toString()
+                    }
+                    holder.pret.text = "${"%.2f".format(mancare.price * numberOf)} RON"
+                }catch (ex: Exception){
+                    Log.e("Error","Adaptor_Lista exception at is ItemComanda: ",ex)
                 }
-                holder.pret.text = "${"%.2f".format(mancare.price*numberOf)} RON"
 
             }
             is ItemChecklist->{

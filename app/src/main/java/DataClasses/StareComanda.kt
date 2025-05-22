@@ -1,7 +1,7 @@
 package DataClasses
 
 enum class StareComanda {
-    Nelasata,
+    Neplasata,
     Plasata,
     In_Progres,
     Completa

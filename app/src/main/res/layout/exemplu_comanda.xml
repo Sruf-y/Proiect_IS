@@ -15,7 +15,7 @@
         android:id="@+id/comanda_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="10dp"
         android:text="TextView"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -46,4 +46,55 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.358" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textTimpComanda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/comanda_stare_vizual"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintStart_toEndOf="@+id/comanda_id"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="min"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/comanda_stare_vizual"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textTimpComanda"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/plusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#469E43"
+        app:layout_constraintBottom_toTopOf="@+id/textTimpComanda"
+        app:layout_constraintEnd_toEndOf="@+id/textTimpComanda"
+        app:layout_constraintStart_toStartOf="@+id/textTimpComanda"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/roundedImageViewRounded"
+        app:srcCompat="@drawable/add_material_button" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/minusButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#9E5E43"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textTimpComanda"
+        app:layout_constraintStart_toStartOf="@+id/textTimpComanda"
+        app:layout_constraintTop_toBottomOf="@+id/textTimpComanda"
+        app:shapeAppearance="@style/roundedImageViewRounded"
+        app:srcCompat="@drawable/subtract_material_default" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
