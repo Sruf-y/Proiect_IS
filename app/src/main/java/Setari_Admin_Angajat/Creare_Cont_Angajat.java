@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ProiectSI.R;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import DataClasses.Angajat;
 import DataClasses.GlobalVars;
@@ -19,14 +20,28 @@ import Start_Activity.File_Salvate;
 
 public class Creare_Cont_Angajat extends AppCompatActivity {
 
+    Angajat ang;
+    String angajatpreviousname="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creare_cont_angajat);
         //aici cod
 
+        ang = getIntent().getParcelableExtra("ang",Angajat.class);
+
+
         EditText etUsername = findViewById(R.id.et_username);
         EditText etPassword = findViewById(R.id.et_password);
+
+
+        if(ang!=null){
+            etUsername.setText(ang.username);
+            angajatpreviousname=ang.username;
+            etPassword.setText(ang.password);
+        }
+
         Button btnAdauga = findViewById(R.id.btn_adauga);
 
         btnAdauga.setOnClickListener(new View.OnClickListener() {
@@ -35,8 +50,23 @@ public class Creare_Cont_Angajat extends AppCompatActivity {
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
 
-                Angajat nouAngajat = new Angajat(username, password);
-                adaugaAngajat(nouAngajat);
+                if(ang!=null){
+                    GlobalVars.INSTANCE.getLista_Angajati().stream().filter(p-> Objects.equals(p.username, angajatpreviousname)).findFirst().get().password=password;
+                    GlobalVars.INSTANCE.getLista_Angajati().stream().filter(p-> Objects.equals(p.username, angajatpreviousname)).findFirst().get().username=username;
+
+                    Functii.Companion.SaveAsJson(Creare_Cont_Angajat.this,
+                            File_Salvate.Lista_Angajati.toString(),
+                            GlobalVars.INSTANCE.getLista_Angajati()
+                    );
+
+                    finish();
+                }
+                else{
+                    Angajat nouAngajat = new Angajat(username, password);
+                    adaugaAngajat(nouAngajat);
+                    finish();
+                }
+
             }
         });
     }

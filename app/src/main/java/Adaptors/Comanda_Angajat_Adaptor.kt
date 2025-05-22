@@ -66,7 +66,7 @@ class Comanda_Angajat_Adaptor(val context:Context,val onLongClickDo:((Comanda)->
             }
 
             plusButton.setOnClickListener {
-                comanda.timp_asteptare+=5
+                comanda.timp_asteptare+=1
 
                 // max 4 ore
                 if(comanda.timp_asteptare>480){
@@ -76,7 +76,7 @@ class Comanda_Angajat_Adaptor(val context:Context,val onLongClickDo:((Comanda)->
                 timetextview.text = comanda.timp_asteptare.toString()
             }
             minusButton.setOnClickListener {
-                comanda.timp_asteptare-=5
+                comanda.timp_asteptare-=1
 
                 if(comanda.timp_asteptare<0){
                     comanda.timp_asteptare=0
@@ -105,6 +105,8 @@ class Comanda_Angajat_Adaptor(val context:Context,val onLongClickDo:((Comanda)->
                     }
                     StareComanda.In_Progres -> {
                         color=R.color.indigo
+                        minusButton.visibility=View.INVISIBLE
+                        plusButton.visibility=View.INVISIBLE
                     }
 
                 }

@@ -51,32 +51,20 @@ public class Aperitive extends Fragment implements Adaptor_Lista.onClickListener
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // codul aici se pune
-
-
 
         adaptor = new Adaptor_Lista(Tip_Adaptor.meniu, GlobalVars.INSTANCE.getLista_items_in_meniu_static(),requireContext(),this,this, Categorie.aperitiv);
 
-        /*
-         * Sa se defineasca recyclerview din  R.layout.fragment_aperitive ca variabila, pentru fiecare din cele 4 tab-uri
-         *
-         * Sa i se seteze layoutManager pentru recycler ca LinearLayoutManager          -----//---------
-         *
-         * Sa i se seteze adapter pentru recycler ca adaptor (cel creat mai sus), schimba pentru fiecare din cele 4 pagini categoria de mancare
-         *
-         *
-         * Sa fie invocata metoda recyclerview_name.getAdapter().notifyDataSetChanged();   --------//----------
-         *
-         *
-         *
-         * Dupa care, sa fie setate onCardClick si onCardLongPress ca mai jos pentru fiecare din cele 4 tab-uri.
-         * */
+        // Definirea RecyclerView din layout
+        RecyclerView recyclerView = requireView().findViewById(R.id.recycler);
 
+        // Setarea LinearLayoutManager
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false));
 
+        // Setarea adapter-ului
+        recyclerView.setAdapter(adaptor);
 
-
-
-
+        // Notificarea schimbărilor
+        recyclerView.getAdapter().notifyDataSetChanged();
     }
 
     @Override
@@ -94,5 +82,11 @@ public class Aperitive extends Fragment implements Adaptor_Lista.onClickListener
     public void onCardLongPress(int position, RecyclerView.@NotNull ViewHolder itemviewholder) {
 
         Functii.Companion.CustomSnack( itemviewholder.itemView, adaptor.getMlist().get(position).getNutritionDescription());
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adaptor.notifyDataSetChanged();
     }
 }

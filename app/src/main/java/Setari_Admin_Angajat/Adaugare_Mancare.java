@@ -1,6 +1,7 @@
 package Setari_Admin_Angajat;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,11 +23,13 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import DataClasses.Categorie;
 import DataClasses.Meniu_Item;
 import Functii_Utils.Functii;
 import DataClasses.GlobalVars;
+import Start_Activity.File_Salvate;
 import Start_Activity.StartActivity;
 import kotlin.jvm.internal.MutableLocalVariableReference;
 import kotlin.reflect.KProperty;
@@ -36,6 +39,10 @@ import kotlinx.coroutines.GlobalScope;
 
 public class Adaugare_Mancare extends AppCompatActivity {
 
+    Meniu_Item myitem=null;
+
+    String previousname ="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,12 +51,16 @@ public class Adaugare_Mancare extends AppCompatActivity {
         // asa utilizez o variabila ce a fost facuta globala in StartActivity
         GlobalVars.INSTANCE.getLista_items_in_meniu_static();
 
+        myitem = getIntent().getParcelableExtra("item",Meniu_Item.class);
+
+        if(myitem!=null){
+            previousname = myitem.getName();
+        }
+
 
 
         Spinner tipSpinner = findViewById(R.id.spinner);
         final Categorie[] tip = {Categorie.aperitiv};
-
-
 
         ArrayList<String> spinner_list = new ArrayList<String>(List.of("Aperitiv","Fel Principal","Bautura Spirtoasa","Bautura nespirtoasa"));
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_item_resource,spinner_list);
@@ -98,10 +109,64 @@ public class Adaugare_Mancare extends AppCompatActivity {
         Button buton = findViewById(R.id.admin_confirmare);
 
 
+        if(myitem!=null){
+            denumire.setText(String.valueOf(myitem.getName()));
+            numeimagine.setText(String.valueOf(myitem.getImage_id()));
+            descriere.setText(String.valueOf(myitem.getDescription()));
+            pret.setText(String.valueOf(myitem.getPrice()));
+            valabil.setChecked(myitem.isAvailable());
+            valorinutirionale.setText(String.valueOf(myitem.getNutritionDescription()));
+            switch(myitem.getCategory()){
+                case aperitiv:
+                    tipSpinner.setSelection(0);
+                    break;
+                case fel_principal:
+                    tipSpinner.setSelection(1);
+                    break;
+                case spirtoase:
+                    tipSpinner.setSelection(2);
+                    break;
+                case nespirtoase:
+                    tipSpinner.setSelection(3);
+                    break;
+            }
+
+
+        }
 
         ////////////////// Scrii codul aici/////////////////////////////////
 
+        buton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(myitem!=null){
+                    var a = GlobalVars.INSTANCE.getLista_items_in_meniu_static().stream().filter(p->p.getName().equals(previousname)).findFirst().get();
+                    a.setName(denumire.getText().toString());
+                    a.setImage_id(Integer.parseInt(numeimagine.getText().toString()));
+                    a.setDescription(descriere.getText().toString());
+                    a.setPrice(Double.parseDouble(pret.getText().toString()));
+                    a.setAvailable(valabil.isChecked());
+                    a.setNutritionDescription(valorinutirionale.getText().toString());
+                    a.setCategory(tip[0]);
 
+                    Functii.Companion.SaveAsJson(Adaugare_Mancare.this, File_Salvate.Lista_Meniu.name(),GlobalVars.INSTANCE.getLista_items_in_meniu_static());
+                    finish();
+                }else{
+
+
+                    Meniu_Item item = new Meniu_Item(Integer.parseInt(numeimagine.getText().toString()),
+                            denumire.getText().toString(),
+                            tip[0],
+                            Double.parseDouble(pret.getText().toString()),
+                            valabil.isChecked(),
+                            descriere.getText().toString(),
+                            valorinutirionale.getText().toString());
+                    GlobalVars.INSTANCE.getLista_items_in_meniu_static().add(item);
+                    Functii.Companion.SaveAsJson(Adaugare_Mancare.this, File_Salvate.Lista_Meniu.name(),GlobalVars.INSTANCE.getLista_items_in_meniu_static());
+                    finish();
+                }
+            }
+        });
 
 
 
