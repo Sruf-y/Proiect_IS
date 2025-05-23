@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -51,6 +52,11 @@ public class Creare_Cont_Angajat extends AppCompatActivity {
                 String password = etPassword.getText().toString();
 
                 if(ang!=null){
+
+                    if (username.isEmpty() || password.isEmpty()) {
+                        return;
+                    }
+
                     GlobalVars.INSTANCE.getLista_Angajati().stream().filter(p-> Objects.equals(p.username, angajatpreviousname)).findFirst().get().password=password;
                     GlobalVars.INSTANCE.getLista_Angajati().stream().filter(p-> Objects.equals(p.username, angajatpreviousname)).findFirst().get().username=username;
 
@@ -62,6 +68,16 @@ public class Creare_Cont_Angajat extends AppCompatActivity {
                     finish();
                 }
                 else{
+
+                    if (username.isEmpty() || password.isEmpty()) {
+                        return;
+                    }
+
+                    if(GlobalVars.INSTANCE.getLista_Angajati().stream().anyMatch(p->p.username.equals(username))){
+                        Toast.makeText(Creare_Cont_Angajat.this, "Username-ul exista deja", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
                     Angajat nouAngajat = new Angajat(username, password);
                     adaugaAngajat(nouAngajat);
                     finish();

@@ -124,74 +124,8 @@ class Functii {
 
             if (lista_items_in_meniu_static.isEmpty()) {
 
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Mamaliguta Cu Ceapa",
-                        Categorie.fel_principal,
-                        24.5,
-                        true,
-                        "Mamaliga ca acasa facuta de bunica bucatareasa.",
-                        "30g otet \n10g sare \n500ml lapte \n1kgmalai"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Fish and Chips",
-                        Categorie.fel_principal,
-                        26.50,
-                        true,
-                        "peste cu cartofi pai",
-                        "Valori nutriționale : Calorii: 600 kcal"
 
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Paste Carbonara",
-                        Categorie.fel_principal,
-                        27.70,
-                        true,
-                        "paste cu cascaval si carne de porc",
-                        "Valori nutritionale: 163.85 Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Pizza Taraneasca",
-                        Categorie.fel_principal,
-                        57.80,
-                        true,
-                        "pizza cu legume si sunca",
-                        "Valori nutritionale:312 Kcal"
-                    )
-                )
-
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Aripioare de pui picante/nepicante",
-                        Categorie.aperitiv,
-                        27.50,
-                        true,
-                        "aripioare cu pesmet",
-                        "Valori nutritionale:203 Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Limonada",
-                        Categorie.nespirtoase,
-                        14.40,
-                        true,
-                        "bautura din zeama de lamaie",
-                        "Valori nutritionale:40.2 Kcal"
-                    )
-                )
+                // BĂUTURI SPIRTOASE (Alcoholic Drinks)
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
                         -1,
@@ -199,247 +133,322 @@ class Functii {
                         Categorie.spirtoase,
                         23.20,
                         true,
-                        "cocktail",
-                        "Valori nutritionale: 214 Kcal"
+                        "Cocktail cubanez cu rom și mentă",
+                        """
+        Ingrediente:
+        - 50ml rom alb
+        - 6 frunze de mentă proaspătă
+        - 25ml sirop de zahăr
+        - 25ml suc de lămâie proaspăt
+        - Apă minerală
+        - Gheață cuburi
+        
+        Alcool: 15% vol.
+        Vegetarian: Da
+        Picant: Nu
+        Calorii: 214 kcal
+        """
                     )
                 )
+
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
                         -1,
-                        "Whisky",
+                        "Whisky Single Malt",
                         Categorie.spirtoase,
                         22.00,
                         true,
-                        "Bautura alcoolica",
-                        "Valori Nutritionale:250 Kcal"
+                        "Băutură alcoolică îmbătrânită în butoi de stejar",
+                        """
+        Ingrediente:
+        - Whisky single malt (40ml)
+        - Gheață (opțional)
+        
+        Alcool: 40% vol.
+        Vegetarian: Da
+        Picant: Nu
+        Calorii: 250 kcal
+        """
+                    )
+                )
 
-                    )
-                )
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
                         -1,
-                        "Fresh de Portocale",
-                        Categorie.nespirtoase,
-                        15.59,
-                        true,
-                        "bautura din portocale stoarse",
-                        "Valori Nutritionale:79Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Ciorba de perisoare",
-                        Categorie.fel_principal,
-                        13.50,
-                        true,
-                        "Ciorba tipica romaneasca",
-                        "Valori nutritionale:47.28"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Hot Dog",
-                        Categorie.fel_principal,
-                        8.50,
-                        true,
-                        "Hot Dog cu cabanosi",
-                        "Valori Nutririonale:289 Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Mici",
-                        Categorie.aperitiv,
-                        14.50,
-                        true,
-                        "Un fel de chiftele la gratar",
-                        "Valori Nutritionale: 178 Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Salata de Varza",
-                        Categorie.aperitiv,
-                        4.00,
-                        true,
-                        "Varza curda tocata",
-                        "Valori Nutritionale:152.5 Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Gulas",
-                        Categorie.fel_principal,
-                        30.00,
-                        true,
-                        "tocana de carne si legume",
-                        "Valori Nutritionale:250Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Ceafa de Porc ",
-                        Categorie.aperitiv,
-                        15.90,
-                        true,
-                        "ceafa de porc gatita la gratar",
-                        "Valori Nutritionale:250.5 Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Pulpe la gratar cu legume",
-                        Categorie.fel_principal,
-                        49.50,
-                        true,
-                        "pulpe si legume proaspete",
-                        "Valori Nutritionale: 239 Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Pilaf de orez",
-                        Categorie.aperitiv,
-                        7.30,
-                        true,
-                        "Orez din grau",
-                        "Valori Nutritionale: 359 Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Mazare",
-                        Categorie.aperitiv,
-                        6.30,
-                        true,
-                        "Mazare cu sare si piper",
-                        "Valori Nutritionale:81Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Ardei Umbluti",
-                        Categorie.fel_principal,
-                        8.40,
-                        true,
-                        "Ardei umbluti cu carne,legume,orez",
-                        "Valori Nutritionale:30.7 Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Halva",
-                        Categorie.aperitiv,
-                        14.35,
-                        true,
-                        "Specialitate de cofetarie, originara din India",
-                        "Valori Nutritionale:468.9 Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Clatite",
-                        Categorie.aperitiv,
-                        30.00,
-                        true,
-                        "Preparat culinar obtinut prin coacerea unei foi subtiri",
-                        "Valori Nutritionale:196.16 Kcal"
-
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Burger",
-                        Categorie.fel_principal,
-                        25.60,
-                        true,
-                        "mancare servita rapid",
-                        "Valori Nutritionale:294.9 Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Placinta cu Branza",
-                        Categorie.aperitiv,
-                        19.99,
-                        true,
-                        "Preparat din Grecia Antica si Roma",
-                        "Valori Nutritionale: 164.18 Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Carnati",
-                        Categorie.aperitiv,
-                        25.00,
-                        true,
-                        "Aliment din carne tocata, slanina, sare, condimente",
-                        "Valori Nutritionale: 300.9 Kcal"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Frigarui",
-                        Categorie.aperitiv,
-                        20.00,
-                        true,
-                        "Mancare romaneasca ce consta in bucati  mici de carne sau legume",
-                        "Valori Nutritionale: 114.97"
-                    )
-                )
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Mamaliga",
-                        Categorie.aperitiv,
+                        "Vin Roșu Sec",
+                        Categorie.spirtoase,
                         18.00,
                         true,
-                        "Preparat din faina de porumb",
-                        "Valori Nutritionale: 70 Kcal"
+                        "Vin roșu sec de podgorie românească",
+                        """
+        Ingrediente:
+        - Vin roșu (150ml)
+        - Struguri: Merlot/Cabernet Sauvignon
+        
+        Alcool: 13% vol.
+        Vegetarian: Da
+        Picant: Nu
+        Calorii: 125 kcal
+        """
                     )
                 )
+
+
+// APERITIVE (Appetizers)
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
                         -1,
-                        "Bere",
-                        Categorie.spirtoase,
-                        30.00,
+                        "Bruschete cu Roșii",
+                        Categorie.aperitiv,
+                        15.0,
                         true,
-                        "Bautura alcoolica",
-                        "Valori Nutritionale:43.3 Kcal"
+                        "Pâine prăjită cu roșii proaspete și busuioc",
+                        """
+        Ingrediente:
+        - Pâine italiană
+        - Roșii cherry
+        - Busuioc proaspăt
+        - Ulei de măsline
+        - Usturoi
+        - Sare
+        
+        Vegetarian: Da
+        Picant: Nu
+        """
                     )
                 )
+
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
                         -1,
-                        "Vin",
-                        Categorie.spirtoase,
-                        58.00,
+                        "Bruschete cu Somon",
+                        Categorie.aperitiv,
+                        22.0,
                         true,
-                        "Bautura alcoolica obtinuta prin fermentarea strugurilor",
-                        "Valori Nutritionale: 82.9 Kcal"
+                        "Pâine prăjită cu somon afumat și cremă de avocat",
+                        """
+        Ingrediente:
+        - Pâine integrală
+        - Somon afumat
+        - Avocat
+        - Lămâie
+        - Mărar
+        - Smântână
+        
+        Vegetarian: Nu
+        Picant: Nu
+        """
+                    )
+                )
+
+// FELURI PRINCIPALE (Main Courses)
+                lista_items_in_meniu_static.add(
+                    Meniu_Item(
+                        -1,
+                        "Mămăligă cu Ceapă",
+                        Categorie.fel_principal,
+                        24.5,
+                        true,
+                        "Mămăligă ca acasă făcută de bunica bucătăreasa",
+                        """
+        Ingrediente:
+        - 1 kg mălai
+        - 500 ml lapte
+        - 30 g oțet
+        - 10 g sare
+        - Ceapă prăjită
+        
+        Vegetarian: Da
+        Picant: Nu
+        """
+                    )
+                )
+
+                lista_items_in_meniu_static.add(
+                    Meniu_Item(
+                        -1,
+                        "Ciorbă de Burtă Picantă",
+                        Categorie.fel_principal,
+                        28.0,
+                        true,
+                        "Ciorbă tradițională cu burtă și usturoi",
+                        """
+        Ingrediente:
+        - Burtă de vită
+        - Smântână
+        - Usturoi
+        - Ardei iute
+        - Morcov
+        - Pătrunjel
+        
+        Vegetarian: Nu
+        Picant: Da (3/5 iuțeală)
+        """
+                    )
+                )
+
+// BĂUTURI NESPIRTOASE (Non-alcoholic Drinks)
+                lista_items_in_meniu_static.add(
+                    Meniu_Item(
+                        -1,
+                        "Limonadă",
+                        Categorie.nespirtoase,
+                        12.0,
+                        true,
+                        "Limonadă naturală cu lămâie proaspătă",
+                        """
+        Ingrediente:
+        - Apă minerală
+        - Lămâie
+        - Frunze de mentă
+        - Fructoză (opțional)
+        
+        Vegetarian: Da
+        Picant: Nu
+        """
+                    )
+                )
+
+                // FELURI PRINCIPALE (Main Courses)
+                lista_items_in_meniu_static.add(
+                    Meniu_Item(
+                        -1,
+                        "Mămăligă cu Ceapă",
+                        Categorie.fel_principal,
+                        24.5,
+                        true,
+                        "Mămăligă ca acasă făcută de bunica bucătăreasa",
+                        """
+        Ingrediente:
+        - 1 kg mălai
+        - 500 ml lapte
+        - 30 g oțet
+        - 10 g sare
+        - Ceapă prăjită
+        
+        Vegetarian: Da
+        Picant: Nu
+        Calorii: 300 kcal
+        """
+                    )
+                )
+
+                lista_items_in_meniu_static.add(
+                    Meniu_Item(
+                        -1,
+                        "Fish and Chips",
+                        Categorie.fel_principal,
+                        26.50,
+                        true,
+                        "Peste cu cartofi pai",
+                        """
+        Ingrediente:
+        - File de cod (200g)
+        - Făină
+        - Bere (pentru aluat)
+        - Cartofi (300g)
+        - Ulei pentru prăjit
+        
+        Vegetarian: Nu
+        Picant: Nu
+        Calorii: 600 kcal
+        """
+                    )
+                )
+
+                lista_items_in_meniu_static.add(
+                    Meniu_Item(
+                        -1,
+                        "Paste Carbonara",
+                        Categorie.fel_principal,
+                        27.70,
+                        true,
+                        "Paste cu cașcaval și carne de porc",
+                        """
+        Ingrediente:
+        - Spaghete (200g)
+        - Ouă
+        - Guanciale (100g)
+        - Pecorino Romano
+        - Parmezan
+        - Piper negru
+        
+        Vegetarian: Nu
+        Picant: Nu
+        Calorii: 550 kcal
+        """
+                    )
+                )
+
+// APERITIVE (Appetizers)
+                lista_items_in_meniu_static.add(
+                    Meniu_Item(
+                        -1,
+                        "Aripioare de pui",
+                        Categorie.aperitiv,
+                        27.50,
+                        true,
+                        "Aripioare cu pesmet",
+                        """
+        Ingrediente:
+        - Aripioare de pui (500g)
+        - Pesmet
+        - Făină
+        - Ouă
+        - Condimente
+        
+        Vegetarian: Nu
+        Picant: Opțional
+        Calorii: 350 kcal
+        """
+                    )
+                )
+
+                // BĂUTURI NESPIRTOASE (Non-Alcoholic Drinks)
+                lista_items_in_meniu_static.add(
+                    Meniu_Item(
+                        -1,
+                        "Apă Plată",
+                        Categorie.nespirtoase,
+                        8.00,
+                        true,
+                        "Apă naturală plată de izvor",
+                        """
+        Ingrediente:
+        - Apă minerală naturală plată (500ml)
+        
+        Vegetarian: Da
+        Picant: Nu
+        Calorii: 0 kcal
+        Mineralizare: slab mineralizată
+        Sursă: Izvorul Minunilor, România
+        """
+                    )
+                )
+
+                lista_items_in_meniu_static.add(
+                    Meniu_Item(
+                        -1,
+                        "Apă Minerală",
+                        Categorie.nespirtoase,
+                        8.00,
+                        true,
+                        "Apă minerală carbogazoasă",
+                        """
+        Ingrediente:
+        - Apă minerală carbogazoasă (500ml)
+        - Dioxid de carbon
+        
+        Vegetarian: Da
+        Picant: Nu
+        Calorii: 0 kcal
+        Mineralizare: medie
+        Sursă: Izvorul Zăganu, România
+        """
                     )
                 )
 
             }
-
-
             SaveAsJson(
                 context,
                 File_Salvate.Lista_Meniu.toString(),

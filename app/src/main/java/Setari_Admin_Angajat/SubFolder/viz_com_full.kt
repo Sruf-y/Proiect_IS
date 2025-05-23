@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ProiectSI.R
 
+// nefolosit, sper ca nu o sa trebuiasca sa folosim
 class viz_com_full : AppCompatActivity(),Adaptor_Lista.onClickListener,Adaptor_Lista.onLongPressListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +37,7 @@ class viz_com_full : AppCompatActivity(),Adaptor_Lista.onClickListener,Adaptor_L
 
 
             recycler.adapter=adaptor
+            recycler.layoutManager=linearLayoutManager
 
             adaptor.notifyDataSetChanged()
         }

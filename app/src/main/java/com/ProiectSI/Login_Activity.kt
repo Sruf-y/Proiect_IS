@@ -34,7 +34,7 @@ class Login_Activity : AppCompatActivity() {
         val admin_username:String = "admin@restaurant.null"
         val admin_password:String = "adminRestaurantMagic12"
 
-
+        // normal mode
         if(!GlobalVars.APP_IN_TEST_MODE) {
             loginbuton.setOnClickListener {
                 if (username.text.toString() == admin_username && password.text.toString() == admin_password) {
@@ -46,6 +46,9 @@ class Login_Activity : AppCompatActivity() {
                 } else {
                     for (i in lista_Angajati) {
                         if (i.username == username.text.toString() && i.password == password.text.toString()) {
+
+                            Toast.makeText(this, "Combinatie incorecta!", Toast.LENGTH_SHORT).show()
+
                             val intent = Intent(this, AdminActivity::class.java)
                             intent.putExtra("arg1", username.text.toString())
                             intent.putExtra("arg2", password.text.toString())
@@ -54,7 +57,7 @@ class Login_Activity : AppCompatActivity() {
                             break;
                         }
                     }
-                    Toast.makeText(this, "Combinatie incorecta!", Toast.LENGTH_SHORT)
+
                 }
             }
         }

@@ -5,6 +5,7 @@ import DataClasses.GlobalVars
 import DataClasses.Meniu_Item
 import Functii_Utils.Functii
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.appcompat.app.ActionBar.LayoutParams
 import androidx.cardview.widget.CardView
@@ -50,6 +52,7 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val lista:ArrayList<T>, val context
         val pret: TextView = itemView.findViewById(R.id.Pret)
         val imagine: ShapeableImageView=itemView.findViewById(R.id.imageView)
         val card:CardView = itemView.findViewById(R.id.card)
+        val info:ImageView = itemView.findViewById(R.id.imageView7)
     }
 
     class ItemComanda(itemView:View):RecyclerView.ViewHolder(itemView){
@@ -121,6 +124,11 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val lista:ArrayList<T>, val context
                 holder.pret.text = "${"%.2f".format(mancare.price)} RON"
 
                 (holder.card.layoutParams as RecyclerView.LayoutParams).setMargins(10.dP,5.dP,10.dP,5.dP)
+
+                holder.info.setOnClickListener {
+                    val intent = Intent(context, NutritionPopup::class.java)
+                    context.startActivity(intent)
+                }
             }
             is ItemComanda->{
                 try {

@@ -43,6 +43,13 @@ public class AdminActivity extends AppCompatActivity {
         Button button_schimbare_date_item_meniu = findViewById(R.id.admin_setari_meniu);
         //button Conturi Angajati
         Button button_admin_vizualizare_conturi_angajati = findViewById(R.id.admin_vizualizare_conturi_angajati);
+        Button buton_adaugare_item = findViewById(R.id.admin_adaugare_item);
+
+
+
+        Button button_agnajat_schimba_valabilitate = findViewById(R.id.angajat_schimbare_valabilitate);
+        //button vizualizarea comenzii        NECOMPLETATA
+        Button button_admin_vizualizare_comenzi = findViewById(R.id.admin_vizualizare_comenzi);
 
 
 
@@ -73,48 +80,51 @@ public class AdminActivity extends AppCompatActivity {
             });
 
 
+            //Button adaugare item
 
+            buton_adaugare_item.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent_nou = new Intent(AdminActivity.this, Adaugare_Mancare.class);
+                    startActivity(intent_nou);
+                }
+            });
 
-
+            button_agnajat_schimba_valabilitate.setVisibility(View.GONE);
+            button_admin_vizualizare_comenzi.setVisibility(View.GONE);
 
         } else {
+            buton_adaugare_item.setVisibility(View.GONE);
             button_creare_angajat.setVisibility(View.GONE);
             button_schimbare_date_item_meniu.setVisibility(View.GONE);
             button_admin_vizualizare_conturi_angajati.setVisibility(View.GONE);
+
+
+
+
+            button_agnajat_schimba_valabilitate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent_nou=new Intent(AdminActivity.this, Schimbare_Valabilitate_Item_Angajat.class );
+                    startActivity(intent_nou);
+                }
+            });
+
+            button_admin_vizualizare_comenzi.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent_nou=new Intent(AdminActivity.this, angajat_vizualizare_comanda.class );
+                    startActivity(intent_nou);
+                }
+            });
         }
 
-        //Button adaugare item
-        Button buton_adaugare_item = findViewById(R.id.admin_adaugare_item);
-        buton_adaugare_item.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent_nou = new Intent(AdminActivity.this, Adaugare_Mancare.class);
-                startActivity(intent_nou);
-            }
-        });
 
 
-        Button button_agnajat_schimba_valabilitate = findViewById(R.id.angajat_schimbare_valabilitate);
-
-        button_agnajat_schimba_valabilitate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                  Intent intent_nou=new Intent(AdminActivity.this, Schimbare_Valabilitate_Item_Angajat.class );
-                  startActivity(intent_nou);
-            }
-        });
 
 
-        //button vizualizarea comenzii        NECOMPLETATA
-        Button button_admin_vizualizare_comenzi = findViewById(R.id.admin_vizualizare_comenzi);
 
-        button_admin_vizualizare_comenzi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                  Intent intent_nou=new Intent(AdminActivity.this, angajat_vizualizare_comanda.class );
-                  startActivity(intent_nou);
-            }
-        });
+
 
 
 

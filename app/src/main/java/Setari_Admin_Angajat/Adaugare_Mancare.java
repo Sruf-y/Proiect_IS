@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -57,7 +58,7 @@ public class Adaugare_Mancare extends AppCompatActivity {
             previousname = myitem.getName();
         }
 
-
+        TextView bigtitle = findViewById(R.id.bigTitle);
 
         Spinner tipSpinner = findViewById(R.id.spinner);
         final Categorie[] tip = {Categorie.aperitiv};
@@ -131,6 +132,7 @@ public class Adaugare_Mancare extends AppCompatActivity {
                     break;
             }
 
+            bigtitle.setText("Editare Item: "+previousname);
 
         }
 

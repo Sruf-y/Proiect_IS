@@ -107,6 +107,7 @@ class StartActivity : AppCompatActivity() {
         Functii.CheckNewInstallLoadList(this)
 
 
+
     }
 
     private fun makeCurrentFragment(fragment: Fragment,container:FragmentContainerView) {

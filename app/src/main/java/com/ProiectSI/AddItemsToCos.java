@@ -44,7 +44,7 @@ public class AddItemsToCos extends AppCompatActivity {
         // Leaga clasa MainActivity de design-ul activity_main
         setContentView(R.layout.activity_additemstocos);
 
-
+        TextView titleview = findViewById(R.id.foodtitle);
         // leaga obiectele din design de date in cod
         //        data                     obiect din design
         TextView text_box = findViewById(R.id.firsttextview);
@@ -66,8 +66,12 @@ public class AddItemsToCos extends AppCompatActivity {
             return;
         }
 
+        assert item != null;
+        titleview.setText(item.getName());
+
         if(GlobalVars.INSTANCE.getComanda_in_cos().getList().contains(item)){
             numar=GlobalVars.INSTANCE.getComanda_in_cos().getListNumberOfs().get(GlobalVars.INSTANCE.getComanda_in_cos().getList().indexOf(item));
+
         }
         else{
 
@@ -79,7 +83,7 @@ public class AddItemsToCos extends AppCompatActivity {
 
 
 
-        infotextview.setText(item.getDescription()+"\n\n\n\n"+item.getNutritionDescription());
+        infotextview.setText(item.getDescription()+"\n\n\n\nValori nutritionale:\n"+item.getNutritionDescription());
 
 
 
