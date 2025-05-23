@@ -1,11 +1,13 @@
 package Adaptors
 
 import DataClasses.Categorie
+import DataClasses.Comanda
 import DataClasses.GlobalVars
 import DataClasses.Meniu_Item
 import Functii_Utils.Functii
 import android.content.Context
 import android.content.Intent
+import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -17,21 +19,26 @@ import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.appcompat.app.ActionBar.LayoutParams
 import androidx.cardview.widget.CardView
+import androidx.collection.intIntMapOf
 import androidx.compose.ui.unit.Constraints
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.marginBottom
 import androidx.recyclerview.widget.RecyclerView
 import com.ProiectSI.KotlinUtils.Companion.dP
 import com.ProiectSI.R
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.android.material.imageview.ShapeableImageView
 
-class Adaptor_Lista<T>(val tip: Tip_Adaptor, val lista:ArrayList<T>, val context: Context, val clickListener: onClickListener, val longPressListener: onLongPressListener, val filtru: Categorie?=null):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class Adaptor_Lista<T>(val tip: Tip_Adaptor, var lista:ArrayList<T>, val context: Context, val clickListener: onClickListener, val longPressListener: onLongPressListener, val filtru: Categorie?=null,val comanda: Comanda?=null):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     val mlist: ArrayList<T>
         get(){if(tip == Tip_Adaptor.meniu && filtru!=null)
                     return ArrayList<Meniu_Item>((lista as ArrayList<Meniu_Item>).filter { p->p.category== filtru }.filter { p->p.isAvailable }) as ArrayList<T>
+                else if(tip== Tip_Adaptor.comanda && comanda!=null)
+                    return comanda.list as ArrayList<T>
                 else
                     return lista
         }
@@ -65,7 +72,7 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val lista:ArrayList<T>, val context
     class ItemChecklist(itemView:View):RecyclerView.ViewHolder(itemView){
         val titlu:TextView = itemView.findViewById(R.id.titlu)
         val checkbox:MaterialCheckBox = itemView.findViewById(R.id.ValabilCheckBox)
-
+        val imagine: ShapeableImageView = itemView.findViewById(R.id.imageView)
         val card:CardView = itemView.findViewById(R.id.card)
         val overlay: ConstraintLayout = itemView.findViewById(R.id.overlay)
     }
@@ -118,7 +125,20 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val lista:ArrayList<T>, val context
 
                 holder.titlu.isSingleLine=false
 
-                holder.imagine.layoutParams.height=130F.dP
+                //holder.imagine.layoutParams.height=130F.dP
+
+                holder.imagine.setImageResource(mancare.image_id)
+
+
+                Glide.with(context).clear(holder.imagine)
+                try {
+                    Glide.with(context)
+                        .load(mancare.image_id)
+                        .error(R.drawable.sarmale)
+                        .into(holder.imagine)
+                }catch (ex: Exception){
+                    Log.e("Errors","Glide Exception in Adaptor_Lista",ex)
+                }
 
                 holder.titlu.text = mancare.name
                 holder.pret.text = "${"%.2f".format(mancare.price)} RON"
@@ -131,14 +151,24 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val lista:ArrayList<T>, val context
             }
             is ItemComanda->{
                 try {
+                    var mancare: Meniu_Item
 
-
-                    val mancare = mlist[position] as Meniu_Item
+                    mancare = mlist[position] as Meniu_Item
 
                     holder.titlu.isSingleLine = true
                     holder.titlu.text = mancare.name
 
-                    holder.imagine.layoutParams.height = 90F.dP
+                    holder.card.layoutParams.height = 90F.dP
+
+                    try {
+                        Glide.with(context)
+                            .load(mancare.image_id)
+                            .error(R.drawable.sarmale)
+                            .diskCacheStrategy(DiskCacheStrategy.ALL)
+                            .into(holder.imagine)
+                    }catch (ex: Exception){
+                        Log.e("Errors","Glide Exception in Adaptor_Lista",ex)
+                    }
 
                     (holder.card.layoutParams as RecyclerView.LayoutParams).setMargins(
                         10.dP,
@@ -147,14 +177,22 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val lista:ArrayList<T>, val context
                         8.dP
                     )
                     var numberOf=0
-                    if(GlobalVars.comanda_in_cos.listNumberOfs.isNotEmpty())
+                    if(comanda==null)
                         numberOf = GlobalVars.comanda_in_cos.listNumberOfs[position]
+                    else{
+                        numberOf = comanda?.listNumberOfs[position]?:1
+                    }
 
                     holder.numberOf.apply {
                         visibility = View.VISIBLE
                         text = "x " + numberOf.toString()
                     }
                     holder.pret.text = "${"%.2f".format(mancare.price * numberOf)} RON"
+
+
+
+
+
                 }catch (ex: Exception){
                     Log.e("Error","Adaptor_Lista exception at is ItemComanda: ",ex)
                 }
@@ -164,6 +202,16 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val lista:ArrayList<T>, val context
                 val mancare = mlist[position] as Meniu_Item
                 holder.titlu.text=mancare.name
                 holder.titlu.isSingleLine=false
+
+                try {
+                    Glide.with(context)
+                        .load(mancare.image_id)
+                        .error(R.drawable.sarmale)
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .into(holder.imagine)
+                }catch (ex: Exception){
+                    Log.e("Errors","Glide Exception in Adaptor_Lista",ex)
+                }
 
                 holder.checkbox.isChecked=mancare.isAvailable
 
@@ -211,8 +259,7 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val lista:ArrayList<T>, val context
 
     fun updateList( newList:ArrayList<T>){
 
-        mlist.clear()
-        mlist.addAll(newList)
+        lista=newList
         notifyDataSetChanged()
     }
 

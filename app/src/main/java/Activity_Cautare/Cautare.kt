@@ -95,16 +95,16 @@ class Cautare : AppCompatActivity(), Adaptor_Lista.onClickListener, Adaptor_List
 
     fun initializeRecycler(){
 
-        val lista_fara_unavailable= lista_items_in_meniu_static.filter { p-> p.isAvailable } as ArrayList
+        val lista_fara_unavailable= lista_items_in_meniu_static.filter { p-> p.isAvailable } as ArrayList<Meniu_Item>
 
 
         context = this
         recycler = findViewById(R.id.recyclerViewCautare);
         recycler.layoutManager=LinearLayoutManager(context);
-        adaptor=Adaptor_Lista(Tip_Adaptor.meniu,ArrayList<Meniu_Item>(),context,this,this)
+        adaptor=Adaptor_Lista(Tip_Adaptor.meniu,lista_fara_unavailable,context,this,this)
         recycler.adapter = adaptor
-        adaptor.updateList(lista_fara_unavailable)
-        recycler.adapter?.notifyDataSetChanged()
+        //adaptor.updateList(lista_fara_unavailable)
+        adaptor.notifyDataSetChanged()
     }
 
     override fun onResume() {

@@ -6,6 +6,7 @@ import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -20,6 +21,8 @@ import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.navigation.ActivityNavigator;
+
+import com.bumptech.glide.Glide;
 
 import DataClasses.GlobalVars;
 import DataClasses.Meniu_Item;
@@ -59,6 +62,8 @@ public class AddItemsToCos extends AppCompatActivity {
 
         TextView infotextview = findViewById(R.id.textView7);
 
+        ImageView image = findViewById(R.id.imageView6);
+
         item = getIntent().getParcelableExtra("item", Meniu_Item.class);
         numar = getIntent().getParcelableExtra("itemNr", Integer.class);
         if(item==null && numar==null){
@@ -68,6 +73,11 @@ public class AddItemsToCos extends AppCompatActivity {
 
         assert item != null;
         titleview.setText(item.getName());
+        Glide.with(this)
+                .asDrawable()
+                .error(R.drawable.sarmale)
+                .load(item.getImage_id())
+                .into(image);
 
         if(GlobalVars.INSTANCE.getComanda_in_cos().getList().contains(item)){
             numar=GlobalVars.INSTANCE.getComanda_in_cos().getListNumberOfs().get(GlobalVars.INSTANCE.getComanda_in_cos().getList().indexOf(item));

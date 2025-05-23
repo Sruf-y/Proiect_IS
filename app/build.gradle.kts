@@ -9,6 +9,7 @@ android {
     namespace = "com.ProiectSI"
     compileSdk = 35
 
+
     defaultConfig {
         applicationId = "com.ProiectSI"
         minSdk = 33
@@ -78,6 +79,6 @@ dependencies {
 
     implementation("de.greenrobot:eventbus:2.4.0")
 
-
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
 }

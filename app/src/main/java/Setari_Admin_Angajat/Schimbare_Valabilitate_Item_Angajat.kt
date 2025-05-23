@@ -58,8 +58,7 @@ class Schimbare_Valabilitate_Item_Angajat : AppCompatActivity(),Adaptor_Lista.on
         val saveButton = findViewById<TextView>(R.id.textView6)
 
         saveButton.setOnClickListener {
-            lista_items_in_meniu_static.clear()
-            lista_items_in_meniu_static.addAll(adaptor.mlist)
+
             Functii.SaveAsJson(this,File_Salvate.Lista_Meniu.toString(), lista_items_in_meniu_static)
         }
 
@@ -72,14 +71,19 @@ class Schimbare_Valabilitate_Item_Angajat : AppCompatActivity(),Adaptor_Lista.on
 
     }
 
+    override fun onPause() {
+        super.onPause()
+
+        Functii.SaveAsJson(this,File_Salvate.Lista_Meniu.toString(), lista_items_in_meniu_static)
+    }
+
     fun initializeRecycler(){
         myContext = this
         recycler = findViewById(R.id.recycler_checkboxes);
         recycler.layoutManager= LinearLayoutManager(myContext);
         recycler.adapter=
-            Adaptor_Lista(Tip_Adaptor.check, ArrayList<Meniu_Item>(),myContext,this,this)
+            Adaptor_Lista(Tip_Adaptor.check, lista_items_in_meniu_static,myContext,this,this,null,null)
         adaptor= recycler.adapter as Adaptor_Lista<Meniu_Item>
-        adaptor.updateList(lista_items_in_meniu_static)
         recycler.adapter?.notifyDataSetChanged()
     }
 

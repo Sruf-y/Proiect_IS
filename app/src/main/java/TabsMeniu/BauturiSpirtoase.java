@@ -44,7 +44,7 @@ public class BauturiSpirtoase extends Fragment implements Adaptor_Lista.onClickL
 
 
         // Crearea adaptorului cu categoria pentru băuturi spirtoase
-        adaptor = new Adaptor_Lista(Tip_Adaptor.meniu, GlobalVars.INSTANCE.getLista_items_in_meniu_static(),requireContext(),this,this, Categorie.spirtoase);
+        adaptor = new Adaptor_Lista(Tip_Adaptor.meniu, GlobalVars.INSTANCE.getLista_items_in_meniu_static(),requireContext(),this,this, Categorie.spirtoase,null);
 
         // Definirea RecyclerView din layout
         RecyclerView recyclerView = requireView().findViewById(R.id.recycler);
@@ -75,6 +75,6 @@ public class BauturiSpirtoase extends Fragment implements Adaptor_Lista.onClickL
     @Override
     public void onResume() {
         super.onResume();
-        adaptor.notifyDataSetChanged();
+        adaptor.updateList(GlobalVars.INSTANCE.getLista_items_in_meniu_static());
     }
 }

@@ -29,7 +29,7 @@ import Functii_Utils.Functii;
 public class FeluriPrincipale extends Fragment implements Adaptor_Lista.onClickListener,Adaptor_Lista.onLongPressListener {
 
     Adaptor_Lista<Meniu_Item> adaptor;
-
+    RecyclerView recyclerView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -44,10 +44,10 @@ public class FeluriPrincipale extends Fragment implements Adaptor_Lista.onClickL
 
 
         // Crearea adaptorului cu categoria pentru feluri principale
-        adaptor = new Adaptor_Lista(Tip_Adaptor.meniu, GlobalVars.INSTANCE.getLista_items_in_meniu_static(),requireContext(),this,this, Categorie.fel_principal);
+        adaptor = new Adaptor_Lista(Tip_Adaptor.meniu, GlobalVars.INSTANCE.getLista_items_in_meniu_static(),requireContext(),this,this, Categorie.fel_principal,null);
 
         // Definirea RecyclerView din layout
-        RecyclerView recyclerView = requireView().findViewById(R.id.recycler);
+        recyclerView = requireView().findViewById(R.id.recycler);
 
         // Setarea LinearLayoutManager
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false));
@@ -75,6 +75,8 @@ public class FeluriPrincipale extends Fragment implements Adaptor_Lista.onClickL
     @Override
     public void onResume() {
         super.onResume();
-        adaptor.notifyDataSetChanged();
+
+        adaptor.updateList(GlobalVars.INSTANCE.getLista_items_in_meniu_static());
+
     }
 }

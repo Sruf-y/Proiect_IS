@@ -128,7 +128,7 @@ class Functii {
                 // BĂUTURI SPIRTOASE (Alcoholic Drinks)
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
-                        -1,
+                        R.drawable.mojito,
                         "Mojito",
                         Categorie.spirtoase,
                         23.20,
@@ -153,7 +153,7 @@ class Functii {
 
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
-                        -1,
+                        R.drawable.whisky_single_malt,
                         "Whisky Single Malt",
                         Categorie.spirtoase,
                         22.00,
@@ -174,7 +174,7 @@ class Functii {
 
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
-                        -1,
+                        R.drawable.vin_rosu_sec,
                         "Vin Roșu Sec",
                         Categorie.spirtoase,
                         18.00,
@@ -194,10 +194,10 @@ class Functii {
                 )
 
 
-// APERITIVE (Appetizers)
+
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
-                        -1,
+                        R.drawable.bruschete_cu_rosii,
                         "Bruschete cu Roșii",
                         Categorie.aperitiv,
                         15.0,
@@ -220,7 +220,7 @@ class Functii {
 
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
-                        -1,
+                        R.drawable.bruschete_cu_somon,
                         "Bruschete cu Somon",
                         Categorie.aperitiv,
                         22.0,
@@ -242,31 +242,11 @@ class Functii {
                 )
 
 // FELURI PRINCIPALE (Main Courses)
-                lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
-                        "Mămăligă cu Ceapă",
-                        Categorie.fel_principal,
-                        24.5,
-                        true,
-                        "Mămăligă ca acasă făcută de bunica bucătăreasa",
-                        """
-        Ingrediente:
-        - 1 kg mălai
-        - 500 ml lapte
-        - 30 g oțet
-        - 10 g sare
-        - Ceapă prăjită
-        
-        Vegetarian: Da
-        Picant: Nu
-        """
-                    )
-                )
+
 
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
-                        -1,
+                        R.drawable.ciorba_de_burta_picanta,
                         "Ciorbă de Burtă Picantă",
                         Categorie.fel_principal,
                         28.0,
@@ -287,10 +267,10 @@ class Functii {
                     )
                 )
 
-// BĂUTURI NESPIRTOASE (Non-alcoholic Drinks)
+
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
-                        -1,
+                        R.drawable.limonada,
                         "Limonadă",
                         Categorie.nespirtoase,
                         12.0,
@@ -309,10 +289,9 @@ class Functii {
                     )
                 )
 
-                // FELURI PRINCIPALE (Main Courses)
+
                 lista_items_in_meniu_static.add(
-                    Meniu_Item(
-                        -1,
+                    Meniu_Item(R.drawable.mamaliga_cu_ceapa,
                         "Mămăligă cu Ceapă",
                         Categorie.fel_principal,
                         24.5,
@@ -335,7 +314,7 @@ class Functii {
 
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
-                        -1,
+                        R.drawable.fish_and_chips,
                         "Fish and Chips",
                         Categorie.fel_principal,
                         26.50,
@@ -358,7 +337,7 @@ class Functii {
 
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
-                        -1,
+                        R.drawable.paste_carbonara,
                         "Paste Carbonara",
                         Categorie.fel_principal,
                         27.70,
@@ -380,10 +359,10 @@ class Functii {
                     )
                 )
 
-// APERITIVE (Appetizers)
+
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
-                        -1,
+                        R.drawable.aripioare_de_pui,
                         "Aripioare de pui",
                         Categorie.aperitiv,
                         27.50,
@@ -404,10 +383,10 @@ class Functii {
                     )
                 )
 
-                // BĂUTURI NESPIRTOASE (Non-Alcoholic Drinks)
+
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
-                        -1,
+                        R.drawable.apa_plata,
                         "Apă Plată",
                         Categorie.nespirtoase,
                         8.00,
@@ -428,7 +407,7 @@ class Functii {
 
                 lista_items_in_meniu_static.add(
                     Meniu_Item(
-                        -1,
+                        R.drawable.apa_minerala,
                         "Apă Minerală",
                         Categorie.nespirtoase,
                         8.00,

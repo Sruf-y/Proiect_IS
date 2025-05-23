@@ -63,10 +63,12 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
         }
 
         checkoutButton.setOnClickListener {
-            GlobalVars.lista_Comenzi.add(GlobalVars.comanda_in_cos)
-            GlobalVars.comanda_in_cos= Comanda();
-            adaptor.updateList(GlobalVars.comanda_in_cos.list)
-            adaptor.notifyDataSetChanged()
+            if(GlobalVars.comanda_in_cos.list.isNotEmpty()) {
+                GlobalVars.lista_Comenzi.add(GlobalVars.comanda_in_cos)
+                GlobalVars.comanda_in_cos = Comanda();
+                adaptor.updateList(GlobalVars.comanda_in_cos.list)
+                adaptor.notifyDataSetChanged()
+            }
         }
 
         GlobalVars.lista_items_in_meniu_static
@@ -109,11 +111,13 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
 
         recycler.layoutManager=LinearLayoutManager(context);
 
-        recycler.adapter=Adaptor_Lista(Tip_Adaptor.comanda, ArrayList<Meniu_Item>(),myContext,this,this)
+        recycler.adapter=Adaptor_Lista(Tip_Adaptor.comanda, GlobalVars.comanda_in_cos.list,myContext,this,this,
+            null,GlobalVars.comanda_in_cos
+            )
 
         adaptor= recycler.adapter as Adaptor_Lista<Meniu_Item>
 
-        adaptor.updateList(GlobalVars.comanda_in_cos.list)
+        adaptor.notifyDataSetChanged()
     }
 
 

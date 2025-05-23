@@ -52,7 +52,7 @@ public class Aperitive extends Fragment implements Adaptor_Lista.onClickListener
         super.onViewCreated(view, savedInstanceState);
 
 
-        adaptor = new Adaptor_Lista(Tip_Adaptor.meniu, GlobalVars.INSTANCE.getLista_items_in_meniu_static(),requireContext(),this,this, Categorie.aperitiv);
+        adaptor = new Adaptor_Lista(Tip_Adaptor.meniu, GlobalVars.INSTANCE.getLista_items_in_meniu_static(),requireContext(),this,this, Categorie.aperitiv,null);
 
         // Definirea RecyclerView din layout
         RecyclerView recyclerView = requireView().findViewById(R.id.recycler);
@@ -75,7 +75,6 @@ public class Aperitive extends Fragment implements Adaptor_Lista.onClickListener
         intent.putExtra("itemNr",0);
         startActivity(intent);
 
-
     }
 
     @Override
@@ -87,6 +86,8 @@ public class Aperitive extends Fragment implements Adaptor_Lista.onClickListener
     @Override
     public void onResume() {
         super.onResume();
-        adaptor.notifyDataSetChanged();
+
+        adaptor.updateList(GlobalVars.INSTANCE.getLista_items_in_meniu_static());
     }
+
 }

@@ -44,7 +44,7 @@ public class BauturiNespirtoase extends Fragment implements Adaptor_Lista.onClic
 
 
         // Crearea adaptorului cu categoria pentru băuturi nespirtoase
-        adaptor = new Adaptor_Lista(Tip_Adaptor.meniu, GlobalVars.INSTANCE.getLista_items_in_meniu_static(),requireContext(),this,this, Categorie.nespirtoase);
+        adaptor = new Adaptor_Lista(Tip_Adaptor.meniu, GlobalVars.INSTANCE.getLista_items_in_meniu_static(),requireContext(),this,this, Categorie.nespirtoase,null);
 
         // Definirea RecyclerView din layout
         RecyclerView recyclerView = requireView().findViewById(R.id.recycler);
@@ -75,6 +75,7 @@ public class BauturiNespirtoase extends Fragment implements Adaptor_Lista.onClic
     @Override
     public void onResume() {
         super.onResume();
-        adaptor.notifyDataSetChanged();
+
+        adaptor.updateList(GlobalVars.INSTANCE.getLista_items_in_meniu_static());
     }
 }

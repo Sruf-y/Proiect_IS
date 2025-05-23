@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ProiectSI.R
 
-// nefolosit, sper ca nu o sa trebuiasca sa folosim
+// folosit la vizualizarea comensii full pt angajat
 class viz_com_full : AppCompatActivity(),Adaptor_Lista.onClickListener,Adaptor_Lista.onLongPressListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +33,7 @@ class viz_com_full : AppCompatActivity(),Adaptor_Lista.onClickListener,Adaptor_L
 
             val linearLayoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
-            val adaptor = Adaptor_Lista(Tip_Adaptor.comanda, comanda.list, this, this, this)
+            val adaptor = Adaptor_Lista(Tip_Adaptor.comanda, comanda.list, this, this, this,null,comanda)
 
 
             recycler.adapter=adaptor
