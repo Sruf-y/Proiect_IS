@@ -1,25 +1,35 @@
 package Adaptors
 
-import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import android.app.Dialog
+import android.content.Context
+import android.view.WindowManager
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import com.ProiectSI.R
+import androidx.core.graphics.drawable.toDrawable
 
-class NutritionPopup : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_nutrition_popup)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+class NutritionPopupDialog(
+    context: Context,
+    private val nutritionInfo: String
+) : Dialog(context) {
 
+    init {
+        // Set transparent background
+        window?.setBackgroundDrawable(context.getColor(R.color.transparent).toDrawable())
+        setContentView(R.layout.dialog_nutrition)
 
+        // Set dialog size (90% width, wrap height)
+        window?.setLayout(
+            (context.resources.displayMetrics.widthPixels * 0.9).toInt(),
+            WindowManager.LayoutParams.WRAP_CONTENT
+        )
 
+        // Set click listeners
+        findViewById<TextView>(R.id.tv_nutrition_info).text = nutritionInfo
+        findViewById<ImageView>(R.id.btn_close).setOnClickListener { dismiss() }
 
+        // Make dialog cancelable when touching outside
+        setCanceledOnTouchOutside(true)
     }
 }

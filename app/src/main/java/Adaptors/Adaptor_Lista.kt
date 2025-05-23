@@ -126,8 +126,7 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, val lista:ArrayList<T>, val context
                 (holder.card.layoutParams as RecyclerView.LayoutParams).setMargins(10.dP,5.dP,10.dP,5.dP)
 
                 holder.info.setOnClickListener {
-                    val intent = Intent(context, NutritionPopup::class.java)
-                    context.startActivity(intent)
+                    NutritionPopupDialog(context,mancare.nutritionDescription.trimIndent()).show()
                 }
             }
             is ItemComanda->{
