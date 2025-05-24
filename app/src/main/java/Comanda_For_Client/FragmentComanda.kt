@@ -82,7 +82,7 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
             startActivity(intent)
         }
 
-        requireView().findViewById(R.id.butonaddTemporar_)
+
 
 
 

@@ -69,6 +69,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
     testImplementation(libs.junit)
+    testImplementation(libs.junit.jupiter)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -81,4 +82,55 @@ dependencies {
 
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
+
+
+
+    debugImplementation(libs.androidx.fragment.testing)
+
+    androidTestImplementation (libs.androidx.runner)
+    androidTestImplementation (libs.androidx.rules)
+    // Optional -- UI testing with Espresso
+    androidTestImplementation (libs.androidx.espresso.core)
+    // Optional -- UI testing with UI Automator
+    androidTestImplementation (libs.androidx.uiautomator)
+    // Optional -- UI testing with Compose
+    androidTestImplementation (libs.ui.test.junit4)
+
+
+
+// Required -- JUnit 4 framework
+    testImplementation (libs.junit)
+    // Optional -- Robolectric environment
+    testImplementation (libs.androidx.core)
+    // Optional -- Mockito framework
+    // Optional -- mockito-kotlin
+    testImplementation (libs.x.github.com.mockito.mockito.kotlin)
+
+// Core library
+    androidTestImplementation (libs.androidx.core)
+
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation (libs.androidx.runner)
+    androidTestImplementation (libs.androidx.rules)
+
+    // Assertions
+    androidTestImplementation (libs.androidx.junit)
+    androidTestImplementation (libs.androidx.truth)
+
+    // Espresso dependencies
+    androidTestImplementation (libs.androidx.espresso.core)
+    androidTestImplementation (libs.androidx.espresso.contrib)
+    androidTestImplementation (libs.androidx.espresso.intents)
+    androidTestImplementation (libs.androidx.espresso.accessibility)
+    androidTestImplementation (libs.androidx.espresso.web)
+    androidTestImplementation (libs.androidx.idling.concurrent)
+
+    // The following Espresso dependency can be either "implementation",
+    // or "androidTestImplementation", depending on whether you want the
+    // dependency to appear on your APK’"s compile classpath or the test APK
+    // classpath.
+    androidTestImplementation (libs.androidx.espresso.idling.resource)
+
+// https://mvnrepository.com/artifact/androidx.test/core
+    implementation("androidx.test:core:1.6.1")
 }
