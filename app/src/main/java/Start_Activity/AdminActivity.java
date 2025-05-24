@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ProiectSI.R;
 
-import DataClasses.GlobalVars;
 import Setari_Admin_Angajat.Adaugare_Mancare;
 import Setari_Admin_Angajat.Creare_Cont_Angajat;
 import Setari_Admin_Angajat.Schimbare_Date_Angajati;

@@ -4,16 +4,16 @@ package Activity_Cautare
 
 
 
-import android.os.Bundle;
-import android.widget.ImageView;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-import com.ProiectSI.R;
-import java.util.ArrayList;
-import Adaptors.Adaptor_Lista;
+import android.os.Bundle
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
+import com.ProiectSI.R
+import java.util.ArrayList
+import Adaptors.Adaptor_Lista
 import Adaptors.Tip_Adaptor
 import DataClasses.Categorie
-import DataClasses.Meniu_Item;
+import DataClasses.Meniu_Item
 import DataClasses.GlobalVars.lista_items_in_meniu_static
 import Functii_Utils.Functii.Companion.CustomSnack
 
@@ -39,10 +39,10 @@ class Cautare : AppCompatActivity(), Adaptor_Lista.onClickListener, Adaptor_List
      }
 
     private fun prepareUI() {
-        val finish_activity_button: ImageView = findViewById(R.id.finish_activity_button);
+        val finish_activity_button: ImageView = findViewById(R.id.finish_activity_button)
 
         finish_activity_button.setOnClickListener {
-            finish();
+            finish()
         }
 
         initializeRecycler()
@@ -101,8 +101,8 @@ class Cautare : AppCompatActivity(), Adaptor_Lista.onClickListener, Adaptor_List
 
 
         context = this
-        recycler = findViewById(R.id.recyclerViewCautare);
-        recycler.layoutManager=LinearLayoutManager(context);
+        recycler = findViewById(R.id.recyclerViewCautare)
+        recycler.layoutManager=LinearLayoutManager(context)
         adaptor=Adaptor_Lista(Tip_Adaptor.meniu,lista_fara_unavailable,context,this,this)
         recycler.adapter = adaptor
         //adaptor.updateList(lista_fara_unavailable)

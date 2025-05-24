@@ -1,22 +1,12 @@
 package DataClasses;
 
-import static android.content.Context.MODE_PRIVATE;
-
-import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import java.io.BufferedWriter;
-import java.io.Console;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class Meniu_Item implements Parcelable {

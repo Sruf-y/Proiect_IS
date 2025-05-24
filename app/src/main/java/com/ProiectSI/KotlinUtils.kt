@@ -14,6 +14,6 @@ class KotlinUtils {
             get() = (this * Resources.getSystem().displayMetrics.density + 0.5f).toInt()
 
         val Int?.toBoolean: Boolean
-            get() = this?.let { it != 0 } ?: false
+            get() = this?.let { it != 0 } == true
     }
 }

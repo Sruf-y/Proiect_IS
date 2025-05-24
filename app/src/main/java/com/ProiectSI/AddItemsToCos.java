@@ -1,12 +1,8 @@
 package com.ProiectSI;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -17,17 +13,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.navigation.ActivityNavigator;
 
 import com.bumptech.glide.Glide;
 
 import DataClasses.GlobalVars;
 import DataClasses.Meniu_Item;
-import Functii_Utils.Functii;
-import Start_Activity.File_Salvate;
 
 
 public class AddItemsToCos extends AppCompatActivity {
@@ -105,7 +97,7 @@ public class AddItemsToCos extends AppCompatActivity {
                 collorchangeforButton(buton_minus,this,R.color.inactive);
                 collorchangeforButton(plusbuton,this,R.color.activated);
                 numar=0;
-                text_box.setText(numar.toString() + " (min)");
+                text_box.setText(numar + " (min)");
             }
             else if(numar>=10){
                 buton_minus.setEnabled(true);
@@ -113,7 +105,7 @@ public class AddItemsToCos extends AppCompatActivity {
                 collorchangeforButton(buton_minus,this,R.color.activated);
                 collorchangeforButton(plusbuton,this,R.color.inactive);
                 numar=10;
-                text_box.setText(numar.toString()+" (max)");
+                text_box.setText(numar +" (max)");
             }
             else{
                 buton_minus.setEnabled(true);

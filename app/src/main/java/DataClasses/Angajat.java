@@ -5,8 +5,6 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
-import kotlinx.android.parcel.Parcelize;
-
 
 public class Angajat implements Parcelable {
     public String username;

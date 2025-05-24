@@ -104,7 +104,7 @@ class StartActivity : AppCompatActivity() {
     private fun makeCurrentFragment(fragment: Fragment,container:FragmentContainerView) {
         supportFragmentManager.beginTransaction().apply {
             replace(container.id,fragment)
-            commit();
+            commit()
         }
     }
 

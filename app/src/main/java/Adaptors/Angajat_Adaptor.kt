@@ -18,8 +18,8 @@ class Angajat_Adaptor(val onClick:(Angajat)->Unit,val onLongClick:(Angajat)->Uni
         get() = GlobalVars.lista_Angajati
 
     inner class adapAngajat(itemView:View):RecyclerView.ViewHolder(itemView){
-        val nameView: TextView = itemView.findViewById(R.id.name);
-        val passView: TextView = itemView.findViewById(R.id.password);
+        val nameView: TextView = itemView.findViewById(R.id.name)
+        val passView: TextView = itemView.findViewById(R.id.password)
         val main: ConstraintLayout = itemView.findViewById(R.id.main)
 
         fun bind(angajat:Angajat){
@@ -70,6 +70,6 @@ class Angajat_Adaptor(val onClick:(Angajat)->Unit,val onLongClick:(Angajat)->Uni
     }
 
     override fun getItemCount(): Int {
-        return mList.size;
+        return mList.size
     }
 }

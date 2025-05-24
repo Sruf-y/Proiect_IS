@@ -22,20 +22,11 @@ class Comanda(var id:String =randomizeID(),
     }
 
     fun addItem(item: Meniu_Item,numar:Int): Boolean{
-        return if(list.add(item) && listNumberOfs.add(numar)){
-            true
-        }
-        else{
-            false
-        }
+        return list.add(item) && listNumberOfs.add(numar)
     }
 
     fun removeItem(item: Meniu_Item): Boolean{
-        return if(listNumberOfs.removeAt(list.indexOf(item)).toBoolean && list.remove(item)){
-            true
-        }
-        else
-            false
+        return listNumberOfs.removeAt(list.indexOf(item)).toBoolean && list.remove(item)
     }
 
 

@@ -13,7 +13,7 @@ class TabSwipeAdaptor(fragment: Fragment): FragmentStateAdapter(fragment) {
 
 
     override fun getItemCount(): Int {
-        return 4;
+        return 4
     }
 
 
@@ -23,10 +23,10 @@ class TabSwipeAdaptor(fragment: Fragment): FragmentStateAdapter(fragment) {
 
         return when(position){
             0-> Aperitive() // MusicFragment();
-            1-> FeluriPrincipale();
+            1-> FeluriPrincipale()
             2-> BauturiSpirtoase() //LyricsFragment();
             3->BauturiNespirtoase()
-            else-> Aperitive();
+            else-> Aperitive()
         }
 
 

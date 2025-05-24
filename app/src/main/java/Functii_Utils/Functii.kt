@@ -37,11 +37,11 @@ class Functii {
             try {
 
                 val fos: FileOutputStream =
-                    context.openFileOutput("$filename.txt", Context.MODE_PRIVATE);
-                fos.write(message.toByteArray());
-                fos.close();
+                    context.openFileOutput("$filename.txt", Context.MODE_PRIVATE)
+                fos.write(message.toByteArray())
+                fos.close()
             } catch (e: IOException) {
-                e.printStackTrace();
+                e.printStackTrace()
             }
         }
 
@@ -60,12 +60,12 @@ class Functii {
                 }
 
                 (view.layoutParams as FrameLayout.LayoutParams).apply {
-                    width = ActionBar.LayoutParams.WRAP_CONTENT;
-                    gravity = Gravity.END or Gravity.BOTTOM;
+                    width = ActionBar.LayoutParams.WRAP_CONTENT
+                    gravity = Gravity.END or Gravity.BOTTOM
                 }
 
                 view.apply {
-                    setBackgroundColor(ContextCompat.getColor(context, R.color.gray))
+                    setBackgroundColor(getColor(context, R.color.gray))
 
                     setAnchorView(whereToShowIt)
 
@@ -75,7 +75,7 @@ class Functii {
 
 
         fun <T> SaveAsJson(context: Context, filename: String, data: T) {
-            val json = Gson().toJson(data);
+            val json = Gson().toJson(data)
             val filepath = context.filesDir.toString() + "/" + filename + ".json"
 
             File(filepath).writeText(json)
@@ -107,16 +107,16 @@ class Functii {
 
             try {
                 val f: FileInputStream =
-                    FileInputStream(context.filesDir.toString() + "/" + filename + ".json");
-                val ois: ObjectInputStream = ObjectInputStream(f);
+                    FileInputStream(context.filesDir.toString() + "/" + filename + ".json")
+                val ois: ObjectInputStream = ObjectInputStream(f)
                 val o: Object = ois.readObject() as Object
-                ois.close();
-                f.close();
-                return o as T;
+                ois.close()
+                f.close()
+                return o as T
             } catch (e: Exception) {
-                e.printStackTrace();
+                e.printStackTrace()
             }
-            return data;
+            return data
         }
 
 
@@ -431,7 +431,7 @@ class Functii {
             SaveAsJson(
                 context,
                 File_Salvate.Lista_Meniu.toString(),
-                GlobalVars.lista_items_in_meniu_static
+                lista_items_in_meniu_static
             )
         }
     }

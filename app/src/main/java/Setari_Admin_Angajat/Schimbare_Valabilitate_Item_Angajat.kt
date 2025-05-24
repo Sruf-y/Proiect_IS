@@ -79,8 +79,8 @@ class Schimbare_Valabilitate_Item_Angajat : AppCompatActivity(),Adaptor_Lista.on
 
     fun initializeRecycler(){
         myContext = this
-        recycler = findViewById(R.id.recycler_checkboxes);
-        recycler.layoutManager= LinearLayoutManager(myContext);
+        recycler = findViewById(R.id.recycler_checkboxes)
+        recycler.layoutManager= LinearLayoutManager(myContext)
         recycler.adapter=
             Adaptor_Lista(Tip_Adaptor.check, lista_items_in_meniu_static,myContext,this,this,null,null)
         adaptor= recycler.adapter as Adaptor_Lista<Meniu_Item>

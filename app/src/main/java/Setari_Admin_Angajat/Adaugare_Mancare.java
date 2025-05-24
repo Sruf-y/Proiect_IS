@@ -1,7 +1,6 @@
 package Setari_Admin_Angajat;
 
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -9,33 +8,20 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.ProiectSI.R;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import DataClasses.Categorie;
 import DataClasses.Meniu_Item;
 import Functii_Utils.Functii;
 import DataClasses.GlobalVars;
 import Start_Activity.File_Salvate;
-import Start_Activity.StartActivity;
-import kotlin.jvm.internal.MutableLocalVariableReference;
-import kotlin.reflect.KProperty;
-import kotlinx.coroutines.GlobalScope;
-
 
 
 public class Adaugare_Mancare extends AppCompatActivity {

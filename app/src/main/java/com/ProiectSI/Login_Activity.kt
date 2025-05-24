@@ -41,7 +41,7 @@ class Login_Activity : AppCompatActivity() {
                     val intent = Intent(this, AdminActivity::class.java)
                     intent.putExtra("arg1", "admin@restaurant.null")
                     intent.putExtra("arg2", "adminRestaurantMagic12")
-                    intent.putExtra("arg3", "admin");
+                    intent.putExtra("arg3", "admin")
                     startActivity(intent)
                 } else {
                     for (i in lista_Angajati) {
@@ -52,9 +52,9 @@ class Login_Activity : AppCompatActivity() {
                             val intent = Intent(this, AdminActivity::class.java)
                             intent.putExtra("arg1", username.text.toString())
                             intent.putExtra("arg2", password.text.toString())
-                            intent.putExtra("arg3", "angajat");
+                            intent.putExtra("arg3", "angajat")
                             startActivity(intent)
-                            break;
+                            break
                         }
                     }
 
@@ -66,7 +66,7 @@ class Login_Activity : AppCompatActivity() {
                 val intent = Intent(this, AdminActivity::class.java)
                 intent.putExtra("arg1", "admin@restaurant.null")
                 intent.putExtra("arg2", "adminRestaurantMagic12")
-                intent.putExtra("arg3", "admin");
+                intent.putExtra("arg3", "admin")
                 startActivity(intent)
             }
         }

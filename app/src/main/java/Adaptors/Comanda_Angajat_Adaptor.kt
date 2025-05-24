@@ -22,7 +22,7 @@ import com.google.android.material.imageview.ShapeableImageView
 class Comanda_Angajat_Adaptor(val context:Context,val onLongClickDo:((Comanda)->Unit)): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     val mList:ArrayList<Comanda>
-        get() {return GlobalVars.lista_Comenzi }
+        get() {return lista_Comenzi }
 
 
     inner class itemInList(itemView:View):RecyclerView.ViewHolder(itemView){

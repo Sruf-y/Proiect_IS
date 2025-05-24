@@ -76,12 +76,7 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, var lista:ArrayList<T>, val context
         val card:CardView = itemView.findViewById(R.id.card)
         val overlay: ConstraintLayout = itemView.findViewById(R.id.overlay)
     }
-    class ItemAngajat(itemView:View):RecyclerView.ViewHolder(itemView){
-
-    }
-
-
-
+    class ItemAngajat(itemView:View):RecyclerView.ViewHolder(itemView)
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

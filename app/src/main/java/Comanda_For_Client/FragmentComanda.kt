@@ -65,7 +65,7 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
         checkoutButton.setOnClickListener {
             if(GlobalVars.comanda_in_cos.list.isNotEmpty()) {
                 GlobalVars.lista_Comenzi.add(GlobalVars.comanda_in_cos)
-                GlobalVars.comanda_in_cos = Comanda();
+                GlobalVars.comanda_in_cos = Comanda()
                 adaptor.updateList(GlobalVars.comanda_in_cos.list)
                 adaptor.notifyDataSetChanged()
             }
@@ -82,7 +82,7 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
             startActivity(intent)
         }
 
-        val buton_adaugare_temp: ImageView = requireView().findViewById(R.id.butonaddTemporar_)
+        requireView().findViewById(R.id.butonaddTemporar_)
 
 
 
@@ -107,9 +107,9 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
     fun initializeRecycler(){
         myContext = requireContext()
 
-        recycler = requireView().findViewById(R.id.recyclercomanda);
+        recycler = requireView().findViewById(R.id.recyclercomanda)
 
-        recycler.layoutManager=LinearLayoutManager(context);
+        recycler.layoutManager=LinearLayoutManager(context)
 
         recycler.adapter=Adaptor_Lista(Tip_Adaptor.comanda, GlobalVars.comanda_in_cos.list,myContext,this,this,
             null,GlobalVars.comanda_in_cos
