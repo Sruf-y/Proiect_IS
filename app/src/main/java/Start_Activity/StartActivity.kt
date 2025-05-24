@@ -35,10 +35,8 @@ class StartActivity : AppCompatActivity() {
             insets
         }
 
-
         val navbar:BottomNavigationView= findViewById(R.id.navbar1)
         val frag_container:FragmentContainerView = findViewById(R.id.fragmentContainerView2)
-
 
         when(navbar.selectedItemId) {
             R.id.meniu -> {
@@ -53,7 +51,6 @@ class StartActivity : AppCompatActivity() {
                 makeCurrentFragment(FragmentMeniu(), frag_container)
             }
         }
-
 
         navbar.setOnItemSelectedListener { item ->
 
@@ -72,12 +69,6 @@ class StartActivity : AppCompatActivity() {
             }
             }
         }
-
-        //adauga itemele din meniu aici
-
-
-
-
 
 
 

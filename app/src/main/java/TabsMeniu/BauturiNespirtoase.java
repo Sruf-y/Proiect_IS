@@ -42,12 +42,13 @@ public class BauturiNespirtoase extends Fragment implements Adaptor_Lista.onClic
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+// Definirea RecyclerView din layout
+        RecyclerView recyclerView = requireView().findViewById(R.id.recycler);
 
         // Crearea adaptorului cu categoria pentru băuturi nespirtoase
-        adaptor = new Adaptor_Lista(Tip_Adaptor.meniu, GlobalVars.INSTANCE.getLista_items_in_meniu_static(),requireContext(),this,this, Categorie.nespirtoase,null);
+        adaptor = new Adaptor_Lista(Tip_Adaptor.meniu, GlobalVars.INSTANCE.getLista_items_in_meniu_static(), requireContext(), this, this, Categorie.nespirtoase, null);
 
-        // Definirea RecyclerView din layout
-        RecyclerView recyclerView = requireView().findViewById(R.id.recycler);
+
 
         // Setarea LinearLayoutManager
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false));
@@ -56,6 +57,9 @@ public class BauturiNespirtoase extends Fragment implements Adaptor_Lista.onClic
         recyclerView.setAdapter(adaptor);
 
         // Notificarea schimbărilor
+        update(recyclerView);
+    }
+    public void update(RecyclerView recyclerView){
         recyclerView.getAdapter().notifyDataSetChanged();
     }
 

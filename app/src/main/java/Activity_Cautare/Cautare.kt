@@ -33,51 +33,53 @@ class Cautare : AppCompatActivity(), Adaptor_Lista.onClickListener, Adaptor_List
          super.onCreate(savedInstanceState)
          setContentView(R.layout.activity_cautare)
 
-         val finish_activity_button:ImageView = findViewById(R.id.finish_activity_button);
-
-         finish_activity_button.setOnClickListener{
-                 finish();
-         }
-
-         initializeRecycler()
-
-         val searchview: SearchView = findViewById(R.id.searchView)
-
-         searchview.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-             override fun onQueryTextSubmit(line: String?): Boolean {
-                 return true
-             }
-
-             override fun onQueryTextChange(line: String): Boolean {
-                 if(!line.isEmpty()){
-                     adaptor.mlist.clear()
-
-
-                     for(mancare in lista_items_in_meniu_static){
-                         if(mancare.name.lowercase().contains(line.lowercase().trim())){
-                             adaptor.mlist.add(mancare)
-                         }
-                     }
-
-                     recycler.adapter?.notifyDataSetChanged()
-
-
-                 }
-                 else{
-                     adaptor.mlist.clear()
-                     adaptor.mlist.addAll(lista_items_in_meniu_static)
-                     recycler.adapter?.notifyDataSetChanged()
-                 }
-
-
-                 return true
-             }
-
-         })
-
+         prepareUI()
 
 
      }
+
+    private fun prepareUI() {
+        val finish_activity_button: ImageView = findViewById(R.id.finish_activity_button);
+
+        finish_activity_button.setOnClickListener {
+            finish();
+        }
+
+        initializeRecycler()
+
+        val searchview: SearchView = findViewById(R.id.searchView)
+
+        searchview.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(line: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(line: String): Boolean {
+                if (!line.isEmpty()) {
+                    adaptor.mlist.clear()
+
+
+                    for (mancare in lista_items_in_meniu_static) {
+                        if (mancare.name.lowercase().contains(line.lowercase().trim())) {
+                            adaptor.mlist.add(mancare)
+                        }
+                    }
+
+                    recycler.adapter?.notifyDataSetChanged()
+
+
+                } else {
+                    adaptor.mlist.clear()
+                    adaptor.mlist.addAll(lista_items_in_meniu_static)
+                    recycler.adapter?.notifyDataSetChanged()
+                }
+
+
+                return true
+            }
+
+        })
+    }
 
     override fun oncardClick(position: Int,itemviewholder: RecyclerView.ViewHolder) {
         val intent = Intent(context, AddItemsToCos::class.java)

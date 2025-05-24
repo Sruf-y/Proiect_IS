@@ -44,7 +44,7 @@ public class AddItemsToCos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Leaga clasa MainActivity de design-ul activity_main
+
         setContentView(R.layout.activity_additemstocos);
 
         TextView titleview = findViewById(R.id.foodtitle);
