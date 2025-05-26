@@ -68,6 +68,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
+    implementation(libs.androidx.fragment.testing)
     testImplementation(libs.junit)
     testImplementation(libs.junit.jupiter)
     androidTestImplementation(libs.androidx.junit)
@@ -125,11 +126,13 @@ dependencies {
     androidTestImplementation (libs.androidx.espresso.web)
     androidTestImplementation (libs.androidx.idling.concurrent)
 
+
     // The following Espresso dependency can be either "implementation",
     // or "androidTestImplementation", depending on whether you want the
     // dependency to appear on your APK’"s compile classpath or the test APK
     // classpath.
     androidTestImplementation (libs.androidx.espresso.idling.resource)
+
 
 // https://mvnrepository.com/artifact/androidx.test/core
     implementation("androidx.test:core:1.6.1")
