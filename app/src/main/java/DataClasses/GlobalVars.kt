@@ -10,5 +10,7 @@ object GlobalVars{
 
     var lista_Angajati = ArrayList<Angajat>()
 
+    var chitante_lista_ughhhh = ArrayList<String>()
+
 
 }

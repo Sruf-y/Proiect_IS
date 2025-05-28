@@ -9,7 +9,7 @@
         android:id="@+id/constraintLayout5"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:background="@color/liftedBackgrounds"
+        android:background="@color/info"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,22 +21,22 @@
             android:layout_width="60dp"
             android:layout_height="0dp"
             android:background="@drawable/ripple_circle"
-            android:backgroundTint="@color/liftedBackgrounds"
+            android:backgroundTint="@color/info"
             android:clickable="true"
             android:padding="10dp"
+            android:src="@drawable/outline_accessibility_new_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/outline_accessibility_new_24" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/search_button"
             android:layout_width="60dp"
             android:layout_height="0dp"
             android:background="@drawable/ripple_circle"
-            android:backgroundTint="@color/liftedBackgrounds"
+            android:backgroundTint="@color/info"
             android:clickable="true"
             android:padding="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -51,7 +51,7 @@
         android:id="@+id/tabLayout"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:background="@color/liftedBackgrounds"
+        android:background="@color/info"
         android:isScrollContainer="true"
         android:scrollbarAlwaysDrawHorizontalTrack="true"
         android:scrollbarFadeDuration="100"
@@ -65,11 +65,12 @@
         app:tabGravity="fill"
         app:tabIndicatorAnimationDuration="100"
         app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorColor="@color/amber"
         app:tabIndicatorGravity="bottom"
         app:tabIndicatorHeight="4dp"
         app:tabMode="scrollable"
         app:tabTextAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:tabTextColor="@color/invertedBackgrounds">
+        app:tabTextColor="@color/white">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"

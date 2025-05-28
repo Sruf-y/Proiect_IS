@@ -38,7 +38,7 @@ class Adaptor_Lista<T>(val tip: Tip_Adaptor, var lista:ArrayList<T>, val context
         get(){if(tip == Tip_Adaptor.meniu && filtru!=null)
                     return ArrayList<Meniu_Item>((lista as ArrayList<Meniu_Item>).filter { p->p.category== filtru }.filter { p->p.isAvailable }) as ArrayList<T>
                 else if(tip== Tip_Adaptor.comanda && comanda!=null)
-                    return comanda.list as ArrayList<T>
+                    return lista
                 else
                     return lista
         }

@@ -1,19 +1,18 @@
 package Functii_Utils
 
+import DataClasses.Angajat
 import DataClasses.Categorie
+import DataClasses.Comanda
 import DataClasses.GlobalVars
+import DataClasses.GlobalVars.chitante_lista_ughhhh
 import DataClasses.GlobalVars.lista_items_in_meniu_static
 import DataClasses.Meniu_Item
 import Start_Activity.File_Salvate
 import android.content.Context
-import android.content.res.ColorStateList
-import android.graphics.PorterDuff
-import android.graphics.drawable.Drawable
 import android.view.Gravity
 import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.app.ActionBar
-import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getColor
 import com.ProiectSI.R
 import com.google.android.material.snackbar.BaseTransientBottomBar
@@ -71,6 +70,30 @@ class Functii {
 
                 }
             }.show()
+        }
+
+
+        fun advancedSaveAsJson(context: Context, filename:String, data:Any,parent:File=context.filesDir) {
+
+            if(!parent.exists()){
+                parent.mkdirs()
+            }
+
+            val json=Gson().toJson(data);
+            val Filename= "$filename.json"
+
+            File(parent,Filename).writeText(json)
+        }
+
+        fun saveAsTextFile(context: Context, filename: String, text: String, parent: File = context.filesDir) {
+            if (!parent.exists()) {
+                parent.mkdirs()
+            }
+
+
+                val fullFilename = "$filename.txt"  // i'm using txt extension for text files
+                File(parent, fullFilename).writeText(text)
+
         }
 
 
@@ -433,7 +456,54 @@ class Functii {
                 File_Salvate.Lista_Meniu.toString(),
                 lista_items_in_meniu_static
             )
+
+            if(GlobalVars.lista_Angajati.isEmpty()){
+                GlobalVars.lista_Angajati.apply {
+                    add(Angajat("Andrei","a"))
+                    add(Angajat("Admin","Password"))
+                    add(Angajat("A","a"))
+                }
+            }
+            SaveAsJson(
+                context,
+                File_Salvate.Lista_Angajati.toString(),
+                GlobalVars.lista_Angajati
+            )
+
         }
+
+        @Throws(IndexOutOfBoundsException::class)
+        fun scoateChitanta(context: Context, comanda: Comanda)  {
+            var lista_iteme_nume = comanda.list.map { p->p.name }
+            var lista_preturi = comanda.list.map{ p->p.price }
+
+            try{
+                val string = StringBuilder("Chitanta comanda "+comanda.id+"\n\n")
+
+                var total = 0f
+
+                lista_iteme_nume.forEachIndexed {index,it->
+                    string.append(it+"\t\t"+lista_preturi[index].toString()+" lei\n")
+                    string.append("x"+comanda.listNumberOfs[index].toString()+"\n\n")
+
+                    total+=(comanda.listNumberOfs[index] * lista_preturi[index]).toFloat()
+                }
+
+                string.append("\n\n\nTotal: ${total} lei")
+
+                chitante_lista_ughhhh = LoadFromJson(context, File_Salvate.Chitante_Lista.name,ArrayList<String>())
+
+                chitante_lista_ughhhh.add(comanda.id)
+                
+                SaveAsJson(context,File_Salvate.Chitante_Lista.name,chitante_lista_ughhhh)
+
+                saveAsTextFile(context,comanda.id.toString(),string.toString(),File(context.filesDir,"Chitante"))
+
+            }catch (ex: IndexOutOfBoundsException){
+                throw ex
+            }
+        }
+
     }
 
 }

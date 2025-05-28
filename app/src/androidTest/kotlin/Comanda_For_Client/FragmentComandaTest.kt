@@ -1,7 +1,12 @@
 package Comanda_For_Client
 
 
+import DataClasses.Comanda
+import DataClasses.GlobalVars
+import DataClasses.Meniu_Item
+import Functii_Utils.Functii
 import Start_Activity.AdminActivity
+import android.content.Context
 import android.content.Intent
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.core.app.ActivityScenario
@@ -17,10 +22,12 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.ProiectSI.R
 import org.hamcrest.CoreMatchers.not
 import org.junit.After
+import org.junit.Assert.assertThrows
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import kotlin.coroutines.coroutineContext
 
 
 class FragmentComandaTest {
@@ -71,6 +78,40 @@ class FragmentComandaTest {
 
         onView(withId(R.id.admin_adaugare_item))
             .check(matches(isDisplayed())) // Should be visible with these args
+    }
+
+
+    @Test
+    fun testChitantePrinting(){
+        // how to get a "fake" context
+        val context = ApplicationProvider.getApplicationContext<Context>()
+
+        val lista = ArrayList(mutableListOf<Meniu_Item>(Meniu_Item()))
+
+        val comandaAux = Comanda(list = lista, listNumberOfs = ArrayList())
+
+
+        assertThrows<IndexOutOfBoundsException>(IndexOutOfBoundsException::class.java){
+            Functii.scoateChitanta(context,comandaAux)
+        }
+
+
+
+    }
+
+    @Test
+    fun testChitantaPrinting_ValoareCorecta(){
+
+        val context = ApplicationProvider.getApplicationContext<Context>()
+
+        val lista = ArrayList(mutableListOf<Meniu_Item>(Meniu_Item()))
+
+        val comandaAux = Comanda(list = lista, listNumberOfs = ArrayList())
+
+
+        assertThrows<IndexOutOfBoundsException>(IndexOutOfBoundsException::class.java){
+            Functii.scoateChitanta(context,Comanda()) // comanda nu are liste de lungimi diferite deci nu v-a da eroare
+        }
     }
 
 

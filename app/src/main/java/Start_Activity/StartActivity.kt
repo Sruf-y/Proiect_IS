@@ -19,7 +19,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 enum class File_Salvate{
     Lista_Comenzi,
     Lista_Meniu,
-    Lista_Angajati
+    Lista_Angajati,
+    Chitante_Lista
 }
 
 

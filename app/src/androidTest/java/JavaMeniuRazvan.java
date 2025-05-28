@@ -1,4 +1,3 @@
-package TabsMeniu;
 
 import android.content.Intent;
 import androidx.fragment.app.testing.FragmentScenario;
@@ -18,8 +17,10 @@ import org.junit.runner.RunWith;
 
 import static androidx.fragment.app.testing.FragmentScenario.launchInContainer;
 
+import TabsMeniu.Aperitive;
+
 @RunWith(AndroidJUnit4.class)
-public class AperitiveFragmentTest {
+public class JavaMeniuRazvan {
 
     @Test
     public void testFragmentLaunchesSuccessfully() {

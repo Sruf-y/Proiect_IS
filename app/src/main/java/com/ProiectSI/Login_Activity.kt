@@ -36,6 +36,7 @@ class Login_Activity : AppCompatActivity() {
 
         // normal mode
         if(!GlobalVars.APP_IN_TEST_MODE) {
+            // app not in test mode, primary way of functioning
             loginbuton.setOnClickListener {
                 if (username.text.toString() == admin_username && password.text.toString() == admin_password) {
                     val intent = Intent(this, AdminActivity::class.java)
@@ -47,7 +48,7 @@ class Login_Activity : AppCompatActivity() {
                     for (i in lista_Angajati) {
                         if (i.username == username.text.toString() && i.password == password.text.toString()) {
 
-                            Toast.makeText(this, "Combinatie incorecta!", Toast.LENGTH_SHORT).show()
+
 
                             val intent = Intent(this, AdminActivity::class.java)
                             intent.putExtra("arg1", username.text.toString())
@@ -55,6 +56,9 @@ class Login_Activity : AppCompatActivity() {
                             intent.putExtra("arg3", "angajat")
                             startActivity(intent)
                             break
+                        }
+                        else{
+                            Toast.makeText(this, "Combinatie incorecta!", Toast.LENGTH_SHORT).show()
                         }
                     }
 

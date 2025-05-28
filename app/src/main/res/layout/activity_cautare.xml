@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="FragmentMeniu.FragmentMeniu" >
+    android:background="@color/blue_light"
+    tools:context="FragmentMeniu.FragmentMeniu">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCautare"
@@ -19,7 +20,7 @@
         android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:background="@color/liftedBackgrounds"
+        android:background="@color/info"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

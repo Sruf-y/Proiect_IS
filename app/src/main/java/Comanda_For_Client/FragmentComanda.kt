@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -67,7 +68,12 @@ class FragmentComanda : Fragment(R.layout.fragment_comanda),Adaptor_Lista.onClic
                 GlobalVars.lista_Comenzi.add(GlobalVars.comanda_in_cos)
                 GlobalVars.comanda_in_cos = Comanda()
                 adaptor.updateList(GlobalVars.comanda_in_cos.list)
-                adaptor.notifyDataSetChanged()
+
+
+                recycler.post {
+                    adaptor.notifyDataSetChanged()
+                    Toast.makeText(requireContext(),"Comanda plasata cu success",Toast.LENGTH_SHORT).show()
+                }
             }
         }
 

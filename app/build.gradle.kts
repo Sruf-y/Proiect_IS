@@ -133,7 +133,11 @@ dependencies {
     // classpath.
     androidTestImplementation (libs.androidx.espresso.idling.resource)
 
-
+    testImplementation ("org.junit.jupiter:junit-jupiter-api:5.12.2")
 // https://mvnrepository.com/artifact/androidx.test/core
     implementation("androidx.test:core:1.6.1")
+
+
+
+
 }

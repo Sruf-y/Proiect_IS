@@ -59,7 +59,7 @@
                 android:layout_height="0dp"
                 android:gravity="center|start"
                 android:paddingHorizontal="10dp"
-                android:shadowColor="@color/backgrounds"
+                android:shadowColor="@color/black"
                 android:shadowDx="3"
                 android:shadowDy="3"
                 android:shadowRadius="1"

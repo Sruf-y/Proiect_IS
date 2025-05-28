@@ -102,6 +102,11 @@ class Comanda_Angajat_Adaptor(val context:Context,val onLongClickDo:((Comanda)->
                         minusButton.visibility=View.INVISIBLE
                         plusButton.visibility=View.INVISIBLE
                         timetextview.text = "0"
+
+
+                        Functii.scoateChitanta(context,comanda)
+
+
                     }
                     StareComanda.In_Progres -> {
                         color=R.color.indigo

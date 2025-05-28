@@ -5,7 +5,7 @@
 
     <item android:state_pressed="false">
         <bitmap android:src="@drawable/search_icon"
-            android:tint="@color/invertedBackgrounds"/>
+            android:tint="@color/white"/>
     </item>
 
     <item>

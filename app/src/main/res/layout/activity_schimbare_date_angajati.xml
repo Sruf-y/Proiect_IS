@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_light"
     tools:context="Setari_Admin_Angajat.Schimbare_Date_Angajati">
 
     <androidx.recyclerview.widget.RecyclerView

@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_light"
     tools:context="Setari_Admin_Angajat.Adaugare_Mancare">
 
 
@@ -15,6 +16,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:text="Adaugare item"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,0 +1,590 @@
+kotlin version: 2.0.0
+error message: org.jetbrains.kotlin.backend.common.BackendException: Backend Internal error: Exception during IR lowering
+File being compiled: C:/Users/andre/AndroidStudioProjects/Proiect_IS/app/src/main/java/Adaptors/Adaptor_Lista.kt
+The root cause java.lang.RuntimeException was thrown at: org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException(CodegenUtil.kt:253)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException$default(CodegenUtil.kt:236)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:65)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:52)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:38)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:29)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:16)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.invokeToplevel(CompilerPhase.kt:62)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.invokeCodegen(JvmIrCodegenFactory.kt:371)
+	at org.jetbrains.kotlin.codegen.CodegenFactory.generateModule(CodegenFactory.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.generateModuleInFrontendIRMode(JvmIrCodegenFactory.kt:433)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.generateCodeFromIr(jvmCompilerPipeline.kt:241)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.compileModulesUsingFrontendIrAndLightTree(jvmCompilerPipeline.kt:140)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:155)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:50)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:104)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:48)
+	at org.jetbrains.kotlin.cli.common.CLITool.exec(CLITool.kt:101)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:453)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:62)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:506)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:423)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally$lambda$9$compile(IncrementalCompilerRunner.kt:249)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally(IncrementalCompilerRunner.kt:267)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:120)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:676)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:92)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1661)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN name:onBindViewHolder visibility:public modality:OPEN <> ($this:Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista>, holder:androidx.recyclerview.widget.RecyclerView.ViewHolder, position:kotlin.Int) returnType:kotlin.Unit
+  overridden:
+    public abstract fun onBindViewHolder (p0: @[EnhancedNullability] {VH of androidx.recyclerview.widget.RecyclerView.Adapter & Any}, p1: kotlin.Int): kotlin.Unit declared in androidx.recyclerview.widget.RecyclerView.Adapter
+  $this: VALUE_PARAMETER name:<this> type:Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista>
+  VALUE_PARAMETER name:holder index:0 type:androidx.recyclerview.widget.RecyclerView.ViewHolder
+  VALUE_PARAMETER name:position index:1 type:kotlin.Int
+  BLOCK_BODY
+    BLOCK type=kotlin.Unit origin=WHEN
+      VAR IR_TEMPORARY_VARIABLE name:tmp1_subject type:androidx.recyclerview.widget.RecyclerView.ViewHolder [val]
+        GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+      WHEN type=kotlin.Unit origin=WHEN
+        BRANCH
+          if: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=Adaptors.Adaptor_Lista.ItemMeniu
+            GET_VAR 'val tmp1_subject: androidx.recyclerview.widget.RecyclerView.ViewHolder [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+          then: BLOCK type=kotlin.Unit origin=null
+            VAR name:mancare type:DataClasses.Meniu_Item [val]
+              BLOCK type=DataClasses.Meniu_Item origin=null
+                VAR IR_TEMPORARY_VARIABLE name:tmp0 type:kotlin.Any? [val]
+                  CALL 'public open fun get (p0: kotlin.Int): @[EnhancedNullability] E of java.util.ArrayList [operator] declared in java.util.ArrayList' type=@[EnhancedNullability] T of Adaptors.Adaptor_Lista origin=GET_ARRAY_ELEMENT
+                    $this: CALL 'public final fun <get-mlist> (): java.util.ArrayList<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista' type=java.util.ArrayList<T of Adaptors.Adaptor_Lista> origin=GET_PROPERTY
+                      $this: GET_VAR '<this>: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> origin=null
+                    p0: GET_VAR 'position: kotlin.Int declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Int origin=null
+                CALL 'public final fun checkNotNull (object: kotlin.Any?, message: kotlin.String): kotlin.Unit declared in kotlin.jvm.internal.Intrinsics' type=kotlin.Unit origin=null
+                  object: GET_VAR 'val tmp0: kotlin.Any? [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Any? origin=null
+                  message: CONST String type=kotlin.String value="null cannot be cast to non-null type DataClasses.Meniu_Item"
+                TYPE_OP type=DataClasses.Meniu_Item? origin=CAST typeOperand=DataClasses.Meniu_Item?
+                  GET_VAR 'val tmp0: kotlin.Any? [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Any? origin=null
+            CALL 'public open fun setSingleLine (p0: kotlin.Boolean): kotlin.Unit declared in android.widget.TextView' type=kotlin.Unit origin=EQ
+              $this: CALL 'public final fun <get-titlu> (): android.widget.TextView declared in Adaptors.Adaptor_Lista.ItemMeniu' type=android.widget.TextView origin=GET_PROPERTY
+                $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemMeniu origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemMeniu
+                  GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+              p0: CONST Boolean type=kotlin.Boolean value=false
+            SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:height type:kotlin.Int visibility:public' type=kotlin.Unit origin=EQ
+              receiver: CALL 'public open fun getLayoutParams (): @[FlexibleNullability] android.view.ViewGroup.LayoutParams? [fake_override] declared in com.google.android.material.imageview.ShapeableImageView' type=@[FlexibleNullability] android.view.ViewGroup.LayoutParams? origin=GET_PROPERTY
+                $this: CALL 'public final fun <get-imagine> (): com.google.android.material.imageview.ShapeableImageView declared in Adaptors.Adaptor_Lista.ItemMeniu' type=com.google.android.material.imageview.ShapeableImageView origin=GET_PROPERTY
+                  $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemMeniu origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemMeniu
+                    GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+              value: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                $receiver: CONST Float type=kotlin.Float value=130.0
+            COMPOSITE type=kotlin.Unit origin=null
+              TRY type=kotlin.Any
+                try: BLOCK type=@[EnhancedNullability] com.bumptech.glide.request.target.ViewTarget<@[FlexibleNullability] android.widget.ImageView?, @[FlexibleNullability] android.graphics.drawable.Drawable?> origin=null
+                  CALL 'public open fun into (p0: @[EnhancedNullability] android.widget.ImageView): @[EnhancedNullability] com.bumptech.glide.request.target.ViewTarget<@[FlexibleNullability] android.widget.ImageView?, @[FlexibleNullability] TranscodeType of com.bumptech.glide.RequestBuilder?> declared in com.bumptech.glide.RequestBuilder' type=@[EnhancedNullability] com.bumptech.glide.request.target.ViewTarget<@[FlexibleNullability] android.widget.ImageView?, @[FlexibleNullability] android.graphics.drawable.Drawable?> origin=null
+                    $this: CALL 'public open fun error (p0: kotlin.Int): @[EnhancedNullability] com.bumptech.glide.RequestBuilder<@[FlexibleNullability] TranscodeType of com.bumptech.glide.RequestBuilder?> [fake_override] declared in com.bumptech.glide.RequestBuilder' type=@[EnhancedNullability] com.bumptech.glide.RequestBuilder<@[FlexibleNullability] android.graphics.drawable.Drawable?> origin=null
+                      $this: CALL 'public open fun load (p0: @[EnhancedNullability] kotlin.Int?): @[EnhancedNullability] com.bumptech.glide.RequestBuilder<@[FlexibleNullability] android.graphics.drawable.Drawable?> declared in com.bumptech.glide.RequestManager' type=@[EnhancedNullability] com.bumptech.glide.RequestBuilder<@[FlexibleNullability] android.graphics.drawable.Drawable?> origin=null
+                        $this: CALL 'public open fun with (p0: @[EnhancedNullability] android.content.Context): @[EnhancedNullability] com.bumptech.glide.RequestManager declared in com.bumptech.glide.Glide' type=@[EnhancedNullability] com.bumptech.glide.RequestManager origin=null
+                          p0: GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:context type:android.content.Context visibility:private [final]' type=android.content.Context origin=null
+                            receiver: GET_VAR '<this>: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> origin=null
+                        p0: CALL 'public open fun getImage_id (): kotlin.Int declared in DataClasses.Meniu_Item' type=kotlin.Int origin=GET_PROPERTY
+                          $this: GET_VAR 'val mancare: DataClasses.Meniu_Item [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=DataClasses.Meniu_Item origin=null
+                      p0: GET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:sarmale type:kotlin.Int visibility:public [static]' type=kotlin.Int origin=null
+                    p0: CALL 'public final fun <get-imagine> (): com.google.android.material.imageview.ShapeableImageView declared in Adaptors.Adaptor_Lista.ItemMeniu' type=com.google.android.material.imageview.ShapeableImageView origin=GET_PROPERTY
+                      $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemMeniu origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemMeniu
+                        GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+                CATCH parameter=val ex: java.lang.Exception [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder
+                  VAR CATCH_PARAMETER name:ex type:java.lang.Exception [val]
+                  BLOCK type=kotlin.Int origin=null
+                    CALL 'public open fun e (p0: @[EnhancedNullability] kotlin.String?, p1: @[EnhancedNullability] kotlin.String?, p2: @[EnhancedNullability] kotlin.Throwable?): kotlin.Int declared in android.util.Log' type=kotlin.Int origin=null
+                      p0: CONST String type=kotlin.String value="Errors"
+                      p1: CONST String type=kotlin.String value="Glide Exception in Adaptor_Lista"
+                      p2: GET_VAR 'val ex: java.lang.Exception [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=java.lang.Exception origin=null
+              COMPOSITE type=kotlin.Unit origin=null
+            CALL 'public final fun setText (p0: @[FlexibleNullability] kotlin.CharSequence?): kotlin.Unit declared in android.widget.TextView' type=kotlin.Unit origin=EQ
+              $this: CALL 'public final fun <get-titlu> (): android.widget.TextView declared in Adaptors.Adaptor_Lista.ItemMeniu' type=android.widget.TextView origin=GET_PROPERTY
+                $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemMeniu origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemMeniu
+                  GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+              p0: CALL 'public open fun getName (): @[FlexibleNullability] kotlin.String? declared in DataClasses.Meniu_Item' type=@[FlexibleNullability] kotlin.String? origin=GET_PROPERTY
+                $this: GET_VAR 'val mancare: DataClasses.Meniu_Item [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=DataClasses.Meniu_Item origin=null
+            CALL 'public final fun setText (p0: @[FlexibleNullability] kotlin.CharSequence?): kotlin.Unit declared in android.widget.TextView' type=kotlin.Unit origin=EQ
+              $this: CALL 'public final fun <get-pret> (): android.widget.TextView declared in Adaptors.Adaptor_Lista.ItemMeniu' type=android.widget.TextView origin=GET_PROPERTY
+                $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemMeniu origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemMeniu
+                  GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+              p0: STRING_CONCATENATION type=kotlin.String
+                CALL 'public final fun format (vararg args: kotlin.Any?): kotlin.String [inline] declared in kotlin.text.StringsKt' type=kotlin.String origin=null
+                  $receiver: CONST String type=kotlin.String value="%.2f"
+                  args: BLOCK type=kotlin.Array<out kotlin.Any?> origin=null
+                    VAR IR_TEMPORARY_VARIABLE name:tmp0 type:kotlin.Array<out kotlin.Any?> [val]
+                      CALL 'public final fun arrayOfNulls <T> (size: kotlin.Int): kotlin.Array<T of kotlin.arrayOfNulls?> declared in kotlin' type=kotlin.Array<out kotlin.Any?> origin=null
+                        <T>: kotlin.Any?
+                        size: CONST Int type=kotlin.Int value=1
+                    CALL 'public final fun set (index: kotlin.Int, value: T of kotlin.Array): kotlin.Unit [operator] declared in kotlin.Array' type=kotlin.Unit origin=null
+                      $this: GET_VAR 'val tmp0: kotlin.Array<out kotlin.Any?> [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Array<out kotlin.Any?> origin=null
+                      index: CONST Int type=kotlin.Int value=0
+                      value: CALL 'public open fun getPrice (): kotlin.Double declared in DataClasses.Meniu_Item' type=kotlin.Double origin=GET_PROPERTY
+                        $this: GET_VAR 'val mancare: DataClasses.Meniu_Item [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=DataClasses.Meniu_Item origin=null
+                    GET_VAR 'val tmp0: kotlin.Array<out kotlin.Any?> [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Array<out kotlin.Any?> origin=null
+                CONST String type=kotlin.String value=" RON"
+            CALL 'public open fun setMargins (p0: kotlin.Int, p1: kotlin.Int, p2: kotlin.Int, p3: kotlin.Int): kotlin.Unit [fake_override] declared in androidx.recyclerview.widget.RecyclerView.LayoutParams' type=kotlin.Unit origin=null
+              $this: BLOCK type=androidx.recyclerview.widget.RecyclerView.LayoutParams origin=null
+                VAR IR_TEMPORARY_VARIABLE name:tmp1 type:kotlin.Any? [val]
+                  CALL 'public open fun getLayoutParams (): @[FlexibleNullability] android.view.ViewGroup.LayoutParams? [fake_override] declared in androidx.cardview.widget.CardView' type=@[FlexibleNullability] android.view.ViewGroup.LayoutParams? origin=GET_PROPERTY
+                    $this: CALL 'public final fun <get-card> (): androidx.cardview.widget.CardView declared in Adaptors.Adaptor_Lista.ItemMeniu' type=androidx.cardview.widget.CardView origin=GET_PROPERTY
+                      $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemMeniu origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemMeniu
+                        GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+                CALL 'public final fun checkNotNull (object: kotlin.Any?, message: kotlin.String): kotlin.Unit declared in kotlin.jvm.internal.Intrinsics' type=kotlin.Unit origin=null
+                  object: GET_VAR 'val tmp1: kotlin.Any? [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Any? origin=null
+                  message: CONST String type=kotlin.String value="null cannot be cast to non-null type androidx.recyclerview.widget.RecyclerView.LayoutParams"
+                TYPE_OP type=androidx.recyclerview.widget.RecyclerView.LayoutParams? origin=CAST typeOperand=androidx.recyclerview.widget.RecyclerView.LayoutParams?
+                  GET_VAR 'val tmp1: kotlin.Any? [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Any? origin=null
+              p0: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                $receiver: CONST Int type=kotlin.Int value=10
+              p1: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                $receiver: CONST Int type=kotlin.Int value=5
+              p2: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                $receiver: CONST Int type=kotlin.Int value=10
+              p3: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                $receiver: CONST Int type=kotlin.Int value=5
+            CALL 'public open fun setOnClickListener (p0: @[EnhancedNullability] android.view.View.OnClickListener?): kotlin.Unit [fake_override] declared in android.widget.ImageView' type=kotlin.Unit origin=null
+              $this: CALL 'public final fun <get-info> (): android.widget.ImageView declared in Adaptors.Adaptor_Lista.ItemMeniu' type=android.widget.ImageView origin=GET_PROPERTY
+                $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemMeniu origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemMeniu
+                  GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+              p0: BLOCK type=android.view.View.OnClickListener origin=LAMBDA
+                COMPOSITE type=kotlin.Unit origin=null
+                CALL 'public final fun <jvm-indy> <T> (dynamicCall: T of kotlin.jvm.internal.<jvm-indy>, bootstrapMethodHandle: kotlin.Any, vararg bootstrapMethodArguments: kotlin.Any): T of kotlin.jvm.internal.<jvm-indy> declared in kotlin.jvm.internal' type=android.view.View.OnClickListener origin=null
+                  <T>: android.view.View.OnClickListener
+                  dynamicCall: CALL 'public final fun onClick (p0: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista.onBindViewHolder$lambda$2>, p1: DataClasses.Meniu_Item): android.view.View.OnClickListener declared in kotlin.jvm.internal.invokeDynamic' type=android.view.View.OnClickListener origin=null
+                    p0: GET_VAR '<this>: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> origin=null
+                    p1: GET_VAR 'val mancare: DataClasses.Meniu_Item [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=DataClasses.Meniu_Item origin=null
+                  bootstrapMethodHandle: CALL 'public final fun <jvm-method-handle> (tag: kotlin.Int, owner: kotlin.String, name: kotlin.String, descriptor: kotlin.String, isInterface: kotlin.Boolean): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                    tag: CONST Int type=kotlin.Int value=6
+                    owner: CONST String type=kotlin.String value="java/lang/invoke/LambdaMetafactory"
+                    name: CONST String type=kotlin.String value="metafactory"
+                    descriptor: CONST String type=kotlin.String value="(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;"
+                    isInterface: CONST Boolean type=kotlin.Boolean value=false
+                  bootstrapMethodArguments: VARARG type=kotlin.Array<kotlin.Any> varargElementType=kotlin.Any
+                    CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                      method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in android.view.View.OnClickListener' type=kotlin.Any
+                    RAW_FUNCTION_REFERENCE 'private final fun onBindViewHolder$lambda$2 <T> (this$0: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista.onBindViewHolder$lambda$2>, $mancare: DataClasses.Meniu_Item, it: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in Adaptors.Adaptor_Lista' type=kotlin.Any
+                    CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                      method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in kotlin.jvm.internal.invokeDynamic.<fake>' type=kotlin.Any
+        BRANCH
+          if: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=Adaptors.Adaptor_Lista.ItemComanda
+            GET_VAR 'val tmp1_subject: androidx.recyclerview.widget.RecyclerView.ViewHolder [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+          then: COMPOSITE type=kotlin.Unit origin=null
+            BLOCK type=kotlin.Any origin=null
+              TRY type=kotlin.Any
+                try: BLOCK type=kotlin.Unit origin=null
+                  VAR name:mancare type:DataClasses.Meniu_Item [var]
+                  SET_VAR 'var mancare: DataClasses.Meniu_Item [var] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Unit origin=EQ
+                    BLOCK type=DataClasses.Meniu_Item origin=null
+                      VAR IR_TEMPORARY_VARIABLE name:tmp2 type:kotlin.Any? [val]
+                        CALL 'public open fun get (p0: kotlin.Int): @[EnhancedNullability] E of java.util.ArrayList [operator] declared in java.util.ArrayList' type=@[EnhancedNullability] T of Adaptors.Adaptor_Lista origin=GET_ARRAY_ELEMENT
+                          $this: CALL 'public final fun <get-mlist> (): java.util.ArrayList<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista' type=java.util.ArrayList<T of Adaptors.Adaptor_Lista> origin=GET_PROPERTY
+                            $this: GET_VAR '<this>: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> origin=null
+                          p0: GET_VAR 'position: kotlin.Int declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Int origin=null
+                      CALL 'public final fun checkNotNull (object: kotlin.Any?, message: kotlin.String): kotlin.Unit declared in kotlin.jvm.internal.Intrinsics' type=kotlin.Unit origin=null
+                        object: GET_VAR 'val tmp2: kotlin.Any? [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Any? origin=null
+                        message: CONST String type=kotlin.String value="null cannot be cast to non-null type DataClasses.Meniu_Item"
+                      TYPE_OP type=DataClasses.Meniu_Item? origin=CAST typeOperand=DataClasses.Meniu_Item?
+                        GET_VAR 'val tmp2: kotlin.Any? [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Any? origin=null
+                  CALL 'public open fun setSingleLine (p0: kotlin.Boolean): kotlin.Unit declared in android.widget.TextView' type=kotlin.Unit origin=EQ
+                    $this: CALL 'public final fun <get-titlu> (): android.widget.TextView declared in Adaptors.Adaptor_Lista.ItemComanda' type=android.widget.TextView origin=GET_PROPERTY
+                      $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemComanda origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemComanda
+                        GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+                    p0: CONST Boolean type=kotlin.Boolean value=true
+                  CALL 'public final fun setText (p0: @[FlexibleNullability] kotlin.CharSequence?): kotlin.Unit declared in android.widget.TextView' type=kotlin.Unit origin=EQ
+                    $this: CALL 'public final fun <get-titlu> (): android.widget.TextView declared in Adaptors.Adaptor_Lista.ItemComanda' type=android.widget.TextView origin=GET_PROPERTY
+                      $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemComanda origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemComanda
+                        GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+                    p0: CALL 'public open fun getName (): @[FlexibleNullability] kotlin.String? declared in DataClasses.Meniu_Item' type=@[FlexibleNullability] kotlin.String? origin=GET_PROPERTY
+                      $this: GET_VAR 'var mancare: DataClasses.Meniu_Item [var] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=DataClasses.Meniu_Item origin=null
+                  SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:height type:kotlin.Int visibility:public' type=kotlin.Unit origin=EQ
+                    receiver: CALL 'public open fun getLayoutParams (): @[FlexibleNullability] android.view.ViewGroup.LayoutParams? [fake_override] declared in com.google.android.material.imageview.ShapeableImageView' type=@[FlexibleNullability] android.view.ViewGroup.LayoutParams? origin=GET_PROPERTY
+                      $this: CALL 'public final fun <get-imagine> (): com.google.android.material.imageview.ShapeableImageView declared in Adaptors.Adaptor_Lista.ItemComanda' type=com.google.android.material.imageview.ShapeableImageView origin=GET_PROPERTY
+                        $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemComanda origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemComanda
+                          GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+                    value: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                      $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                      $receiver: CONST Float type=kotlin.Float value=90.0
+                  COMPOSITE type=kotlin.Unit origin=null
+                    TRY type=kotlin.Any
+                      try: BLOCK type=@[EnhancedNullability] com.bumptech.glide.request.target.ViewTarget<@[FlexibleNullability] android.widget.ImageView?, @[FlexibleNullability] android.graphics.drawable.Drawable?> origin=null
+                        CALL 'public open fun into (p0: @[EnhancedNullability] android.widget.ImageView): @[EnhancedNullability] com.bumptech.glide.request.target.ViewTarget<@[FlexibleNullability] android.widget.ImageView?, @[FlexibleNullability] TranscodeType of com.bumptech.glide.RequestBuilder?> declared in com.bumptech.glide.RequestBuilder' type=@[EnhancedNullability] com.bumptech.glide.request.target.ViewTarget<@[FlexibleNullability] android.widget.ImageView?, @[FlexibleNullability] android.graphics.drawable.Drawable?> origin=null
+                          $this: CALL 'public open fun error (p0: kotlin.Int): @[EnhancedNullability] com.bumptech.glide.RequestBuilder<@[FlexibleNullability] TranscodeType of com.bumptech.glide.RequestBuilder?> [fake_override] declared in com.bumptech.glide.RequestBuilder' type=@[EnhancedNullability] com.bumptech.glide.RequestBuilder<@[FlexibleNullability] android.graphics.drawable.Drawable?> origin=null
+                            $this: CALL 'public open fun load (p0: @[EnhancedNullability] kotlin.Int?): @[EnhancedNullability] com.bumptech.glide.RequestBuilder<@[FlexibleNullability] android.graphics.drawable.Drawable?> declared in com.bumptech.glide.RequestManager' type=@[EnhancedNullability] com.bumptech.glide.RequestBuilder<@[FlexibleNullability] android.graphics.drawable.Drawable?> origin=null
+                              $this: CALL 'public open fun with (p0: @[EnhancedNullability] android.content.Context): @[EnhancedNullability] com.bumptech.glide.RequestManager declared in com.bumptech.glide.Glide' type=@[EnhancedNullability] com.bumptech.glide.RequestManager origin=null
+                                p0: GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:context type:android.content.Context visibility:private [final]' type=android.content.Context origin=null
+                                  receiver: GET_VAR '<this>: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> origin=null
+                              p0: CALL 'public open fun getImage_id (): kotlin.Int declared in DataClasses.Meniu_Item' type=kotlin.Int origin=GET_PROPERTY
+                                $this: GET_VAR 'var mancare: DataClasses.Meniu_Item [var] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=DataClasses.Meniu_Item origin=null
+                            p0: GET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:sarmale type:kotlin.Int visibility:public [static]' type=kotlin.Int origin=null
+                          p0: CALL 'public final fun <get-imagine> (): com.google.android.material.imageview.ShapeableImageView declared in Adaptors.Adaptor_Lista.ItemComanda' type=com.google.android.material.imageview.ShapeableImageView origin=GET_PROPERTY
+                            $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemComanda origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemComanda
+                              GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+                      CATCH parameter=val ex: java.lang.Exception [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder
+                        VAR CATCH_PARAMETER name:ex type:java.lang.Exception [val]
+                        BLOCK type=kotlin.Int origin=null
+                          CALL 'public open fun e (p0: @[EnhancedNullability] kotlin.String?, p1: @[EnhancedNullability] kotlin.String?, p2: @[EnhancedNullability] kotlin.Throwable?): kotlin.Int declared in android.util.Log' type=kotlin.Int origin=null
+                            p0: CONST String type=kotlin.String value="Errors"
+                            p1: CONST String type=kotlin.String value="Glide Exception in Adaptor_Lista"
+                            p2: GET_VAR 'val ex: java.lang.Exception [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=java.lang.Exception origin=null
+                    COMPOSITE type=kotlin.Unit origin=null
+                  CALL 'public open fun setMargins (p0: kotlin.Int, p1: kotlin.Int, p2: kotlin.Int, p3: kotlin.Int): kotlin.Unit [fake_override] declared in androidx.recyclerview.widget.RecyclerView.LayoutParams' type=kotlin.Unit origin=null
+                    $this: BLOCK type=androidx.recyclerview.widget.RecyclerView.LayoutParams origin=null
+                      VAR IR_TEMPORARY_VARIABLE name:tmp3 type:kotlin.Any? [val]
+                        CALL 'public open fun getLayoutParams (): @[FlexibleNullability] android.view.ViewGroup.LayoutParams? [fake_override] declared in androidx.cardview.widget.CardView' type=@[FlexibleNullability] android.view.ViewGroup.LayoutParams? origin=GET_PROPERTY
+                          $this: CALL 'public final fun <get-card> (): androidx.cardview.widget.CardView declared in Adaptors.Adaptor_Lista.ItemComanda' type=androidx.cardview.widget.CardView origin=GET_PROPERTY
+                            $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemComanda origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemComanda
+                              GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+                      CALL 'public final fun checkNotNull (object: kotlin.Any?, message: kotlin.String): kotlin.Unit declared in kotlin.jvm.internal.Intrinsics' type=kotlin.Unit origin=null
+                        object: GET_VAR 'val tmp3: kotlin.Any? [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Any? origin=null
+                        message: CONST String type=kotlin.String value="null cannot be cast to non-null type androidx.recyclerview.widget.RecyclerView.LayoutParams"
+                      TYPE_OP type=androidx.recyclerview.widget.RecyclerView.LayoutParams? origin=CAST typeOperand=androidx.recyclerview.widget.RecyclerView.LayoutParams?
+                        GET_VAR 'val tmp3: kotlin.Any? [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Any? origin=null
+                    p0: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                      $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                      $receiver: CONST Int type=kotlin.Int value=10
+                    p1: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                      $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                      $receiver: CONST Int type=kotlin.Int value=8
+                    p2: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                      $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                      $receiver: CONST Int type=kotlin.Int value=10
+                    p3: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                      $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                      $receiver: CONST Int type=kotlin.Int value=8
+                  VAR name:numberOf type:kotlin.jvm.internal.Ref.IntRef [val]
+                    CONSTRUCTOR_CALL 'public constructor <init> () declared in kotlin.jvm.internal.Ref.IntRef' type=kotlin.jvm.internal.Ref.IntRef origin=null
+                  WHEN type=kotlin.Unit origin=IF
+                    BRANCH
+                      if: CALL 'public final fun EQEQ (arg0: kotlin.Any?, arg1: kotlin.Any?): kotlin.Boolean declared in kotlin.internal.ir' type=kotlin.Boolean origin=EQEQ
+                        arg0: GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:comanda type:DataClasses.Comanda? visibility:private [final]' type=DataClasses.Comanda? origin=null
+                          receiver: GET_VAR '<this>: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> origin=null
+                        arg1: CONST Null type=kotlin.Nothing? value=null
+                      then: SET_FIELD 'FIELD IR_BUILTINS_STUB name:element type:kotlin.Int visibility:public' type=kotlin.Unit origin=EQ
+                        receiver: GET_VAR 'val numberOf: kotlin.jvm.internal.Ref.IntRef [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.jvm.internal.Ref.IntRef origin=null
+                        value: CALL 'public open fun get (p0: kotlin.Int): @[EnhancedNullability] E of java.util.ArrayList [operator] declared in java.util.ArrayList' type=@[EnhancedNullability] kotlin.Int origin=GET_ARRAY_ELEMENT
+                          $this: CALL 'public final fun <get-listNumberOfs> (): java.util.ArrayList<kotlin.Int> [fake_override] declared in kotlin.Nothing' type=java.util.ArrayList<kotlin.Int> origin=GET_PROPERTY
+                            $this: BLOCK type=kotlin.Nothing origin=null
+                              CALL 'public final fun CHECK_NOT_NULL <T0> (arg0: T0 of kotlin.internal.ir.CHECK_NOT_NULL?): {T0 of kotlin.internal.ir.CHECK_NOT_NULL & Any} declared in kotlin.internal.ir' type=kotlin.Nothing origin=EXCLEXCL
+                                <T0>: kotlin.Nothing
+                                arg0: GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:comanda type:DataClasses.Comanda? visibility:private [final]' type=DataClasses.Comanda? origin=null
+                                  receiver: GET_VAR '<this>: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> origin=null
+                              CALL 'public final fun throwKotlinNothingValueException (): kotlin.Nothing declared in kotlin.jvm.internal.Intrinsics' type=kotlin.Nothing origin=null
+                          p0: GET_VAR 'position: kotlin.Int declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Int origin=null
+                  COMPOSITE type=kotlin.Unit origin=null
+                    CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.widget.TextView origin=null
+                      <T>: android.widget.TextView
+                      $receiver: CALL 'public final fun <get-numberOf> (): android.widget.TextView declared in Adaptors.Adaptor_Lista.ItemComanda' type=android.widget.TextView origin=GET_PROPERTY
+                        $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemComanda origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemComanda
+                          GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+                      block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.widget.TextView, kotlin.Unit> origin=LAMBDA
+                        COMPOSITE type=kotlin.Unit origin=null
+                        FUNCTION_REFERENCE 'private final fun onBindViewHolder$lambda$3 ($numberOf: kotlin.jvm.internal.Ref.IntRef): kotlin.Unit declared in Adaptors.Adaptor_Lista' type=@[ExtensionFunctionType] kotlin.Function1<android.widget.TextView, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+                          $numberOf: GET_VAR 'val numberOf: kotlin.jvm.internal.Ref.IntRef [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.jvm.internal.Ref.IntRef origin=null
+                    COMPOSITE type=kotlin.Unit origin=null
+                  CALL 'public final fun setText (p0: @[FlexibleNullability] kotlin.CharSequence?): kotlin.Unit declared in android.widget.TextView' type=kotlin.Unit origin=EQ
+                    $this: CALL 'public final fun <get-pret> (): android.widget.TextView declared in Adaptors.Adaptor_Lista.ItemComanda' type=android.widget.TextView origin=GET_PROPERTY
+                      $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemComanda origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemComanda
+                        GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+                    p0: STRING_CONCATENATION type=kotlin.String
+                      CALL 'public final fun format (vararg args: kotlin.Any?): kotlin.String [inline] declared in kotlin.text.StringsKt' type=kotlin.String origin=null
+                        $receiver: CONST String type=kotlin.String value="%.2f"
+                        args: BLOCK type=kotlin.Array<out kotlin.Any?> origin=null
+                          VAR IR_TEMPORARY_VARIABLE name:tmp0 type:kotlin.Array<out kotlin.Any?> [val]
+                            CALL 'public final fun arrayOfNulls <T> (size: kotlin.Int): kotlin.Array<T of kotlin.arrayOfNulls?> declared in kotlin' type=kotlin.Array<out kotlin.Any?> origin=null
+                              <T>: kotlin.Any?
+                              size: CONST Int type=kotlin.Int value=1
+                          CALL 'public final fun set (index: kotlin.Int, value: T of kotlin.Array): kotlin.Unit [operator] declared in kotlin.Array' type=kotlin.Unit origin=null
+                            $this: GET_VAR 'val tmp0: kotlin.Array<out kotlin.Any?> [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Array<out kotlin.Any?> origin=null
+                            index: CONST Int type=kotlin.Int value=0
+                            value: CALL 'public final fun times (other: kotlin.Int): kotlin.Double [operator] declared in kotlin.Double' type=kotlin.Double origin=MUL
+                              $this: CALL 'public open fun getPrice (): kotlin.Double declared in DataClasses.Meniu_Item' type=kotlin.Double origin=GET_PROPERTY
+                                $this: GET_VAR 'var mancare: DataClasses.Meniu_Item [var] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=DataClasses.Meniu_Item origin=null
+                              other: GET_FIELD 'FIELD IR_BUILTINS_STUB name:element type:kotlin.Int visibility:public' type=kotlin.Int origin=null
+                                receiver: GET_VAR 'val numberOf: kotlin.jvm.internal.Ref.IntRef [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.jvm.internal.Ref.IntRef origin=null
+                          GET_VAR 'val tmp0: kotlin.Array<out kotlin.Any?> [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Array<out kotlin.Any?> origin=null
+                      CONST String type=kotlin.String value=" RON"
+                CATCH parameter=val ex: java.lang.Exception [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder
+                  VAR CATCH_PARAMETER name:ex type:java.lang.Exception [val]
+                  BLOCK type=kotlin.Int origin=null
+                    CALL 'public open fun e (p0: @[EnhancedNullability] kotlin.String?, p1: @[EnhancedNullability] kotlin.String?, p2: @[EnhancedNullability] kotlin.Throwable?): kotlin.Int declared in android.util.Log' type=kotlin.Int origin=null
+                      p0: CONST String type=kotlin.String value="Error"
+                      p1: CONST String type=kotlin.String value="Adaptor_Lista exception at is ItemComanda: "
+                      p2: GET_VAR 'val ex: java.lang.Exception [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=java.lang.Exception origin=null
+            COMPOSITE type=kotlin.Unit origin=null
+        BRANCH
+          if: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=Adaptors.Adaptor_Lista.ItemChecklist
+            GET_VAR 'val tmp1_subject: androidx.recyclerview.widget.RecyclerView.ViewHolder [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+          then: BLOCK type=kotlin.Unit origin=null
+            VAR name:mancare type:DataClasses.Meniu_Item [val]
+              BLOCK type=DataClasses.Meniu_Item origin=null
+                VAR IR_TEMPORARY_VARIABLE name:tmp4 type:kotlin.Any? [val]
+                  CALL 'public open fun get (p0: kotlin.Int): @[EnhancedNullability] E of java.util.ArrayList [operator] declared in java.util.ArrayList' type=@[EnhancedNullability] T of Adaptors.Adaptor_Lista origin=GET_ARRAY_ELEMENT
+                    $this: CALL 'public final fun <get-mlist> (): java.util.ArrayList<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista' type=java.util.ArrayList<T of Adaptors.Adaptor_Lista> origin=GET_PROPERTY
+                      $this: GET_VAR '<this>: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> origin=null
+                    p0: GET_VAR 'position: kotlin.Int declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Int origin=null
+                CALL 'public final fun checkNotNull (object: kotlin.Any?, message: kotlin.String): kotlin.Unit declared in kotlin.jvm.internal.Intrinsics' type=kotlin.Unit origin=null
+                  object: GET_VAR 'val tmp4: kotlin.Any? [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Any? origin=null
+                  message: CONST String type=kotlin.String value="null cannot be cast to non-null type DataClasses.Meniu_Item"
+                TYPE_OP type=DataClasses.Meniu_Item? origin=CAST typeOperand=DataClasses.Meniu_Item?
+                  GET_VAR 'val tmp4: kotlin.Any? [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Any? origin=null
+            CALL 'public final fun setText (p0: @[FlexibleNullability] kotlin.CharSequence?): kotlin.Unit declared in android.widget.TextView' type=kotlin.Unit origin=EQ
+              $this: CALL 'public final fun <get-titlu> (): android.widget.TextView declared in Adaptors.Adaptor_Lista.ItemChecklist' type=android.widget.TextView origin=GET_PROPERTY
+                $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemChecklist origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemChecklist
+                  GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+              p0: CALL 'public open fun getName (): @[FlexibleNullability] kotlin.String? declared in DataClasses.Meniu_Item' type=@[FlexibleNullability] kotlin.String? origin=GET_PROPERTY
+                $this: GET_VAR 'val mancare: DataClasses.Meniu_Item [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=DataClasses.Meniu_Item origin=null
+            CALL 'public open fun setSingleLine (p0: kotlin.Boolean): kotlin.Unit declared in android.widget.TextView' type=kotlin.Unit origin=EQ
+              $this: CALL 'public final fun <get-titlu> (): android.widget.TextView declared in Adaptors.Adaptor_Lista.ItemChecklist' type=android.widget.TextView origin=GET_PROPERTY
+                $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemChecklist origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemChecklist
+                  GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+              p0: CONST Boolean type=kotlin.Boolean value=false
+            COMPOSITE type=kotlin.Unit origin=null
+              TRY type=kotlin.Any
+                try: BLOCK type=@[EnhancedNullability] com.bumptech.glide.request.target.ViewTarget<@[FlexibleNullability] android.widget.ImageView?, @[FlexibleNullability] android.graphics.drawable.Drawable?> origin=null
+                  CALL 'public open fun into (p0: @[EnhancedNullability] android.widget.ImageView): @[EnhancedNullability] com.bumptech.glide.request.target.ViewTarget<@[FlexibleNullability] android.widget.ImageView?, @[FlexibleNullability] TranscodeType of com.bumptech.glide.RequestBuilder?> declared in com.bumptech.glide.RequestBuilder' type=@[EnhancedNullability] com.bumptech.glide.request.target.ViewTarget<@[FlexibleNullability] android.widget.ImageView?, @[FlexibleNullability] android.graphics.drawable.Drawable?> origin=null
+                    $this: CALL 'public open fun error (p0: kotlin.Int): @[EnhancedNullability] com.bumptech.glide.RequestBuilder<@[FlexibleNullability] TranscodeType of com.bumptech.glide.RequestBuilder?> [fake_override] declared in com.bumptech.glide.RequestBuilder' type=@[EnhancedNullability] com.bumptech.glide.RequestBuilder<@[FlexibleNullability] android.graphics.drawable.Drawable?> origin=null
+                      $this: CALL 'public open fun load (p0: @[EnhancedNullability] kotlin.Int?): @[EnhancedNullability] com.bumptech.glide.RequestBuilder<@[FlexibleNullability] android.graphics.drawable.Drawable?> declared in com.bumptech.glide.RequestManager' type=@[EnhancedNullability] com.bumptech.glide.RequestBuilder<@[FlexibleNullability] android.graphics.drawable.Drawable?> origin=null
+                        $this: CALL 'public open fun with (p0: @[EnhancedNullability] android.content.Context): @[EnhancedNullability] com.bumptech.glide.RequestManager declared in com.bumptech.glide.Glide' type=@[EnhancedNullability] com.bumptech.glide.RequestManager origin=null
+                          p0: GET_FIELD 'FIELD PROPERTY_BACKING_FIELD name:context type:android.content.Context visibility:private [final]' type=android.content.Context origin=null
+                            receiver: GET_VAR '<this>: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> origin=null
+                        p0: CALL 'public open fun getImage_id (): kotlin.Int declared in DataClasses.Meniu_Item' type=kotlin.Int origin=GET_PROPERTY
+                          $this: GET_VAR 'val mancare: DataClasses.Meniu_Item [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=DataClasses.Meniu_Item origin=null
+                      p0: GET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:sarmale type:kotlin.Int visibility:public [static]' type=kotlin.Int origin=null
+                    p0: CALL 'public final fun <get-imagine> (): com.google.android.material.imageview.ShapeableImageView declared in Adaptors.Adaptor_Lista.ItemChecklist' type=com.google.android.material.imageview.ShapeableImageView origin=GET_PROPERTY
+                      $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemChecklist origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemChecklist
+                        GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+                CATCH parameter=val ex: java.lang.Exception [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder
+                  VAR CATCH_PARAMETER name:ex type:java.lang.Exception [val]
+                  BLOCK type=kotlin.Int origin=null
+                    CALL 'public open fun e (p0: @[EnhancedNullability] kotlin.String?, p1: @[EnhancedNullability] kotlin.String?, p2: @[EnhancedNullability] kotlin.Throwable?): kotlin.Int declared in android.util.Log' type=kotlin.Int origin=null
+                      p0: CONST String type=kotlin.String value="Errors"
+                      p1: CONST String type=kotlin.String value="Glide Exception in Adaptor_Lista"
+                      p2: GET_VAR 'val ex: java.lang.Exception [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=java.lang.Exception origin=null
+              COMPOSITE type=kotlin.Unit origin=null
+            CALL 'public open fun setChecked (p0: kotlin.Boolean): kotlin.Unit declared in com.google.android.material.checkbox.MaterialCheckBox' type=kotlin.Unit origin=EQ
+              $this: CALL 'public final fun <get-checkbox> (): com.google.android.material.checkbox.MaterialCheckBox declared in Adaptors.Adaptor_Lista.ItemChecklist' type=com.google.android.material.checkbox.MaterialCheckBox origin=GET_PROPERTY
+                $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemChecklist origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemChecklist
+                  GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+              p0: CALL 'public open fun isAvailable (): kotlin.Boolean declared in DataClasses.Meniu_Item' type=kotlin.Boolean origin=GET_PROPERTY
+                $this: GET_VAR 'val mancare: DataClasses.Meniu_Item [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=DataClasses.Meniu_Item origin=null
+            CALL 'public open fun setOnClickListener (p0: @[EnhancedNullability] android.view.View.OnClickListener?): kotlin.Unit [fake_override] declared in com.google.android.material.checkbox.MaterialCheckBox' type=kotlin.Unit origin=null
+              $this: CALL 'public final fun <get-checkbox> (): com.google.android.material.checkbox.MaterialCheckBox declared in Adaptors.Adaptor_Lista.ItemChecklist' type=com.google.android.material.checkbox.MaterialCheckBox origin=GET_PROPERTY
+                $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemChecklist origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemChecklist
+                  GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+              p0: BLOCK type=android.view.View.OnClickListener origin=LAMBDA
+                COMPOSITE type=kotlin.Unit origin=null
+                CALL 'public final fun <jvm-indy> <T> (dynamicCall: T of kotlin.jvm.internal.<jvm-indy>, bootstrapMethodHandle: kotlin.Any, vararg bootstrapMethodArguments: kotlin.Any): T of kotlin.jvm.internal.<jvm-indy> declared in kotlin.jvm.internal' type=android.view.View.OnClickListener origin=null
+                  <T>: android.view.View.OnClickListener
+                  dynamicCall: CALL 'public final fun onClick (p0: DataClasses.Meniu_Item, p1: androidx.recyclerview.widget.RecyclerView.ViewHolder): android.view.View.OnClickListener declared in kotlin.jvm.internal.invokeDynamic' type=android.view.View.OnClickListener origin=null
+                    p0: GET_VAR 'val mancare: DataClasses.Meniu_Item [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=DataClasses.Meniu_Item origin=null
+                    p1: GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+                  bootstrapMethodHandle: CALL 'public final fun <jvm-method-handle> (tag: kotlin.Int, owner: kotlin.String, name: kotlin.String, descriptor: kotlin.String, isInterface: kotlin.Boolean): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                    tag: CONST Int type=kotlin.Int value=6
+                    owner: CONST String type=kotlin.String value="java/lang/invoke/LambdaMetafactory"
+                    name: CONST String type=kotlin.String value="metafactory"
+                    descriptor: CONST String type=kotlin.String value="(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;"
+                    isInterface: CONST Boolean type=kotlin.Boolean value=false
+                  bootstrapMethodArguments: VARARG type=kotlin.Array<kotlin.Any> varargElementType=kotlin.Any
+                    CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                      method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in android.view.View.OnClickListener' type=kotlin.Any
+                    RAW_FUNCTION_REFERENCE 'private final fun onBindViewHolder$lambda$4 ($mancare: DataClasses.Meniu_Item, $holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, it: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in Adaptors.Adaptor_Lista' type=kotlin.Any
+                    CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                      method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in kotlin.jvm.internal.invokeDynamic.<fake>' type=kotlin.Any
+            CALL 'public open fun setOnClickListener (p0: @[EnhancedNullability] android.view.View.OnClickListener?): kotlin.Unit [fake_override] declared in androidx.constraintlayout.widget.ConstraintLayout' type=kotlin.Unit origin=null
+              $this: CALL 'public final fun <get-overlay> (): androidx.constraintlayout.widget.ConstraintLayout declared in Adaptors.Adaptor_Lista.ItemChecklist' type=androidx.constraintlayout.widget.ConstraintLayout origin=GET_PROPERTY
+                $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemChecklist origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemChecklist
+                  GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+              p0: BLOCK type=android.view.View.OnClickListener origin=LAMBDA
+                COMPOSITE type=kotlin.Unit origin=null
+                CALL 'public final fun <jvm-indy> <T> (dynamicCall: T of kotlin.jvm.internal.<jvm-indy>, bootstrapMethodHandle: kotlin.Any, vararg bootstrapMethodArguments: kotlin.Any): T of kotlin.jvm.internal.<jvm-indy> declared in kotlin.jvm.internal' type=android.view.View.OnClickListener origin=null
+                  <T>: android.view.View.OnClickListener
+                  dynamicCall: CALL 'public final fun onClick (p0: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista.onBindViewHolder$lambda$5>, p1: kotlin.Int, p2: androidx.recyclerview.widget.RecyclerView.ViewHolder): android.view.View.OnClickListener declared in kotlin.jvm.internal.invokeDynamic' type=android.view.View.OnClickListener origin=null
+                    p0: GET_VAR '<this>: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> origin=null
+                    p1: GET_VAR 'position: kotlin.Int declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Int origin=null
+                    p2: GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+                  bootstrapMethodHandle: CALL 'public final fun <jvm-method-handle> (tag: kotlin.Int, owner: kotlin.String, name: kotlin.String, descriptor: kotlin.String, isInterface: kotlin.Boolean): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                    tag: CONST Int type=kotlin.Int value=6
+                    owner: CONST String type=kotlin.String value="java/lang/invoke/LambdaMetafactory"
+                    name: CONST String type=kotlin.String value="metafactory"
+                    descriptor: CONST String type=kotlin.String value="(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;"
+                    isInterface: CONST Boolean type=kotlin.Boolean value=false
+                  bootstrapMethodArguments: VARARG type=kotlin.Array<kotlin.Any> varargElementType=kotlin.Any
+                    CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                      method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in android.view.View.OnClickListener' type=kotlin.Any
+                    RAW_FUNCTION_REFERENCE 'private final fun onBindViewHolder$lambda$5 <T> (this$0: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista.onBindViewHolder$lambda$5>, $position: kotlin.Int, $holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, it: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in Adaptors.Adaptor_Lista' type=kotlin.Any
+                    CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+                      method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in kotlin.jvm.internal.invokeDynamic.<fake>' type=kotlin.Any
+            CALL 'public open fun setMargins (p0: kotlin.Int, p1: kotlin.Int, p2: kotlin.Int, p3: kotlin.Int): kotlin.Unit [fake_override] declared in androidx.recyclerview.widget.RecyclerView.LayoutParams' type=kotlin.Unit origin=null
+              $this: BLOCK type=androidx.recyclerview.widget.RecyclerView.LayoutParams origin=null
+                VAR IR_TEMPORARY_VARIABLE name:tmp5 type:kotlin.Any? [val]
+                  CALL 'public open fun getLayoutParams (): @[FlexibleNullability] android.view.ViewGroup.LayoutParams? [fake_override] declared in androidx.cardview.widget.CardView' type=@[FlexibleNullability] android.view.ViewGroup.LayoutParams? origin=GET_PROPERTY
+                    $this: CALL 'public final fun <get-card> (): androidx.cardview.widget.CardView declared in Adaptors.Adaptor_Lista.ItemChecklist' type=androidx.cardview.widget.CardView origin=GET_PROPERTY
+                      $this: TYPE_OP type=Adaptors.Adaptor_Lista.ItemChecklist origin=IMPLICIT_CAST typeOperand=Adaptors.Adaptor_Lista.ItemChecklist
+                        GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+                CALL 'public final fun checkNotNull (object: kotlin.Any?, message: kotlin.String): kotlin.Unit declared in kotlin.jvm.internal.Intrinsics' type=kotlin.Unit origin=null
+                  object: GET_VAR 'val tmp5: kotlin.Any? [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Any? origin=null
+                  message: CONST String type=kotlin.String value="null cannot be cast to non-null type androidx.recyclerview.widget.RecyclerView.LayoutParams"
+                TYPE_OP type=androidx.recyclerview.widget.RecyclerView.LayoutParams? origin=CAST typeOperand=androidx.recyclerview.widget.RecyclerView.LayoutParams?
+                  GET_VAR 'val tmp5: kotlin.Any? [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Any? origin=null
+              p0: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                $receiver: CONST Int type=kotlin.Int value=10
+              p1: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                $receiver: CONST Int type=kotlin.Int value=8
+              p2: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                $receiver: CONST Int type=kotlin.Int value=10
+              p3: CALL 'public final fun <get-dP> (): kotlin.Int declared in com.ProiectSI.KotlinUtils.Companion' type=kotlin.Int origin=GET_PROPERTY
+                $this: GET_FIELD 'FIELD FIELD_FOR_OBJECT_INSTANCE name:Companion type:com.ProiectSI.KotlinUtils.Companion visibility:public [final,static]' type=com.ProiectSI.KotlinUtils.Companion origin=null
+                $receiver: CONST Int type=kotlin.Int value=8
+        BRANCH
+          if: TYPE_OP type=kotlin.Boolean origin=INSTANCEOF typeOperand=Adaptors.Adaptor_Lista.ItemAngajat
+            GET_VAR 'val tmp1_subject: androidx.recyclerview.widget.RecyclerView.ViewHolder [val] declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+          then: BLOCK type=kotlin.Unit origin=null
+    CALL 'public open fun setOnClickListener (p0: @[EnhancedNullability] android.view.View.OnClickListener?): kotlin.Unit declared in android.view.View' type=kotlin.Unit origin=null
+      $this: GET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:itemView type:@[EnhancedNullability] android.view.View visibility:public [final]' type=@[EnhancedNullability] android.view.View origin=null
+        receiver: GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+      p0: BLOCK type=android.view.View.OnClickListener origin=LAMBDA
+        COMPOSITE type=kotlin.Unit origin=null
+        CALL 'public final fun <jvm-indy> <T> (dynamicCall: T of kotlin.jvm.internal.<jvm-indy>, bootstrapMethodHandle: kotlin.Any, vararg bootstrapMethodArguments: kotlin.Any): T of kotlin.jvm.internal.<jvm-indy> declared in kotlin.jvm.internal' type=android.view.View.OnClickListener origin=null
+          <T>: android.view.View.OnClickListener
+          dynamicCall: CALL 'public final fun onClick (p0: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista.onBindViewHolder$lambda$6>, p1: kotlin.Int, p2: androidx.recyclerview.widget.RecyclerView.ViewHolder): android.view.View.OnClickListener declared in kotlin.jvm.internal.invokeDynamic' type=android.view.View.OnClickListener origin=null
+            p0: GET_VAR '<this>: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> origin=null
+            p1: GET_VAR 'position: kotlin.Int declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Int origin=null
+            p2: GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+          bootstrapMethodHandle: CALL 'public final fun <jvm-method-handle> (tag: kotlin.Int, owner: kotlin.String, name: kotlin.String, descriptor: kotlin.String, isInterface: kotlin.Boolean): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+            tag: CONST Int type=kotlin.Int value=6
+            owner: CONST String type=kotlin.String value="java/lang/invoke/LambdaMetafactory"
+            name: CONST String type=kotlin.String value="metafactory"
+            descriptor: CONST String type=kotlin.String value="(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;"
+            isInterface: CONST Boolean type=kotlin.Boolean value=false
+          bootstrapMethodArguments: VARARG type=kotlin.Array<kotlin.Any> varargElementType=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in android.view.View.OnClickListener' type=kotlin.Any
+            RAW_FUNCTION_REFERENCE 'private final fun onBindViewHolder$lambda$6 <T> (this$0: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista.onBindViewHolder$lambda$6>, $position: kotlin.Int, $holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, it: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in Adaptors.Adaptor_Lista' type=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in kotlin.jvm.internal.invokeDynamic.<fake>' type=kotlin.Any
+    CALL 'public open fun setOnLongClickListener (p0: @[EnhancedNullability] android.view.View.OnLongClickListener?): kotlin.Unit declared in android.view.View' type=kotlin.Unit origin=null
+      $this: GET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:itemView type:@[EnhancedNullability] android.view.View visibility:public [final]' type=@[EnhancedNullability] android.view.View origin=null
+        receiver: GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+      p0: BLOCK type=android.view.View.OnLongClickListener origin=LAMBDA
+        COMPOSITE type=kotlin.Unit origin=null
+        CALL 'public final fun <jvm-indy> <T> (dynamicCall: T of kotlin.jvm.internal.<jvm-indy>, bootstrapMethodHandle: kotlin.Any, vararg bootstrapMethodArguments: kotlin.Any): T of kotlin.jvm.internal.<jvm-indy> declared in kotlin.jvm.internal' type=android.view.View.OnLongClickListener origin=null
+          <T>: android.view.View.OnLongClickListener
+          dynamicCall: CALL 'public final fun onLongClick (p0: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista.onBindViewHolder$lambda$7>, p1: kotlin.Int, p2: androidx.recyclerview.widget.RecyclerView.ViewHolder): android.view.View.OnLongClickListener declared in kotlin.jvm.internal.invokeDynamic' type=android.view.View.OnLongClickListener origin=null
+            p0: GET_VAR '<this>: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista> origin=null
+            p1: GET_VAR 'position: kotlin.Int declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=kotlin.Int origin=null
+            p2: GET_VAR 'holder: androidx.recyclerview.widget.RecyclerView.ViewHolder declared in Adaptors.Adaptor_Lista.onBindViewHolder' type=androidx.recyclerview.widget.RecyclerView.ViewHolder origin=null
+          bootstrapMethodHandle: CALL 'public final fun <jvm-method-handle> (tag: kotlin.Int, owner: kotlin.String, name: kotlin.String, descriptor: kotlin.String, isInterface: kotlin.Boolean): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+            tag: CONST Int type=kotlin.Int value=6
+            owner: CONST String type=kotlin.String value="java/lang/invoke/LambdaMetafactory"
+            name: CONST String type=kotlin.String value="metafactory"
+            descriptor: CONST String type=kotlin.String value="(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;"
+            isInterface: CONST Boolean type=kotlin.Boolean value=false
+          bootstrapMethodArguments: VARARG type=kotlin.Array<kotlin.Any> varargElementType=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun onLongClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Boolean declared in android.view.View.OnLongClickListener' type=kotlin.Any
+            RAW_FUNCTION_REFERENCE 'private final fun onBindViewHolder$lambda$7 <T> (this$0: Adaptors.Adaptor_Lista<T of Adaptors.Adaptor_Lista.onBindViewHolder$lambda$7>, $position: kotlin.Int, $holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, it: @[FlexibleNullability] android.view.View?): kotlin.Boolean declared in Adaptors.Adaptor_Lista' type=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun onLongClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Boolean [fake_override] declared in kotlin.jvm.internal.invokeDynamic.<fake>' type=kotlin.Any
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate$default(FunctionCodegen.kt:42)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethodNode(ClassCodegen.kt:385)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethod(ClassCodegen.kt:402)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generate(ClassCodegen.kt:169)
+	at org.jetbrains.kotlin.backend.jvm.FileCodegen.lower(JvmPhases.kt:41)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt.makeIrFilePhase$lambda$5(PhaseBuilders.kt:114)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt$createSimpleNamedCompilerPhase$1.phaseBody(PhaseBuilders.kt:71)
+	at org.jetbrains.kotlin.backend.common.phaser.SimpleNamedCompilerPhase.phaseBody(CompilerPhase.kt:226)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:62)
+	... 44 more
+Caused by: java.lang.IllegalStateException: Fake override should have at least one overridden descriptor: FUN FAKE_OVERRIDE name:<get-listNumberOfs> visibility:public modality:FINAL <> ($this:kotlin.Nothing) returnType:java.util.ArrayList<kotlin.Int> [fake_override]
+	at org.jetbrains.kotlin.backend.jvm.ir.JvmIrUtilsKt.findSuperDeclaration(JvmIrUtils.kt:413)
+	at org.jetbrains.kotlin.backend.jvm.mapping.MethodSignatureMapper.findSuperDeclaration(MethodSignatureMapper.kt:440)
+	at org.jetbrains.kotlin.backend.jvm.mapping.MethodSignatureMapper.mapToCallableMethod(MethodSignatureMapper.kt:409)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:599)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.gen(ExpressionCodegen.kt:216)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrCallGenerator.genValueAndPut(IrCallGenerator.kt:48)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall$handleParameter(ExpressionCodegen.kt:610)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:619)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:872)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitSetField(IrElementVisitor.kt:206)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:902)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrSetField.accept(IrSetField.kt:21)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitWhen(ExpressionCodegen.kt:1095)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitWhen(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrWhen.accept(IrWhen.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:587)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitBlock(IrElementVisitor.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:407)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrBlock.accept(IrBlock.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitTryWithInfo(ExpressionCodegen.kt:1333)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitTry(ExpressionCodegen.kt:1324)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitTry(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrTry.accept(IrTry.kt:26)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:587)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitBlock(IrElementVisitor.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:407)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrBlock.accept(IrBlock.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:587)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitComposite(IrElementVisitor.kt:125)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitComposite(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitComposite(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrComposite.accept(IrComposite.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitWhen(ExpressionCodegen.kt:1095)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitWhen(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrWhen.accept(IrWhen.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:587)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitContainerExpression(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitBlock(IrElementVisitor.kt:122)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:407)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlock(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrBlock.accept(IrBlock.kt:18)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:578)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:239)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:121)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:46)
+	... 54 more
+
+
