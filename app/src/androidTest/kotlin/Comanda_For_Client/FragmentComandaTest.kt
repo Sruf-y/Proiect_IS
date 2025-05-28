@@ -50,7 +50,7 @@ class FragmentComandaTest {
     }
 
     @Test
-    fun testForAdminVisibility(){
+    fun testForAdminVisibility_shouldNotInvisible_False(){
         val intent = Intent(ApplicationProvider.getApplicationContext(), AdminActivity::class.java).apply {
             putExtra("arg3", "admin")
         }
@@ -62,7 +62,7 @@ class FragmentComandaTest {
     }
 
     @Test
-    fun testForAdminVisibility2(){
+    fun testForAdminVisibility_ShouldBeVisible(){
         val intent = Intent(ApplicationProvider.getApplicationContext(), AdminActivity::class.java).apply {
             putExtra("arg3", "admin")
         }
