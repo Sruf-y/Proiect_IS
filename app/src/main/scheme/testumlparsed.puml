@@ -1,0 +1,448 @@
+@startuml
+class Start_Activity.AdminActivity {
+# void onCreate(Bundle)
+}
+
+class Adaptors.TabSwipeAdaptor {
++ Int getItemCount()
++ Fragment createFragment(Int)
+}
+
+class Setari_Admin_Angajat.Creare_Cont_Angajat {
+~ Angajat ang
+~ String angajatpreviousname
+# void onCreate(Bundle)
+- void adaugaAngajat(Angajat)
+# void onResume()
+}
+
+
+enum DataClasses.Categorie {
++  aperitiv
++  fel_principal
++  spirtoase
++  nespirtoase
+}
+
+class DataClasses.Angajat {
++ String username
++ String password
++ {static} Creator<Angajat> CREATOR
++ int describeContents()
++ void writeToParcel(Parcel,int)
+}
+
+
+class Adaptors.NutritionPopupDialog {
+}
+enum Start_Activity.File_Salvate {
+}
+class Start_Activity.StartActivity {
++ void onCreate(Bundle?)
++ void onPause()
++ void onResume()
+- void makeCurrentFragment(Fragment,FragmentContainerView)
+}
+
+class TabsMeniu.BauturiNespirtoase {
+~ Adaptor_Lista<Meniu_Item> adaptor
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
++ void update(RecyclerView)
++ void oncardClick(int,RecyclerView.ViewHolder)
++ void onCardLongPress(int,RecyclerView.ViewHolder)
++ void onResume()
+}
+
+
+class com.ProiectSI.KotlinUtils$Companion {
++ Int dP
++ Int dP
++ Int dP
++ Boolean toBoolean
++ void null()
+}
+
+
+class com.ProiectSI.KotlinUtils {
+}
+class TabsMeniu.FeluriPrincipale {
+~ Adaptor_Lista<Meniu_Item> adaptor
+~ RecyclerView recyclerView
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
++ void oncardClick(int,RecyclerView.ViewHolder)
++ void onCardLongPress(int,RecyclerView.ViewHolder)
++ void onResume()
+}
+
+
+class TabsMeniu.BauturiSpirtoase {
+~ Adaptor_Lista<Meniu_Item> adaptor
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
++ void oncardClick(int,RecyclerView.ViewHolder)
++ void onCardLongPress(int,RecyclerView.ViewHolder)
++ void onResume()
+}
+
+
+class TabsMeniu.Aperitive {
+~ Adaptor_Lista<Meniu_Item> adaptor
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
++ void oncardClick(int,RecyclerView.ViewHolder)
++ void onCardLongPress(int,RecyclerView.ViewHolder)
++ void onResume()
+}
+
+
+class FragmentMeniu.FragmentMeniu {
++ void onViewCreated(View,Bundle?)
+}
+
+class Activity_Cautare.Cautare {
++ Context context
++ RecyclerView recycler
++ Adaptor_Lista<Meniu_Item> adaptor
++ void onCreate(Bundle?)
+- void prepareUI()
++ void oncardClick(Int,RecyclerView.ViewHolder)
++ void onCardLongPress(Int,RecyclerView.ViewHolder)
++ void initializeRecycler()
++ void onResume()
+}
+
+
+class JavaTests {
++ void testButtonClick_inMyClassicFragment_updatesText()
+}
+
+class Setari_Admin_Angajat.SubFolder.viz_com_full {
++ void onCreate(Bundle?)
+- void setAdaptor()
+- void setViewPadding()
++ void oncardClick(void,Int,void,RecyclerView.ViewHolder)
++ void null()
++ void onCardLongPress(void,Int,void,RecyclerView.ViewHolder)
++ void null()
+}
+
+class DataClasses.Meniu_Item {
+- int image_id
+- String name
+- Categorie category
+- double price
+- boolean available
+- String description
+- String nutritionDescription
++ {static} Creator<Meniu_Item> CREATOR
++ int getImage_id()
++ void setImage_id(int)
++ String getName()
++ void setName(String)
++ Categorie getCategory()
++ void setCategory(Categorie)
++ double getPrice()
++ void setPrice(double)
++ boolean isAvailable()
++ void setAvailable(boolean)
++ String getDescription()
++ void setDescription(String)
++ String getNutritionDescription()
++ void setNutritionDescription(String)
++ Meniu_Item Parse(String)
++ ArrayList<Meniu_Item> ParseArrayList(String)
++ String toString()
++ int describeContents()
++ void writeToParcel(Parcel,int)
++ boolean equals(Object)
++ int hashCode()
+}
+
+
+interface Adaptors.Adaptor_Lista$onClickListener {
++ void oncardClick(Int,RecyclerView.ViewHolder)
+}
+
+interface Adaptors.Adaptor_Lista$onLongPressListener {
++ void onCardLongPress(Int,RecyclerView.ViewHolder)
+}
+
+class Adaptors.Adaptor_Lista$ItemMeniu {
++ TextView titlu
++ TextView pret
++ ShapeableImageView imagine
++ CardView card
++ ImageView info
+}
+
+class Adaptors.Adaptor_Lista$ItemComanda {
++ TextView titlu
++ TextView pret
++ ShapeableImageView imagine
++ CardView card
++ TextView numberOf
+}
+
+class Adaptors.Adaptor_Lista$ItemChecklist {
++ TextView titlu
++ MaterialCheckBox checkbox
++ ShapeableImageView imagine
++ CardView card
++ ConstraintLayout overlay
+}
+
+class Adaptors.Adaptor_Lista$ItemAngajat {
+}
+class Adaptors.Adaptor_Lista {
++ ArrayList<T> mlist
++ void null()
++ RecyclerView.ViewHolder onCreateViewHolder(ViewGroup,Int)
++ Int getItemCount()
++ void onBindViewHolder(RecyclerView.ViewHolder,Int)
++ void updateList(ArrayList<T>)
++ void addItemAt(T,Int,ArrayList<T>?)
++ void removeItemAt(Int,ArrayList<T>?)
+}
+
+
+class Setari_Admin_Angajat.Stergere_Conturi_Angajati {
+# void onCreate(Bundle)
+}
+
+class com.ProiectSI.JavaUtilities {
++ Boolean FloatToBoolean(float)
++ Boolean IntToBoolean(int)
++ int BooleanToInt(Boolean)
+}
+
+class Adaptors.Angajat_Adaptor$adapAngajat {
++ TextView nameView
++ TextView passView
++ ConstraintLayout main
++ void bind(Angajat)
+}
+
+
+class Adaptors.Angajat_Adaptor {
++ ArrayList<Angajat> mList
++ void onCreateViewHolder(void,ViewGroup,void,Int)
++ void null()
++ void onBindViewHolder(void,RecyclerView.ViewHolder,void,Int)
++ void null()
++ Int getItemCount()
+}
+
+
+class Setari_Admin_Angajat.angajat_vizualizare_comanda {
+# void onCreate(Bundle)
+}
+
+class Functii_Utils.Functii$Companion {
++ void WriteStringInFile(Context,String,String)
++ void CustomSnack(View,String)
++ void advancedSaveAsJson(Context,String,Any,File)
++ void saveAsTextFile(Context,String,String,File)
++ void SaveAsJson(Context,String,T)
++ T KotlinLoadFromJson(Context,String,T)
++ T LoadFromJson(Context,String,T)
++ void CheckNewInstallLoadList(Context)
++ void scoateChitanta(Context,Comanda)
+}
+
+class Functii_Utils.Functii {
+}
+class Setari_Admin_Angajat.Schimbare_date_mancare {
++ Adaptor_Lista<Meniu_Item> adaptor
++ RecyclerView recycler
++ LinearLayoutManager layoutmanager
++ void onCreate(Bundle?)
++ void oncardClick(void,Int,void,RecyclerView.ViewHolder)
++ void null()
++ void onCardLongPress(void,Int,void,RecyclerView.ViewHolder)
++ void null()
++ void onResume()
+}
+
+
+enum Adaptors.Tip_Adaptor {
+}
+class DataClasses.Comanda$Companion {
++ String randomizeID()
+}
+
+class DataClasses.Comanda {
++ Boolean addItem(Meniu_Item,Int)
++ Boolean removeItem(Meniu_Item)
++ void setAt(Int,Meniu_Item,Int)
+}
+
+class DataClasses.GlobalVars {
++  APP_IN_TEST_MODE
++  lista_Comenzi
++  comanda_in_cos
++  lista_items_in_meniu_static
++  lista_Angajati
++  chitante_lista_ughhhh
+}
+
+class com.ProiectSI.Login_Activity {
++ void onCreate(Bundle?)
++ void onResume()
+}
+
+class com.ProiectSI.AddItemsToCos {
+~ Meniu_Item item
+~ Integer numar
+# void onCreate(Bundle)
+- {static} void collorchangeforButton(View,Context,int)
+# void onPause()
+# void onResume()
+}
+
+
+class JavaMeniuRazvan {
++ void testFragmentLaunchesSuccessfully()
++ void testRecyclerViewIsDisplayed()
++ void testRecyclerViewHasLayoutManager()
++ void testRecyclerViewHasAdapter()
++ void testFragmentResumeBehavior()
+}
+
+class Comanda_For_Client.FragmentComanda {
++ RecyclerView recycler
++ Adaptor_Lista<Meniu_Item> adaptor
++ Context myContext
++ void oncardClick(Int,RecyclerView.ViewHolder)
++ void onCardLongPress(Int,RecyclerView.ViewHolder)
++ void onViewCreated(View,Bundle?)
++ void initializeRecycler()
++ void onResume()
+}
+
+
+class Setari_Admin_Angajat.Schimbare_Date_Angajati {
+- RecyclerView recycler
+- Angajat_Adaptor adaptor
+- LinearLayoutManager layoutManager
++ void onCreate(Bundle?)
+- void setupWindowInsets()
+- void setupRecyclerView()
+- void openEditAngajatActivity(Angajat)
+- void removeAngajat(Angajat)
++ void onResume()
+}
+
+
+enum DataClasses.StareComanda {
+}
+class Adaptors.Comanda_Angajat_Adaptor$itemInList {
++ TextView id
++ TextView stare_text
++ ConstraintLayout stare_vizual
++ ConstraintLayout main
++ ShapeableImageView plusButton
++ ShapeableImageView minusButton
++ TextView timetextview
++ void bind(Comanda)
+}
+
+
+class Adaptors.Comanda_Angajat_Adaptor {
++ ArrayList<Comanda> mList
++ void null()
++ void onCreateViewHolder(void,ViewGroup,void,Int)
++ void null()
++ void onBindViewHolder(void,RecyclerView.ViewHolder,void,Int)
++ void null()
++ Int getItemCount()
+}
+
+
+class Setari_Admin_Angajat.Adaugare_Mancare {
+~ Meniu_Item myitem
+~ String previousname
+# void onCreate(Bundle)
+# void onPause()
+# void onResume()
+}
+
+
+class Setari_Admin_Angajat.Schimbare_Valabilitate_Item_Angajat {
++ Context myContext
++ RecyclerView recycler
++ Adaptor_Lista<Meniu_Item> adaptor
++ void oncardClick(Int,RecyclerView.ViewHolder)
++ void onCardLongPress(Int,RecyclerView.ViewHolder)
++ void onCreate(Bundle?)
++ void onResume()
++ void onPause()
++ void initializeRecycler()
+}
+
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- Start_Activity.AdminActivity
+androidx.viewpager2.adapter.FragmentStateAdapter <|-- Adaptors.TabSwipeAdaptor
+androidx.appcompat.app.AppCompatActivity <|-- Setari_Admin_Angajat.Creare_Cont_Angajat
+android.os.Parcelable <|.. DataClasses.Angajat
+androidx.appcompat.app.AppCompatActivity <|-- Start_Activity.StartActivity
+TabsMeniu.onClickListener <|.. TabsMeniu.BauturiNespirtoase
+TabsMeniu.onLongPressListener <|.. TabsMeniu.BauturiNespirtoase
+androidx.fragment.app.Fragment <|-- TabsMeniu.BauturiNespirtoase
+com.ProiectSI.KotlinUtils +.. com.ProiectSI.KotlinUtils$Companion
+TabsMeniu.onClickListener <|.. TabsMeniu.FeluriPrincipale
+TabsMeniu.onLongPressListener <|.. TabsMeniu.FeluriPrincipale
+androidx.fragment.app.Fragment <|-- TabsMeniu.FeluriPrincipale
+TabsMeniu.onClickListener <|.. TabsMeniu.BauturiSpirtoase
+TabsMeniu.onLongPressListener <|.. TabsMeniu.BauturiSpirtoase
+androidx.fragment.app.Fragment <|-- TabsMeniu.BauturiSpirtoase
+TabsMeniu.onClickListener <|.. TabsMeniu.Aperitive
+TabsMeniu.onLongPressListener <|.. TabsMeniu.Aperitive
+androidx.fragment.app.Fragment <|-- TabsMeniu.Aperitive
+androidx.fragment.app.Fragment <|-- FragmentMeniu.FragmentMeniu
+androidx.appcompat.app.AppCompatActivity <|-- Activity_Cautare.Cautare
+Activity_Cautare.onClickListener <|.. Activity_Cautare.Cautare
+Activity_Cautare.onLongPressListener <|.. Activity_Cautare.Cautare
+androidx.appcompat.app.AppCompatActivity <|-- Setari_Admin_Angajat.SubFolder.viz_com_full
+Setari_Admin_Angajat.SubFolder.onClickListener <|.. Setari_Admin_Angajat.SubFolder.viz_com_full
+Setari_Admin_Angajat.SubFolder.onLongPressListener <|.. Setari_Admin_Angajat.SubFolder.viz_com_full
+android.os.Parcelable <|.. DataClasses.Meniu_Item
+Adaptors.Adaptor_Lista +.. Adaptors.Adaptor_Lista$onClickListener
+Adaptors.Adaptor_Lista +.. Adaptors.Adaptor_Lista$onLongPressListener
+Adaptors.Adaptor_Lista +.. Adaptors.Adaptor_Lista$ItemMeniu
+Adaptors.ViewHolder <|-- Adaptors.Adaptor_Lista$ItemMeniu
+Adaptors.Adaptor_Lista +.. Adaptors.Adaptor_Lista$ItemComanda
+Adaptors.ViewHolder <|-- Adaptors.Adaptor_Lista$ItemComanda
+Adaptors.Adaptor_Lista +.. Adaptors.Adaptor_Lista$ItemChecklist
+Adaptors.ViewHolder <|-- Adaptors.Adaptor_Lista$ItemChecklist
+Adaptors.Adaptor_Lista +.. Adaptors.Adaptor_Lista$ItemAngajat
+Adaptors.ViewHolder <|-- Adaptors.Adaptor_Lista$ItemAngajat
+Adaptors.Adapter <|-- Adaptors.Adaptor_Lista
+androidx.appcompat.app.AppCompatActivity <|-- Setari_Admin_Angajat.Stergere_Conturi_Angajati
+Adaptors.Angajat_Adaptor +.. Adaptors.Angajat_Adaptor$adapAngajat
+Adaptors.ViewHolder <|-- Adaptors.Angajat_Adaptor$adapAngajat
+Adaptors.Adapter <|-- Adaptors.Angajat_Adaptor
+androidx.appcompat.app.AppCompatActivity <|-- Setari_Admin_Angajat.angajat_vizualizare_comanda
+Functii_Utils.Functii +.. Functii_Utils.Functii$Companion
+androidx.appcompat.app.AppCompatActivity <|-- Setari_Admin_Angajat.Schimbare_date_mancare
+Setari_Admin_Angajat.onClickListener <|.. Setari_Admin_Angajat.Schimbare_date_mancare
+Setari_Admin_Angajat.onLongPressListener <|.. Setari_Admin_Angajat.Schimbare_date_mancare
+DataClasses.Comanda +.. DataClasses.Comanda$Companion
+android.os.Parcelable <|.. DataClasses.Comanda
+androidx.appcompat.app.AppCompatActivity <|-- com.ProiectSI.Login_Activity
+androidx.appcompat.app.AppCompatActivity <|-- com.ProiectSI.AddItemsToCos
+androidx.fragment.app.Fragment <|-- Comanda_For_Client.FragmentComanda
+Comanda_For_Client.onClickListener <|.. Comanda_For_Client.FragmentComanda
+Comanda_For_Client.onLongPressListener <|.. Comanda_For_Client.FragmentComanda
+androidx.appcompat.app.AppCompatActivity <|-- Setari_Admin_Angajat.Schimbare_Date_Angajati
+Adaptors.Comanda_Angajat_Adaptor +.. Adaptors.Comanda_Angajat_Adaptor$itemInList
+Adaptors.ViewHolder <|-- Adaptors.Comanda_Angajat_Adaptor$itemInList
+Adaptors.Adapter <|-- Adaptors.Comanda_Angajat_Adaptor
+androidx.appcompat.app.AppCompatActivity <|-- Setari_Admin_Angajat.Adaugare_Mancare
+androidx.appcompat.app.AppCompatActivity <|-- Setari_Admin_Angajat.Schimbare_Valabilitate_Item_Angajat
+Setari_Admin_Angajat.onClickListener <|.. Setari_Admin_Angajat.Schimbare_Valabilitate_Item_Angajat
+Setari_Admin_Angajat.onLongPressListener <|.. Setari_Admin_Angajat.Schimbare_Valabilitate_Item_Angajat
+@enduml
