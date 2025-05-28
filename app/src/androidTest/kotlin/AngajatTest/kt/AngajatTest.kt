@@ -1,5 +1,6 @@
 package AngajatTest.kt
 
+import DataClasses.Angajat
 import android.os.Parcel
 import org.junit.Assert.*
 import org.junit.Test
