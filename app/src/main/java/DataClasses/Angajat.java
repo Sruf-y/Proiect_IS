@@ -5,10 +5,24 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
+import java.util.Objects;
+
 
 public class Angajat implements Parcelable {
     public String username;
     public String password;
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Angajat angajat = (Angajat) o;
+        return Objects.equals(username, angajat.username) && Objects.equals(password, angajat.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, password);
+    }
 
     public Angajat(String username, String password){
 

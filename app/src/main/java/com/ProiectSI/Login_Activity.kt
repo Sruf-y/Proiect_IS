@@ -45,6 +45,11 @@ class Login_Activity : AppCompatActivity() {
                     intent.putExtra("arg3", "admin")
                     startActivity(intent)
                 } else {
+                    if(!lista_Angajati.contains(Angajat(username.text.toString(),password.text.toString()))){
+                        Toast.makeText(this, "Combinatie incorecta!", Toast.LENGTH_SHORT).show()
+
+                    }
+
                     for (i in lista_Angajati) {
                         if (i.username == username.text.toString() && i.password == password.text.toString()) {
 
@@ -57,9 +62,7 @@ class Login_Activity : AppCompatActivity() {
                             startActivity(intent)
                             break
                         }
-                        else{
-                            Toast.makeText(this, "Combinatie incorecta!", Toast.LENGTH_SHORT).show()
-                        }
+
                     }
 
                 }
